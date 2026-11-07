@@ -109,7 +109,7 @@ activity('jati','Janji seorang Duta Perpaduan','Gerbang perpaduan','Penjaga masa
 'Kamu memilih kerjasama, toleransi dan kejujuran. Inilah antara amalan yang membentuk jati diri dan mengukuhkan perpaduan dalam kehidupan.',
 'Pilih tiga amalan yang menunjukkan kerjasama, toleransi dan integriti.',[3.5,-25],'arch','46')]
 
-data=dict(version=1,title='MISI RUKUN NEGARA',subtitle='Pengembaraan Merentas Masa',
+data=dict(soundtrack=dict(music='assets/journey.wav',ambience='assets/ambience.wav',mission2='assets/hope.wav',mission3='assets/together.wav'),version=1,title='MISI RUKUN NEGARA',subtitle='Pengembaraan Merentas Masa',
 introduction='Setiap negara mempunyai kisah yang membentuk masa depannya. Hari ini, kamu diberi peluang untuk menyaksikan sebahagian daripada perjalanan sejarah Malaysia. Apakah yang menyatukan rakyat berbilang kaum di Malaysia?',
 source=dict(url='https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/',pages='36–46',checked='2026-11-07'),
 missions=[

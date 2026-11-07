@@ -30,3 +30,16 @@ for k in range(sr*24):
 with wave.open('public/assets/ambience.wav','w') as w:
  w.setnchannels(1);w.setsampwidth(2);w.setframerate(sr);w.writeframes(b''.join(struct.pack('<h',int(max(-1,min(1,v))*32767)) for v in ambient))
 print('Original outdoor ambience generated.')
+
+for filename,tempo,scale in [('hope.wav',.6,[261.63,329.63,392,523.25]),('together.wav',.4,[293.66,329.63,392,440,493.88,587.33])]:
+ length=24;track=[0.0]*(sr*length)
+ for beat in range(int(length/tempo)):
+  freq=scale[(beat*3+beat//4)%len(scale)];start=int(beat*tempo*sr)
+  for k in range(min(int(sr*1.6),len(track)-start)):
+   t=k/sr;env=(1-math.exp(-t*60))*math.exp(-t*2.7)
+   track[start+k]+=.12*env*(math.sin(2*math.pi*freq*t)+.15*math.sin(2*math.pi*freq*2*t))
+ for k in range(len(track)):
+  t=k/sr;track[k]=(track[k]+.014*math.sin(2*math.pi*scale[0]/2*t))*min(1,t,length-t)
+ with wave.open('public/assets/'+filename,'w') as w:
+  w.setnchannels(1);w.setsampwidth(2);w.setframerate(sr);w.writeframes(b''.join(struct.pack('<h',int(max(-1,min(1,v))*32767)) for v in track))
+print('Hope and community mission music generated.')

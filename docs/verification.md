@@ -5,11 +5,15 @@ Keputusan akan dikemas kini berdasarkan ujian sebenar, bukan berdasarkan kewujud
 ## Disahkan
 
 - TypeScript dan binaan produksi Vite berjaya.
-- 43 laluan aset kandungan/dunia diperiksa wujud sebelum build.
-- 8 ujian kandungan dan API lulus: penilaian jawapan, tiga sebab yang tepat, skema kandungan, enkripsi sesi, kawalan akses, CSRF, draf, fail, konflik, penerbitan atomik dan pemulihan.
-- Browser Chromium: telefon 390 × 844 tanpa overflow mendatar dan butang pergerakan berfungsi.
+- 45 laluan aset kandungan/dunia diperiksa wujud sebelum build.
+- 11 ujian kandungan dan API lulus: penilaian jawapan, tiga sebab yang tepat, skema kandungan, enkripsi sesi, kawalan akses, CSRF, draf, fail, konflik, penerbitan atomik dan pemulihan.
+- Browser Chromium: telefon 390 × 844 tanpa overflow mendatar dan butang pergerakan berfungsi; joystick analog disemak dalam binaan akhir.
 - Browser Chromium: ralat model 404 dipaparkan dan Retry berjaya memuatkan semula dunia.
 - Browser Chromium: editor tempatan boleh menyimpan, memuatkan semula dan melihat pratonton 3D; penerbitan global dinyahaktifkan tanpa sesi backend.
+
+## Disahkan secara berasingan
+
+- Simpanan perjalanan selesai pada sempadan peta kekal boleh disambung; refleksi dipulihkan. Tetapan kelantangan rosak dipulihkan kepada nilai lalai.
 
 ## Sedang disahkan
 

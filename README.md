@@ -37,15 +37,15 @@ Semua aset permainan dan fon dihoskan bersama website. Sambungan Internet diperl
 6. Lengkapkan aktiviti misi untuk membuka misi seterusnya. Tiada had masa.
 7. Buku pengembaraan merekodkan pengetahuan yang telah ditemui. Nama, kemajuan dan refleksi disimpan pada peranti yang sama.
 
-Telefon/tablet: gunakan butang arah dan leret dunia untuk melihat. Kualiti grafik rendah boleh dipilih dalam tetapan. Ujian emulasi telefon tidak menggantikan penilaian prestasi pada telefon fizikal sekolah.
+Telefon/tablet: gunakan joystick dan leret dunia untuk melihat. Kualiti grafik rendah boleh dipilih dalam tetapan. Ujian emulasi telefon tidak menggantikan penilaian prestasi pada telefon fizikal sekolah.
 
 ## Tiga misi
 
-| Misi | Aktiviti | Kandungan |
-| --- | --- | --- |
-| Jejak Masa 1969 | 4 | Tiga petunjuk dan pentaksiran tiga sebab pengenalan |
-| Lima Prinsip, Satu Negara | 6 | Lima matlamat dan lima cabaran prinsip |
-| Duta Perpaduan | 6 | Enam peranan Rukun Negara dalam situasi kehidupan |
+| Misi                      | Aktiviti | Kandungan                                           |
+| ------------------------- | -------- | --------------------------------------------------- |
+| Jejak Masa 1969           | 4        | Tiga petunjuk dan pentaksiran tiga sebab pengenalan |
+| Lima Prinsip, Satu Negara | 6        | Lima matlamat dan lima cabaran prinsip              |
+| Duta Perpaduan            | 6        | Enam peranan Rukun Negara dalam situasi kehidupan   |
 
 Kandungan disemak daripada halaman **bercetak 36–46** buku teks yang dinyatakan dalam prompt. Watak dan dialog pendidikan ialah rekaan. Galeri ialah ruang imaginatif. Rekonstruksi visual tidak didakwa sebagai rakaman atau pembinaan semula tepat sebuah lokasi sebenar.
 

@@ -657,5 +657,11 @@
       ]
     }
   ],
-  "introductionAudio": "assets/voice/prologue.ogg"
+  "introductionAudio": "assets/voice/prologue.ogg",
+  "soundtrack": {
+    "music": "assets/journey.wav",
+    "ambience": "assets/ambience.wav",
+    "mission2": "assets/hope.wav",
+    "mission3": "assets/together.wav"
+  }
 }
