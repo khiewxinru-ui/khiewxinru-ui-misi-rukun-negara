@@ -3,14 +3,14 @@
 ## Binaan dan kandungan
 
 - **Lulus**: TypeScript dan binaan produksi Vite.
-- **Lulus**: 45 laluan aset kandungan/dunia wujud sebelum build, termasuk model GLB, muzik dan 36 fail naratif Bahasa Melayu.
+- **Lulus**: 9 laluan aset kandungan/dunia wujud sebelum build selepas penarikan balik naratif eSpeak, termasuk model GLB, tekstur, muzik dan bunyi persekitaran.
 - **Lulus**: 11 ujian kandungan, API dan pergerakan melalui `npm test`.
 
 Ujian merangkumi jawapan tiga sebab yang tepat, skema dan laluan kandungan, enkripsi sesi, akses guru/CSRF, draf bersama, pengesahan fail, konflik versi, penerbitan atomik, pemulihan versi, pergerakan pada kadar bingkai berbeza, collision dan sempadan peta.
 
 Semakan penerbitan GitHub dipautkan kepada commit induk yang sama dan ref dikemas kini tanpa force push. Perubahan serentak tidak digabungkan secara senyap dengan draf lama.
 
-## Lima senario browser — lulus
+## Senario browser — lulus
 
 | Senario                  | Bukti                                                                                                                                                                                                                                                         |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -30,17 +30,19 @@ Arahan `npm run server` berjaya memulakan servis Node. `GET /health` mengembalik
 
 Ujian API menggunakan penyedia GitHub tiruan untuk mengesahkan simpanan/penerbitan secara selamat. **Ini tidak membuktikan OAuth produksi atau penerbitan guru sebenar telah tersedia.**
 
-## GitHub Pages — belum diterbitkan
+## GitHub Pages — telah diterbitkan
 
-Kod dan workflow telah dihantar ke branch `main`. Workflow berjaya menjalankan build dan ujian, tetapi langkah `actions/configure-pages` tidak dapat menemui tapak Pages yang telah diaktifkan. Cubaan mengaktifkannya melalui GitHub API ditolak dengan **403 Resource not accessible by integration**.
+Deployment [42385002591](https://github.com/khiewxinru-ui/khiewxinru-ui-misi-rukun-negara/actions/runs/42385002591) berjaya: ujian, build, konfigurasi Pages dan job deploy semuanya lulus. Pemilik telah menetapkan Source kepada GitHub Actions.
 
-Pemilik perlu membuka **Settings → Pages → Source → GitHub Actions**, kemudian menjalankan semula workflow atau push baharu.
+URL website sebenar:
 
-URL sasaran:
+https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/
 
-`https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/`
-
-URL itu belum boleh dianggap deployment yang berjaya. Perjalanan pada URL GitHub Pages sebenar perlu diuji selepas penerbitan berjaya.
+- Halaman utama mengembalikan **HTTPS 200**.
+- Semakan sebelum penarikan balik suara meliputi 41 laluan model/audio/media yang mengembalikan HTTP 200; fail eSpeak kemudian ditarik balik selepas semakan kualiti pemilik.
+- Sampel model GLB, muzik dan naratif yang diterbitkan mempunyai SHA-256 sama dengan fail sumber.
+- Perjalanan lengkap pada URL sebenar lulus: semua 16 aktiviti, tiga misi, refleksi dan pemulihan selepas refresh (4.7 minit). Ralat aset/Retry, editor tempatan, joystick telefon dan pemulihan sempadan juga lulus.
+- Permintaan browser dalam Cloud disalurkan melalui klien permintaan yang mengesahkan TLS menggunakan CA proksi persekitaran. Pengesahan sijil tidak dinyahaktifkan.
 
 ## Masih memerlukan konfigurasi pemilik
 
@@ -50,3 +52,9 @@ URL itu belum boleh dianggap deployment yang berjaya. Perjalanan pada URL GitHub
 - Ujian browser dan prestasi pada peranti fizikal sekolah.
 
 Rujuk [panduan backend](teacher-backend.md) untuk langkah persediaan dan senarai penerimaan produksi.
+
+## Status kualiti suara
+
+Naratif eSpeak terdahulu ditolak oleh pemilik kerana sebutan tidak standard untuk Bahasa Melayu Malaysia. Fail telah ditarik balik, rujukan kandungan dikosongkan dan fallback TTS pelayar dimatikan. Ujian main balik/metadata terdahulu hanya membuktikan fail boleh dimainkan; ia bukan penilaian sebutan. Sampel pengganti ms-MY memerlukan semakan manusia sebelum penerbitan keseluruhan.
+
+Ujian regresi suara lulus: tetapan lama `voice: true` dan `subtitles: false` tidak mencetuskan rakaman yang ditolak atau TTS pelayar; teks dialog tetap kelihatan dan kawalan audio tidak tersedia dilumpuhkan.

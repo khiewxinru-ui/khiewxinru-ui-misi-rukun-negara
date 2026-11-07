@@ -1,4 +1,5 @@
-import { test, expect, type Page } from "@playwright/test";
+import { type Page } from "@playwright/test";
+import { test, expect } from "./fixtures";
 import { readFileSync } from "node:fs";
 import { contentSchema, type Activity } from "../../src/shared/content";
 const content = contentSchema.parse(
@@ -25,7 +26,7 @@ async function start(page: Page, waitForCanvas = true) {
       }),
     );
   });
-  await page.goto("/");
+  await page.goto("./");
   await page.getByRole("button", { name: "Mula Pengembaraan" }).click();
   await page.getByRole("button", { name: "Perempuan", exact: true }).click();
   await page.getByLabel("Nama pengembara").fill("Aina");
@@ -141,7 +142,9 @@ test("Student completes the entire three-mission journey and resumes after refre
       await approach(page, a);
       await solve(page, a, a.id === "tuhan");
     }
-    console.info(`Misi ${mission.id}: semua aktiviti selesai melalui kawalan pemain.`);
+    console.info(
+      `Misi ${mission.id}: semua aktiviti selesai melalui kawalan pemain.`,
+    );
     await expect(page.getByRole("dialog")).toBeVisible();
     await page
       .getByRole("button", {
@@ -178,7 +181,7 @@ test("Student completes the entire three-mission journey and resumes after refre
 test("Missing 3D asset shows an error and Retry recovers", async ({ page }) => {
   let fail = true;
   await page.route("**/assets/shophouse.glb", (route) =>
-    fail ? route.fulfill({ status: 404, body: "missing" }) : route.continue(),
+    fail ? route.fulfill({ status: 404, body: "missing" }) : route.fallback(),
   );
   await start(page, false);
   await expect(page.getByRole("alert")).toContainText(
@@ -191,7 +194,7 @@ test("Missing 3D asset shows an error and Retry recovers", async ({ page }) => {
 test("Local teacher draft can be edited, saved, previewed and recovered without publishing", async ({
   page,
 }) => {
-  await page.goto("/#guru");
+  await page.goto("./#guru");
   await page.getByRole("button", { name: /Lihat editor tempatan/ }).click();
   await page
     .getByLabel("Nama produk", { exact: true })

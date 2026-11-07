@@ -23,6 +23,7 @@ import {
 import type { Activity, Content } from "./shared/content";
 import { loadContent } from "./shared/content";
 import { audioEngine, type AudioSettings } from "./game/audio";
+import { narrationAvailable } from "./game/narration";
 import {
   createSave,
   readSave,
@@ -451,12 +452,15 @@ export default function App() {
           <PrimaryButton onClick={enter}>Masuki lorong masa</PrimaryButton>
           <button
             className="text-button light"
+            disabled={!narrationAvailable(content.introductionAudio)}
             onClick={() =>
               audioEngine.speak(content.introduction, content.introductionAudio)
             }
           >
             <Volume2 size={17} />
-            Dengar kisah permulaan
+            {narrationAvailable(content.introductionAudio)
+              ? "Dengar kisah permulaan"
+              : "Audio sedang disemak"}
           </button>
         </main>
       )}
@@ -605,8 +609,8 @@ export default function App() {
             </div>
           </div>
           <p className="hint-box">
-            Telefon dan tablet: gunakan joystick dan leret skrin untuk
-            melihat. Jika grafik berat, pilih kualiti rendah dalam tetapan.
+            Telefon dan tablet: gunakan joystick dan leret skrin untuk melihat.
+            Jika grafik berat, pilih kualiti rendah dalam tetapan.
           </p>
           <PrimaryButton onClick={() => setModal(null)}>
             Saya bersedia

@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { type Activity, checkAnswer, assetUrl } from "../shared/content";
 import { audioEngine } from "../game/audio";
+import { narrationAvailable } from "../game/narration";
 import { Modal, PrimaryButton } from "./UI";
 
 export function ActivityDialog({
@@ -43,6 +44,7 @@ export function ActivityDialog({
     : page === 0
       ? activity.audio
       : activity.narration[page] || "";
+  const hasAudio = narrationAvailable(audioPath);
   useEffect(() => {
     audioEngine.speak(line, audioPath);
     return () => audioEngine.stopVoice();
@@ -94,7 +96,7 @@ export function ActivityDialog({
           )}
           {audioEngine.settings.subtitles ||
           !audioEngine.settings.voice ||
-          !audioPath ||
+          !hasAudio ||
           showText ? (
             <p className="dialogue-line">{line}</p>
           ) : (
@@ -109,10 +111,12 @@ export function ActivityDialog({
           <div className="dialog-actions">
             <button
               className="text-button"
+              disabled={!hasAudio}
+              title={hasAudio ? "Ulang rakaman" : "Audio baharu sedang disemak"}
               onClick={() => audioEngine.speak(line, audioPath)}
             >
               <Volume2 size={17} />
-              Dengar semula
+              {hasAudio ? "Dengar semula" : "Audio sedang disemak"}
             </button>
             <PrimaryButton onClick={() => setPage((p) => p + 1)}>
               {page === activity.dialogue.length - 1

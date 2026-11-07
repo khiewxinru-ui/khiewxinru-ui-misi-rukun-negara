@@ -1,4 +1,5 @@
 import { assetUrl } from "../shared/content";
+import { narrationAvailable } from "./narration";
 
 export type AudioSettings = {
   music: boolean;
@@ -13,7 +14,7 @@ export type AudioSettings = {
 export const defaultSettings: AudioSettings = {
   music: true,
   effects: true,
-  voice: true,
+  voice: false,
   subtitles: true,
   volume: 0.55,
   reducedMotion: false,
@@ -87,30 +88,16 @@ class AudioEngine {
       osc.stop(t + 0.5);
     });
   }
-  speak(
-    text: string,
-    audioPath = "",
-  ): "recorded" | "speech" | "unavailable" | "off" {
+  speak(_text: string, audioPath = ""): "recorded" | "unavailable" | "off" {
     this.stopVoice();
     if (!this.settings.voice) return "off";
-    if (audioPath) {
+    if (narrationAvailable(audioPath)) {
       this.voiceAudio = new Audio(assetUrl(audioPath));
       this.voiceAudio.volume = this.settings.volume;
       void this.voiceAudio.play().catch(() => {});
       return "recorded";
     }
-    if (!("speechSynthesis" in window)) return "unavailable";
-    const voice = window.speechSynthesis
-      .getVoices()
-      .find((v) => /^ms(?:-|_)/i.test(v.lang) || v.lang === "ms");
-    if (!voice) return "unavailable";
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = "ms-MY";
-    u.voice = voice;
-    u.rate = 0.92;
-    u.volume = this.settings.volume;
-    window.speechSynthesis.speak(u);
-    return "speech";
+    return "unavailable";
   }
   stopVoice() {
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();

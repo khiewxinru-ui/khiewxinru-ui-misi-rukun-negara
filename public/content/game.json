@@ -52,13 +52,9 @@
           ],
           "object": "crate",
           "image": "",
-          "audio": "assets/voice/ekonomi-0.ogg",
+          "audio": "",
           "page": "37",
-          "narration": [
-            "assets/voice/ekonomi-0.ogg",
-            "assets/voice/ekonomi-1.ogg",
-            "assets/voice/ekonomi-2.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "penempatan",
@@ -91,13 +87,9 @@
           ],
           "object": "map",
           "image": "",
-          "audio": "assets/voice/penempatan-0.ogg",
+          "audio": "",
           "page": "37",
-          "narration": [
-            "assets/voice/penempatan-0.ogg",
-            "assets/voice/penempatan-1.ogg",
-            "assets/voice/penempatan-2.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "politik",
@@ -130,13 +122,9 @@
           ],
           "object": "radio",
           "image": "",
-          "audio": "assets/voice/politik-0.ogg",
+          "audio": "",
           "page": "36–37",
-          "narration": [
-            "assets/voice/politik-0.ogg",
-            "assets/voice/politik-1.ogg",
-            "assets/voice/politik-2.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "sebab",
@@ -171,12 +159,9 @@
           ],
           "object": "book",
           "image": "",
-          "audio": "assets/voice/sebab-0.ogg",
+          "audio": "",
           "page": "36–37",
-          "narration": [
-            "assets/voice/sebab-0.ogg",
-            "assets/voice/sebab-1.ogg"
-          ]
+          "narration": []
         }
       ]
     },
@@ -228,12 +213,9 @@
           ],
           "object": "notice",
           "image": "",
-          "audio": "assets/voice/matlamat-0.ogg",
+          "audio": "",
           "page": "38",
-          "narration": [
-            "assets/voice/matlamat-0.ogg",
-            "assets/voice/matlamat-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "tuhan",
@@ -263,12 +245,9 @@
           ],
           "object": "lantern",
           "image": "",
-          "audio": "assets/voice/tuhan-0.ogg",
+          "audio": "",
           "page": "39",
-          "narration": [
-            "assets/voice/tuhan-0.ogg",
-            "assets/voice/tuhan-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "raja",
@@ -304,12 +283,9 @@
           ],
           "object": "flag",
           "image": "",
-          "audio": "assets/voice/raja-0.ogg",
+          "audio": "",
           "page": "40",
-          "narration": [
-            "assets/voice/raja-0.ogg",
-            "assets/voice/raja-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "perlembagaan",
@@ -339,12 +315,9 @@
           ],
           "object": "book",
           "image": "",
-          "audio": "assets/voice/perlembagaan-0.ogg",
+          "audio": "",
           "page": "41",
-          "narration": [
-            "assets/voice/perlembagaan-0.ogg",
-            "assets/voice/perlembagaan-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "undang",
@@ -376,12 +349,9 @@
           ],
           "object": "notice",
           "image": "",
-          "audio": "assets/voice/undang-0.ogg",
+          "audio": "",
           "page": "42",
-          "narration": [
-            "assets/voice/undang-0.ogg",
-            "assets/voice/undang-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "sopan",
@@ -413,12 +383,9 @@
           ],
           "object": "bench",
           "image": "",
-          "audio": "assets/voice/sopan-0.ogg",
+          "audio": "",
           "page": "43",
-          "narration": [
-            "assets/voice/sopan-0.ogg",
-            "assets/voice/sopan-1.ogg"
-          ]
+          "narration": []
         }
       ]
     },
@@ -458,12 +425,9 @@
           ],
           "object": "lantern",
           "image": "",
-          "audio": "assets/voice/agama-0.ogg",
+          "audio": "",
           "page": "44",
-          "narration": [
-            "assets/voice/agama-0.ogg",
-            "assets/voice/agama-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "patriotik",
@@ -495,12 +459,9 @@
           ],
           "object": "flag",
           "image": "",
-          "audio": "assets/voice/patriotik-0.ogg",
+          "audio": "",
           "page": "45",
-          "narration": [
-            "assets/voice/patriotik-0.ogg",
-            "assets/voice/patriotik-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "patuh",
@@ -530,12 +491,9 @@
           ],
           "object": "notice",
           "image": "",
-          "audio": "assets/voice/patuh-0.ogg",
+          "audio": "",
           "page": "45",
-          "narration": [
-            "assets/voice/patuh-0.ogg",
-            "assets/voice/patuh-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "perpaduan",
@@ -571,12 +529,9 @@
           ],
           "object": "garden",
           "image": "",
-          "audio": "assets/voice/perpaduan-0.ogg",
+          "audio": "",
           "page": "45",
-          "narration": [
-            "assets/voice/perpaduan-0.ogg",
-            "assets/voice/perpaduan-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "nilai",
@@ -608,12 +563,9 @@
           ],
           "object": "bench",
           "image": "",
-          "audio": "assets/voice/nilai-0.ogg",
+          "audio": "",
           "page": "46",
-          "narration": [
-            "assets/voice/nilai-0.ogg",
-            "assets/voice/nilai-1.ogg"
-          ]
+          "narration": []
         },
         {
           "id": "jati",
@@ -647,17 +599,14 @@
           ],
           "object": "arch",
           "image": "",
-          "audio": "assets/voice/jati-0.ogg",
+          "audio": "",
           "page": "46",
-          "narration": [
-            "assets/voice/jati-0.ogg",
-            "assets/voice/jati-1.ogg"
-          ]
+          "narration": []
         }
       ]
     }
   ],
-  "introductionAudio": "assets/voice/prologue.ogg",
+  "introductionAudio": "",
   "soundtrack": {
     "music": "assets/journey.wav",
     "ambience": "assets/ambience.wav",

@@ -4,9 +4,9 @@
 
 Repository: https://github.com/khiewxinru-ui/khiewxinru-ui-misi-rukun-negara
 
-URL GitHub Pages (selepas deployment berjaya): https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/
+Website GitHub Pages: https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/
 
-Status sebenar deployment boleh disemak pada tab **Actions**. URL sahaja bukan bukti bahawa deployment berjaya.
+Deployment GitHub Pages telah berjaya. Status penerbitan seterusnya boleh disemak pada tab **Actions**. Teacher Editor dalam talian memerlukan konfigurasi backend berasingan.
 
 ## Paparan sebenar
 
@@ -145,6 +145,15 @@ Bangunan GLB asal dimodelkan dengan arked melengkung, kaki lima, tiang, cornice,
 
 Imej menu ialah ilustrasi sinematik yang dijana; ia bukan tangkapan skrin gameplay. Paparan permainan sebenar ialah dunia 3D dalam `src/game/World.tsx`. Aset tidak mewakili dokumentasi tepat sebuah bandar atau bangunan tahun 1969.
 
-Muzik, kesan dan bunyi persekitaran dijana untuk projek ini. Naratif ialah suara sintesis Bahasa Melayu. Fon DM Sans dan Libre Caslon Display menggunakan SIL Open Font License; salinan lesen tersedia dalam `docs/licenses/`.
+Muzik, kesan dan bunyi persekitaran dijana untuk projek ini. Naratif eSpeak terdahulu telah ditarik balik kerana sebutannya tidak sesuai dengan Bahasa Melayu Malaysia. Rakaman pengganti perlu disemak sebelum diterbitkan; permainan kini menggunakan teks dialog. Fon DM Sans dan Libre Caslon Display menggunakan SIL Open Font License; salinan lesen tersedia dalam `docs/licenses/`.
 
-Model boleh dijana semula dengan Blender melalui `scripts/build-heritage.py`. Skrip audio memerlukan Python; skrip naratif juga memerlukan `espeakng-loader` dan ffmpeg. **Semua hasil aset telah disertakan** — Blender dan Python tidak diperlukan oleh murid atau untuk build website.
+Model boleh dijana semula dengan Blender melalui `scripts/build-heritage.py`. Skrip muzik dan bunyi persekitaran memerlukan Python. **Semua hasil aset telah disertakan** — Blender dan Python tidak diperlukan oleh murid atau untuk build website.
+
+## Semakan suara pengganti
+
+Naratif eSpeak telah ditarik balik. Suara pengganti belum digunakan dalam permainan. Dua sampel sintesis neural berlocale **ms-MY** disediakan untuk semakan pemilik:
+
+- [Yasmin — suara perempuan](https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/assets/previews/ms-my-yasmin.mp3)
+- [Osman — suara lelaki](https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/assets/previews/ms-my-osman.mp3)
+
+Sumber sampel: Microsoft Edge Read Aloud, `ms-MY-YasminNeural` dan `ms-MY-OsmanNeural`. Penetapan locale bukan bukti bahawa sebutan telah disahkan untuk PdP; pemilik perlu menilai sampel sebelum penerbitan naratif penuh.

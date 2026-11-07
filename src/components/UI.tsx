@@ -184,8 +184,7 @@ export function Settings({
         />
       </label>
       <p className="fine-print">
-        Naratif Bahasa Melayu disertakan. Teks boleh dipaparkan semula apabila
-        sari kata dimatikan.
+        Rakaman dialog baharu sedang disemak. Teks dialog sentiasa tersedia.
       </p>
     </div>
   );

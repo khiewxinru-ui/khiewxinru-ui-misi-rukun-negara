@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 
 test("A finished journey at the map edge remains resumable after refresh", async ({
   page,
@@ -25,7 +25,7 @@ test("A finished journey at the map edge remains resumable after refresh", async
       JSON.stringify({ volume: "corrupt", lookSensitivity: "corrupt" }),
     );
   });
-  await page.goto("/");
+  await page.goto("./");
   await expect(
     page.getByRole("button", { name: "Lihat pencapaian" }),
   ).toBeVisible();
