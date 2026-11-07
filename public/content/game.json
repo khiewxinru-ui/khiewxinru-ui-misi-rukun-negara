@@ -1,0 +1,661 @@
+{
+  "version": 1,
+  "title": "MISI RUKUN NEGARA",
+  "subtitle": "Pengembaraan Merentas Masa",
+  "introduction": "Setiap negara mempunyai kisah yang membentuk masa depannya. Hari ini, kamu diberi peluang untuk menyaksikan sebahagian daripada perjalanan sejarah Malaysia. Apakah yang menyatukan rakyat berbilang kaum di Malaysia?",
+  "source": {
+    "url": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+    "pages": "36–46",
+    "checked": "2026-11-07"
+  },
+  "missions": [
+    {
+      "id": 1,
+      "title": "Jejak Masa 1969",
+      "era": "MALAYSIA · 1969",
+      "tagline": "Tiga petunjuk. Satu permulaan.",
+      "introduction": "Terokai lorong ini dan temui tiga petunjuk yang membantu kamu memahami keadaan masyarakat Malaysia pada zaman tersebut. Selepas itu, satukan hasil penyiasatanmu di meja penyiasat.",
+      "conclusion": "Perbezaan kegiatan ekonomi, pengasingan tempat tinggal dan perbezaan fahaman politik ialah tiga sebab pengenalan Rukun Negara. Kini terokai matlamat dan prinsip yang mengukuhkan perpaduan.",
+      "activities": [
+        {
+          "id": "ekonomi",
+          "title": "Tiga pekerjaan, satu persoalan",
+          "label": "Peti perdagangan",
+          "speaker": "Pak Rahman, penjaga kedai",
+          "dialogue": [
+            "Selamat datang, {name}. Lihat barang-barang ini: hasil tani, bijih timah dan getah. Setiap satunya menceritakan kegiatan ekonomi yang berbeza.",
+            "Semasa pentadbiran British, masyarakat dipisahkan mengikut kegiatan ekonomi utama. Keadaan itu mewujudkan jurang ekonomi yang tidak seimbang.",
+            "Ini ialah gambaran pola sejarah dalam buku teks, bukan pekerjaan semua orang dalam sesuatu kaum, dan bukan gambaran masyarakat Malaysia hari ini."
+          ],
+          "kind": "match",
+          "question": "Padankan hasil dengan kegiatan ekonominya.",
+          "options": [
+            "Hasil tanaman",
+            "Bijih timah",
+            "Getah"
+          ],
+          "correct": [
+            2,
+            0,
+            1
+          ],
+          "matches": [
+            "Perlombongan",
+            "Perladangan",
+            "Pertanian"
+          ],
+          "feedback": "Tepat! Perbezaan kegiatan ekonomi ialah salah satu sebab pengenalan Rukun Negara. Corak ekonomi yang terpisah mewujudkan jurang antara masyarakat.",
+          "hint": "Bijih timah dilombong; getah dihasilkan di ladang; tanaman berkaitan pertanian.",
+          "position": [
+            -3.5,
+            3
+          ],
+          "object": "crate",
+          "image": "",
+          "audio": "assets/voice/ekonomi-0.ogg",
+          "page": "37",
+          "narration": [
+            "assets/voice/ekonomi-0.ogg",
+            "assets/voice/ekonomi-1.ogg",
+            "assets/voice/ekonomi-2.ogg"
+          ]
+        },
+        {
+          "id": "penempatan",
+          "title": "Jarak yang memisahkan",
+          "label": "Peta penempatan",
+          "speaker": "Mei Ling, penduduk rekaan",
+          "dialogue": [
+            "Pada peta ini, kampung, bandar dan ladang terletak berjauhan. Cuba bayangkan jika kita jarang berjumpa dengan jiran daripada kawasan lain.",
+            "Buku teks menerangkan pola sejarah: orang Melayu banyak di kampung dan pedalaman, orang Cina di bandar, dan orang India di ladang. Ini bukan keadaan semua individu.",
+            "Pengasingan tempat tinggal mengurangkan peluang masyarakat untuk berinteraksi. Bagaimanakah hubungan dapat dieratkan?"
+          ],
+          "kind": "multi",
+          "question": "Pilih DUA pemerhatian yang disokong oleh petunjuk ini.",
+          "options": [
+            "Tempat tinggal yang berasingan mengurangkan interaksi.",
+            "Semua individu dalam sesuatu kaum tinggal di tempat yang sama.",
+            "Aktiviti bersama membuka peluang untuk berkenalan.",
+            "Masyarakat tidak perlu berhubung."
+          ],
+          "correct": [
+            0,
+            2
+          ],
+          "matches": [],
+          "feedback": "Bagus. Pengasingan tempat tinggal mengurangkan interaksi. Peluang bertemu dan bekerjasama membantu mengeratkan hubungan.",
+          "hint": "Fikirkan peluang untuk bertemu. Elakkan kenyataan yang menganggap semua orang adalah sama.",
+          "position": [
+            3.5,
+            -5
+          ],
+          "object": "map",
+          "image": "",
+          "audio": "assets/voice/penempatan-0.ogg",
+          "page": "37",
+          "narration": [
+            "assets/voice/penempatan-0.ogg",
+            "assets/voice/penempatan-1.ogg",
+            "assets/voice/penempatan-2.ogg"
+          ]
+        },
+        {
+          "id": "politik",
+          "title": "Suara dari radio lama",
+          "label": "Radio kedai",
+          "speaker": "Narator",
+          "dialogue": [
+            "Radio ini membawa kita menelusuri latar sejarah. Perbezaan fahaman politik merenggangkan hubungan antara kaum. Keadaan tidak harmoni turut menjadi latar Peristiwa 13 Mei 1969.",
+            "Selepas peristiwa tersebut, pentadbiran negara dijalankan oleh MAGERAN. Rukun Negara kemudiannya diperkenalkan untuk mengukuhkan perpaduan dan semangat kekitaan.",
+            "Tiada rakaman berita sejarah dimainkan di sini. Penerangan ini ialah naratif pendidikan yang disusun berdasarkan buku teks."
+          ],
+          "kind": "order",
+          "question": "Susun hubungan sebab dan keperluan ini daripada awal hingga akhir.",
+          "options": [
+            "Hubungan antara kaum menjadi renggang.",
+            "Perpaduan dan semangat kekitaan perlu diperkukuh.",
+            "Wujud perbezaan fahaman politik."
+          ],
+          "correct": [
+            2,
+            0,
+            1
+          ],
+          "matches": [],
+          "feedback": "Betul. Perbezaan fahaman politik merenggangkan hubungan. Rukun Negara menjadi panduan untuk mengukuhkan perpaduan.",
+          "hint": "Mulakan dengan perbezaan fahaman, kemudian kesannya kepada hubungan, dan akhirnya perkara yang perlu diperkukuh.",
+          "position": [
+            -3.5,
+            -14
+          ],
+          "object": "radio",
+          "image": "",
+          "audio": "assets/voice/politik-0.ogg",
+          "page": "36–37",
+          "narration": [
+            "assets/voice/politik-0.ogg",
+            "assets/voice/politik-1.ogg",
+            "assets/voice/politik-2.ogg"
+          ]
+        },
+        {
+          "id": "sebab",
+          "title": "Tiga petunjuk sejarah",
+          "label": "Meja penyiasat",
+          "speaker": "Penjaga masa",
+          "dialogue": [
+            "Kamu telah menemui petunjuk tentang ekonomi, tempat tinggal dan fahaman politik. Kini satukan hasil penyiasatanmu.",
+            "Peristiwa 13 Mei 1969 ialah latar sejarah yang penting. Namun, pentaksiran ini meminta tiga sebab pengenalan Rukun Negara yang dinyatakan dalam buku teks."
+          ],
+          "kind": "multi",
+          "question": "Pilih tepat TIGA sebab pengenalan Rukun Negara.",
+          "options": [
+            "Perbezaan kegiatan ekonomi",
+            "Kemajuan Internet",
+            "Pengasingan tempat tinggal",
+            "Peristiwa 13 Mei 1969",
+            "Perbezaan fahaman politik",
+            "Perubahan cuaca"
+          ],
+          "correct": [
+            0,
+            2,
+            4
+          ],
+          "matches": [],
+          "feedback": "Ketiga-tiga sebab tepat: perbezaan kegiatan ekonomi, pengasingan tempat tinggal dan perbezaan fahaman politik. Laluan masa seterusnya kini terbuka.",
+          "hint": "Gunakan tiga petunjuk yang kamu kumpulkan. Bezakan sebab yang dinilai dengan latar peristiwa.",
+          "position": [
+            3.5,
+            -25
+          ],
+          "object": "book",
+          "image": "",
+          "audio": "assets/voice/sebab-0.ogg",
+          "page": "36–37",
+          "narration": [
+            "assets/voice/sebab-0.ogg",
+            "assets/voice/sebab-1.ogg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Lima Prinsip, Satu Negara",
+      "era": "GALERI MASA · 1970",
+      "tagline": "Temui asas yang menyatukan kita.",
+      "introduction": "Ikuti laluan galeri imaginatif. Temui lima matlamat, kemudian lengkapkan cabaran bagi setiap prinsip Rukun Negara.",
+      "conclusion": "Kamu memahami lima matlamat dan lima prinsip Rukun Negara. Bawa bekalan ini ke Malaysia masa kini dan tunjukkan peranannya melalui tindakan.",
+      "activities": [
+        {
+          "id": "matlamat",
+          "title": "Lima cita-cita bersama",
+          "label": "Papan cita-cita",
+          "speaker": "Penjaga galeri imaginatif",
+          "dialogue": [
+            "Selepas memahami sebab pengenalannya, kita meneroka cita-cita dan prinsip Rukun Negara. Galeri ini ialah ruang pengembaraan imaginatif, bukan bangunan sejarah sebenar.",
+            "Rukun Negara diisytiharkan pada 31 Ogos 1970. Lima matlamatnya meliputi perpaduan, demokrasi, masyarakat adil, kebebasan terhadap tradisi kebudayaan yang pelbagai, dan masyarakat progresif berasaskan sains serta teknologi moden."
+          ],
+          "kind": "match",
+          "question": "Padankan tindakan dengan matlamat yang paling sesuai.",
+          "options": [
+            "Bermuafakat antara masyarakat",
+            "Menghormati keputusan melalui proses demokrasi",
+            "Menikmati kemakmuran secara adil dan saksama",
+            "Menghargai kepelbagaian tradisi kebudayaan",
+            "Menggunakan sains dan teknologi moden"
+          ],
+          "correct": [
+            2,
+            4,
+            0,
+            3,
+            1
+          ],
+          "matches": [
+            "Masyarakat yang adil",
+            "Masyarakat progresif",
+            "Perpaduan lebih erat",
+            "Sikap liberal terhadap tradisi kebudayaan",
+            "Cara hidup demokrasi"
+          ],
+          "feedback": "Lima matlamat saling melengkapi: perpaduan erat, hidup demokrasi, masyarakat adil, sikap liberal terhadap tradisi kebudayaan, dan masyarakat progresif.",
+          "hint": "Cari perkataan petunjuk: muafakat, demokrasi, adil, tradisi serta teknologi.",
+          "position": [
+            -3.5,
+            4
+          ],
+          "object": "notice",
+          "image": "",
+          "audio": "assets/voice/matlamat-0.ogg",
+          "page": "38",
+          "narration": [
+            "assets/voice/matlamat-0.ogg",
+            "assets/voice/matlamat-1.ogg"
+          ]
+        },
+        {
+          "id": "tuhan",
+          "title": "Ruang untuk saling menghormati",
+          "label": "Pelita keharmonian",
+          "speaker": "Asha, pengunjung rekaan",
+          "dialogue": [
+            "Kepercayaan kepada Tuhan bermaksud agama sebagai pegangan utama rakyat Malaysia.",
+            "Prinsip ini membimbing kita menghormati amalan beragama masyarakat lain dan membantu menyatupadukan masyarakat yang berbilang kaum."
+          ],
+          "kind": "choice",
+          "question": "Seorang rakan mengamalkan agamanya. Apakah tindakan yang menepati prinsip pertama?",
+          "options": [
+            "Memaksanya mengikut amalan kita.",
+            "Menghormati amalannya dan menjaga adab.",
+            "Mengejek amalannya."
+          ],
+          "correct": [
+            1
+          ],
+          "matches": [],
+          "feedback": "Menghormati amalan beragama orang lain membantu masyarakat hidup bersatu padu.",
+          "hint": "Prinsip ini mengajak kita menghormati pegangan dan amalan beragama.",
+          "position": [
+            3.5,
+            -1
+          ],
+          "object": "lantern",
+          "image": "",
+          "audio": "assets/voice/tuhan-0.ogg",
+          "page": "39",
+          "narration": [
+            "assets/voice/tuhan-0.ogg",
+            "assets/voice/tuhan-1.ogg"
+          ]
+        },
+        {
+          "id": "raja",
+          "title": "Taat setia, bersama",
+          "label": "Sudut kedaulatan",
+          "speaker": "Penjaga galeri",
+          "dialogue": [
+            "Kesetiaan kepada Raja dan Negara menuntut setiap warganegara memberikan sepenuh taat setia kepada Yang di-Pertuan Agong sebagai Ketua Utama Negara.",
+            "Prinsip ini menyatupadukan rakyat dan menyemai semangat patriotik."
+          ],
+          "kind": "match",
+          "question": "Padankan unsur dengan penerangan yang betul.",
+          "options": [
+            "Yang di-Pertuan Agong",
+            "Kesetiaan kepada Raja dan Negara",
+            "Semangat patriotik"
+          ],
+          "correct": [
+            1,
+            2,
+            0
+          ],
+          "matches": [
+            "Cinta akan negara",
+            "Ketua Utama Negara",
+            "Prinsip kedua Rukun Negara"
+          ],
+          "feedback": "Tepat. Yang di-Pertuan Agong ialah Ketua Utama Negara. Taat setia menyatukan rakyat dan memupuk kecintaan kepada negara.",
+          "hint": "Bezakan institusi negara, nama prinsip, dan perasaan cinta akan negara.",
+          "position": [
+            -3.5,
+            -6
+          ],
+          "object": "flag",
+          "image": "",
+          "audio": "assets/voice/raja-0.ogg",
+          "page": "40",
+          "narration": [
+            "assets/voice/raja-0.ogg",
+            "assets/voice/raja-1.ogg"
+          ]
+        },
+        {
+          "id": "perlembagaan",
+          "title": "Asas tertinggi",
+          "label": "Naskhah perlembagaan",
+          "speaker": "Penjaga galeri",
+          "dialogue": [
+            "Keluhuran Perlembagaan bermaksud Perlembagaan Persekutuan ialah undang-undang tertinggi negara.",
+            "Tiada institusi yang dapat mengatasi ketertinggiannya. Rakyat perlu menerima, mematuhi dan mempertahankan kemuliaan Perlembagaan Persekutuan."
+          ],
+          "kind": "choice",
+          "question": "Letakkan naskhah yang menjadi undang-undang tertinggi pada tempat utama.",
+          "options": [
+            "Peraturan permainan",
+            "Perlembagaan Persekutuan",
+            "Peraturan sebuah kelab"
+          ],
+          "correct": [
+            1
+          ],
+          "matches": [],
+          "feedback": "Perlembagaan Persekutuan ialah undang-undang tertinggi negara. Peraturan lain tidak mengatasi ketertinggiannya.",
+          "hint": "Cari undang-undang yang menjadi asas tertinggi bagi negara.",
+          "position": [
+            3.5,
+            -12
+          ],
+          "object": "book",
+          "image": "",
+          "audio": "assets/voice/perlembagaan-0.ogg",
+          "page": "41",
+          "narration": [
+            "assets/voice/perlembagaan-0.ogg",
+            "assets/voice/perlembagaan-1.ogg"
+          ]
+        },
+        {
+          "id": "undang",
+          "title": "Laluan yang selamat",
+          "label": "Tanda keselamatan",
+          "speaker": "Penjaga laluan",
+          "dialogue": [
+            "Kedaulatan Undang-undang bermaksud rakyat menghormati dan mematuhi undang-undang yang ditetapkan.",
+            "Kepatuhan ini membantu menjamin keharmonian masyarakat dan keselamatan negara."
+          ],
+          "kind": "order",
+          "question": "Susun tindakan sebelum melintas jalan di tempat yang sesuai.",
+          "options": [
+            "Melintas apabila laluan selamat.",
+            "Berhenti di tepi jalan.",
+            "Perhatikan keadaan lalu lintas."
+          ],
+          "correct": [
+            1,
+            2,
+            0
+          ],
+          "matches": [],
+          "feedback": "Sikap berhati-hati dan mematuhi peraturan membantu menjaga keselamatan bersama.",
+          "hint": "Berhenti dahulu, perhatikan lalu lintas, kemudian melintas apabila selamat.",
+          "position": [
+            -3.5,
+            -18
+          ],
+          "object": "notice",
+          "image": "",
+          "audio": "assets/voice/undang-0.ogg",
+          "page": "42",
+          "narration": [
+            "assets/voice/undang-0.ogg",
+            "assets/voice/undang-1.ogg"
+          ]
+        },
+        {
+          "id": "sopan",
+          "title": "Budi membina jambatan",
+          "label": "Bangku pertemuan",
+          "speaker": "Amir, pengunjung rekaan",
+          "dialogue": [
+            "Kesopanan dan Kesusilaan bermaksud amalan nilai murni yang mencerminkan keperibadian rakyat Malaysia.",
+            "Nilai murni membentuk masyarakat yang berdisiplin, berakhlak mulia, saling memahami dan bekerjasama."
+          ],
+          "kind": "multi",
+          "question": "Pilih DUA tindakan yang menunjukkan kesopanan dan kesusilaan.",
+          "options": [
+            "Mendengar pendapat rakan dengan tertib.",
+            "Memotong percakapan dan menghina rakan.",
+            "Mengucapkan terima kasih selepas dibantu.",
+            "Merampas barang tanpa izin."
+          ],
+          "correct": [
+            0,
+            2
+          ],
+          "matches": [],
+          "feedback": "Mendengar dengan tertib dan berterima kasih mengeratkan hubungan. Kelima-lima prinsip kini menjadi bekalan untuk misi seterusnya.",
+          "hint": "Pilih tindakan yang menjaga perasaan dan menghargai orang lain.",
+          "position": [
+            3.5,
+            -25
+          ],
+          "object": "bench",
+          "image": "",
+          "audio": "assets/voice/sopan-0.ogg",
+          "page": "43",
+          "narration": [
+            "assets/voice/sopan-0.ogg",
+            "assets/voice/sopan-1.ogg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Duta Perpaduan",
+      "era": "MALAYSIA · MASA KINI",
+      "tagline": "Sejarah menjadi tindakan.",
+      "introduction": "Kembali ke komuniti hari ini. Bantu jiran, buat keputusan dan amalkan peranan Rukun Negara dalam enam situasi kehidupan.",
+      "conclusion": "Sejarah memberi kita pengajaran. Rukun Negara membimbing masyarakat menghormati kepelbagaian, mencintai negara, mematuhi undang-undang, bersatu padu, berbudi pekerti dan membina jati diri.",
+      "activities": [
+        {
+          "id": "agama",
+          "title": "Jiran yang saling menghargai",
+          "label": "Ruang kejiranan",
+          "speaker": "Asha, jiran rekaan",
+          "dialogue": [
+            "Kamu kembali ke Malaysia masa kini. Jiran-jiran sedang merancang aktiviti komuniti yang disertai pelbagai agama dan kepercayaan.",
+            "Menghormati amalan dan keperluan masing-masing membantu kita meraikan kepelbagaian."
+          ],
+          "kind": "choice",
+          "question": "Seorang jiran meminta ruang untuk menunaikan amalan agamanya. Apakah pilihanmu?",
+          "options": [
+            "Memberikan ruang dan menghormati keperluannya.",
+            "Menyuruhnya meninggalkan aktiviti.",
+            "Menjadikan amalannya bahan jenaka."
+          ],
+          "correct": [
+            0
+          ],
+          "matches": [],
+          "feedback": "Jiranmu berasa dihargai. Menghormati agama dan kepercayaan membina masyarakat yang bertoleransi.",
+          "hint": "Fikirkan cara memastikan semua jiran berasa dihormati.",
+          "position": [
+            -3.5,
+            4
+          ],
+          "object": "lantern",
+          "image": "",
+          "audio": "assets/voice/agama-0.ogg",
+          "page": "44",
+          "narration": [
+            "assets/voice/agama-0.ogg",
+            "assets/voice/agama-1.ogg"
+          ]
+        },
+        {
+          "id": "patriotik",
+          "title": "Hormat lambang negara",
+          "label": "Dataran komuniti",
+          "speaker": "Mei Ling, sukarelawan rekaan",
+          "dialogue": [
+            "Komuniti sedang bersedia untuk sambutan Hari Kebangsaan. Semangat patriotik menyemai cinta dan taat setia kepada negara.",
+            "Rukun Negara juga membimbing kita menghormati lambang kedaulatan negara seperti Jalur Gemilang, Jata Negara dan lagu Negaraku."
+          ],
+          "kind": "multi",
+          "question": "Pilih DUA tindakan yang memperlihatkan semangat patriotik.",
+          "options": [
+            "Menghormati Jalur Gemilang.",
+            "Mempermainkan lagu Negaraku.",
+            "Menyertai aktiviti komuniti dengan rasa cinta akan negara.",
+            "Merosakkan hiasan kebangsaan."
+          ],
+          "correct": [
+            0,
+            2
+          ],
+          "matches": [],
+          "feedback": "Persiapan komuniti kini lebih bermakna. Menghormati lambang negara dan menyumbang kepada komuniti mencerminkan semangat patriotik.",
+          "hint": "Pilih perbuatan yang menunjukkan hormat dan cinta akan negara.",
+          "position": [
+            3.5,
+            -1
+          ],
+          "object": "flag",
+          "image": "",
+          "audio": "assets/voice/patriotik-0.ogg",
+          "page": "45",
+          "narration": [
+            "assets/voice/patriotik-0.ogg",
+            "assets/voice/patriotik-1.ogg"
+          ]
+        },
+        {
+          "id": "patuh",
+          "title": "Keselamatan milik bersama",
+          "label": "Papan komuniti",
+          "speaker": "Pak Rahman, jiran rekaan",
+          "dialogue": [
+            "Ada rakan mengajak kamu merosakkan kemudahan awam. Undang-undang membantu menjaga keamanan dan keselamatan.",
+            "Rukun Negara membimbing rakyat menghindari kegiatan jenayah dan mematuhi undang-undang."
+          ],
+          "kind": "choice",
+          "question": "Apakah tindakan yang menjaga kesejahteraan komuniti?",
+          "options": [
+            "Mengikut ajakan supaya diterima rakan.",
+            "Menolak ajakan dan mendapatkan bantuan orang dewasa.",
+            "Merosakkan kemudahan apabila tiada orang melihat."
+          ],
+          "correct": [
+            1
+          ],
+          "matches": [],
+          "feedback": "Kemudahan awam terpelihara dan komuniti kekal selamat. Kamu menunjukkan sikap menghormati undang-undang.",
+          "hint": "Pilih tindakan yang mematuhi undang-undang dan mendapatkan bantuan yang sesuai.",
+          "position": [
+            -3.5,
+            -6
+          ],
+          "object": "notice",
+          "image": "",
+          "audio": "assets/voice/patuh-0.ogg",
+          "page": "45",
+          "narration": [
+            "assets/voice/patuh-0.ogg",
+            "assets/voice/patuh-1.ogg"
+          ]
+        },
+        {
+          "id": "perpaduan",
+          "title": "Taman kita, usaha bersama",
+          "label": "Taman muafakat",
+          "speaker": "Amir, sukarelawan rekaan",
+          "dialogue": [
+            "Taman kejiranan memerlukan gotong-royong. Jiran daripada pelbagai latar belakang mahu menyumbang.",
+            "Permuafakatan, toleransi dan sikap menghormati budaya lain membantu mengukuhkan perpaduan masyarakat."
+          ],
+          "kind": "match",
+          "question": "Padankan situasi dengan tindakan yang membantu kerjasama.",
+          "options": [
+            "Jiran baharu belum mengenali sesiapa.",
+            "Ahli kumpulan berbeza pendapat.",
+            "Tugasan perlu disiapkan bersama."
+          ],
+          "correct": [
+            2,
+            0,
+            1
+          ],
+          "matches": [
+            "Dengar pandangan dan cari persetujuan.",
+            "Bahagikan kerja dengan adil.",
+            "Ajak berkenalan dan sertai kumpulan."
+          ],
+          "feedback": "Taman kembali ceria melalui kerjasama semua. Sikap bertoleransi dan bermuafakat mengukuhkan perpaduan.",
+          "hint": "Kenalkan jiran, dengar pandangan, dan bahagikan kerja secara adil.",
+          "position": [
+            3.5,
+            -12
+          ],
+          "object": "garden",
+          "image": "",
+          "audio": "assets/voice/perpaduan-0.ogg",
+          "page": "45",
+          "narration": [
+            "assets/voice/perpaduan-0.ogg",
+            "assets/voice/perpaduan-1.ogg"
+          ]
+        },
+        {
+          "id": "nilai",
+          "title": "Kecil tindakan, besar makna",
+          "label": "Bangku kejiranan",
+          "speaker": "Mei Ling, jiran rekaan",
+          "dialogue": [
+            "Seorang jiran tercicir barang ketika membawa bekalan untuk aktiviti komuniti.",
+            "Kesopanan dan budi pekerti mulia mewujudkan hubungan yang harmoni dan saling menghormati."
+          ],
+          "kind": "order",
+          "question": "Susun tindakan membantu jiran dengan sopan.",
+          "options": [
+            "Ucapkan kata yang baik setelah membantu.",
+            "Minta izin untuk membantu.",
+            "Bantu mengutip dan pulangkan barangnya."
+          ],
+          "correct": [
+            1,
+            2,
+            0
+          ],
+          "matches": [],
+          "feedback": "Jiranmu tersenyum dan berterima kasih. Nilai murni dapat diamalkan melalui tindakan harian yang sederhana.",
+          "hint": "Mulakan dengan meminta izin. Bantu dengan baik dan akhiri dengan kata yang sopan.",
+          "position": [
+            -3.5,
+            -18
+          ],
+          "object": "bench",
+          "image": "",
+          "audio": "assets/voice/nilai-0.ogg",
+          "page": "46",
+          "narration": [
+            "assets/voice/nilai-0.ogg",
+            "assets/voice/nilai-1.ogg"
+          ]
+        },
+        {
+          "id": "jati",
+          "title": "Janji seorang Duta Perpaduan",
+          "label": "Gerbang perpaduan",
+          "speaker": "Penjaga masa",
+          "dialogue": [
+            "Perjalananmu hampir selesai, {name}. Rukun Negara membina jati diri melalui toleransi, kerjasama dan sikap saling memahami.",
+            "Integriti bermaksud kejujuran yang tulen dan konsisten. Tindakan kita perlu mencerminkan nilai yang kita pegang."
+          ],
+          "kind": "multi",
+          "question": "Pilih TIGA amalan yang akan kamu bawa pulang.",
+          "options": [
+            "Bekerjasama dengan rakan pelbagai latar belakang.",
+            "Meniru dalam peperiksaan apabila sukar.",
+            "Bertolak ansur dan cuba memahami orang lain.",
+            "Bersikap jujur walaupun tiada orang melihat.",
+            "Menghina perbezaan budaya."
+          ],
+          "correct": [
+            0,
+            2,
+            3
+          ],
+          "matches": [],
+          "feedback": "Kamu memilih kerjasama, toleransi dan kejujuran. Inilah antara amalan yang membentuk jati diri dan mengukuhkan perpaduan dalam kehidupan.",
+          "hint": "Pilih tiga amalan yang menunjukkan kerjasama, toleransi dan integriti.",
+          "position": [
+            3.5,
+            -25
+          ],
+          "object": "arch",
+          "image": "",
+          "audio": "assets/voice/jati-0.ogg",
+          "page": "46",
+          "narration": [
+            "assets/voice/jati-0.ogg",
+            "assets/voice/jati-1.ogg"
+          ]
+        }
+      ]
+    }
+  ],
+  "introductionAudio": "assets/voice/prologue.ogg"
+}
