@@ -4,9 +4,19 @@
 
 Repository: https://github.com/khiewxinru-ui/khiewxinru-ui-misi-rukun-negara
 
-URL GitHub Pages: https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/
+URL GitHub Pages (selepas deployment berjaya): https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/
 
 Status sebenar deployment boleh disemak pada tab **Actions**. URL sahaja bukan bukti bahawa deployment berjaya.
+
+## Paparan sebenar
+
+Menu permainan:
+
+![Menu permainan](docs/screenshots/menu.webp)
+
+Persekitaran 3D dalam pelayar:
+
+![Gameplay 3D sebenar](docs/screenshots/gameplay.webp)
 
 ## Menjalankan projek
 

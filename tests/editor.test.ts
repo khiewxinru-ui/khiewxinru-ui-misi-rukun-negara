@@ -206,16 +206,16 @@ test("Teacher API: access control, CSRF, durable drafts, upload validation, publ
   assert.equal((await call("/api/session", undefined, cookie)).status, 401);
 });
 test("GitHub content conflicts prevent overwriting changes", async () => {
-  const github = new GitHubService(
-    config,
-    async () =>
-      new Response(
-        JSON.stringify({
-          content: Buffer.from(JSON.stringify(content)).toString("base64"),
-          sha: "changed",
-        }),
-        { status: 200 },
-      ),
+  const github = new GitHubService(config, async (input) =>
+    String(input).includes("/git/ref/")
+      ? new Response(JSON.stringify({ object: { sha: "pinned-head" } }))
+      : new Response(
+          JSON.stringify({
+            content: Buffer.from(JSON.stringify(content)).toString("base64"),
+            sha: "changed",
+          }),
+          { status: 200 },
+        ),
   );
   await assert.rejects(
     () => github.publish("token", content, "old", []),
@@ -256,6 +256,11 @@ test("Publishing uses one commit with a non-forced fast-forward and no credentia
     { path: "assets/uploads/a.png", body: "AQID" },
   ]);
   assert.equal(result.commit, "new-commit");
+  assert.ok(calls[0].path.includes("/git/ref/"));
+  assert.ok(
+    calls[1].path.endsWith("?ref=parent"),
+    "Content is validated against the immutable commit used as the publication parent.",
+  );
   const ref = calls.at(-1)!;
   assert.deepEqual(ref.body, { sha: "new-commit", force: false });
   const tree = calls.find((c) => c.path.endsWith("/git/trees"))!;

@@ -198,10 +198,10 @@ export class GitHubService {
       );
     return user;
   }
-  async current(token: string) {
+  async current(token: string, ref = this.config.branch) {
     const file = await this.api<{ content: string; sha: string }>(
       token,
-      `${this.root}/contents/public/content/game.json?ref=${encodeURIComponent(this.config.branch)}`,
+      `${this.root}/contents/public/content/game.json?ref=${encodeURIComponent(ref)}`,
     );
     const content = contentSchema.parse(
       JSON.parse(Buffer.from(file.content, "base64").toString("utf8")),
@@ -214,17 +214,18 @@ export class GitHubService {
     sourceSha: string,
     media: { path: string; body: string }[],
   ) {
-    // Compare content version as well as the branch's eventual fast-forward lease.
-    const remote = await this.current(token);
+    // Pin content validation to the exact parent commit. A moving branch name
+    // would allow a concurrent content change between validation and tree creation.
+    const ref = await this.api<{ object: { sha: string } }>(
+      token,
+      `${this.root}/git/ref/heads/${encodeURIComponent(this.config.branch)}`,
+    );
+    const remote = await this.current(token, ref.object.sha);
     if (remote.sha !== sourceSha)
       throw new HttpError(
         409,
         "Kandungan yang diterbitkan telah berubah sejak draf dibuka. Semak perubahan dahulu.",
       );
-    const ref = await this.api<{ object: { sha: string } }>(
-      token,
-      `${this.root}/git/ref/heads/${encodeURIComponent(this.config.branch)}`,
-    );
     const parent = await this.api<{ tree: { sha: string } }>(
       token,
       `${this.root}/git/commits/${ref.object.sha}`,
