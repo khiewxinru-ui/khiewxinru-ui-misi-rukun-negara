@@ -14,7 +14,7 @@ export type AudioSettings = {
 export const defaultSettings: AudioSettings = {
   music: true,
   effects: true,
-  voice: false,
+  voice: true,
   subtitles: true,
   volume: 0.55,
   reducedMotion: false,
@@ -27,6 +27,11 @@ class AudioEngine {
   private music = new Audio(assetUrl("assets/journey.wav"));
   private ambience = new Audio(assetUrl("assets/ambience.wav"));
   private voiceAudio: HTMLAudioElement | null = null;
+  private setLevels() {
+    const speaking = this.voiceAudio !== null;
+    this.music.volume = this.settings.volume * (speaking ? 0.07 : 0.24);
+    this.ambience.volume = this.settings.volume * (speaking ? 0.04 : 0.14);
+  }
   settings = defaultSettings;
   constructor() {
     this.music.loop = true;
@@ -48,11 +53,10 @@ class AudioEngine {
   }
   update(s: AudioSettings) {
     this.settings = s;
-    this.music.volume = s.volume * 0.24;
+    this.setLevels();
     if (s.music && this.context?.state === "running")
       void this.music.play().catch(() => {});
     else this.music.pause();
-    this.ambience.volume = s.volume * 0.14;
     if (s.effects && this.context?.state === "running")
       void this.ambience.play().catch(() => {});
     else this.ambience.pause();
@@ -88,13 +92,27 @@ class AudioEngine {
       osc.stop(t + 0.5);
     });
   }
-  speak(_text: string, audioPath = ""): "recorded" | "unavailable" | "off" {
+  speak(
+    _text: string,
+    audioPath = "",
+    manual = false,
+  ): "recorded" | "unavailable" | "off" {
     this.stopVoice();
-    if (!this.settings.voice) return "off";
+    if (!this.settings.voice && !manual) return "off";
     if (narrationAvailable(audioPath)) {
-      this.voiceAudio = new Audio(assetUrl(audioPath));
-      this.voiceAudio.volume = this.settings.volume;
-      void this.voiceAudio.play().catch(() => {});
+      const clip = new Audio(assetUrl(audioPath));
+      this.voiceAudio = clip;
+      clip.volume = this.settings.volume;
+      this.setLevels();
+      const release = () => {
+        if (this.voiceAudio === clip) {
+          this.voiceAudio = null;
+          this.setLevels();
+        }
+      };
+      clip.onended = release;
+      clip.onerror = release;
+      void clip.play().catch(release);
       return "recorded";
     }
     return "unavailable";
@@ -103,6 +121,7 @@ class AudioEngine {
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
     this.voiceAudio?.pause();
     this.voiceAudio = null;
+    this.setLevels();
   }
   pause() {
     this.music.pause();

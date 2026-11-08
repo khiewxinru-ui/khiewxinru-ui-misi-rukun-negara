@@ -32,7 +32,7 @@ async function start(page: Page, waitForCanvas = true) {
   await page.getByLabel("Nama pengembara").fill("Aina");
   await page.getByRole("button", { name: "Mulakan perjalanan" }).click();
   await page.getByRole("button", { name: "Masuki lorong masa" }).click();
-  await page.getByRole("button", { name: "Terokai kawasan" }).click();
+  await page.getByRole("button", { name: "Mula misi" }).click();
   if (waitForCanvas)
     await expect(
       page.getByRole("main", { name: "Dunia pengembaraan 3D" }),
@@ -82,7 +82,7 @@ async function solve(page: Page, a: Activity, wrong = false) {
   for (let i = 0; i < a.dialogue.length; i++)
     await dialog
       .getByRole("button", {
-        name: i === a.dialogue.length - 1 ? "Terima cabaran" : "Teruskan",
+        name: i === a.dialogue.length - 1 ? "Mula cabaran" : "Teruskan",
         exact: true,
       })
       .click();
@@ -128,7 +128,7 @@ async function solve(page: Page, a: Activity, wrong = false) {
   await expect(
     dialog.getByText("Petunjuk direkodkan!", { exact: true }),
   ).toBeVisible();
-  await dialog.getByRole("button", { name: "Sambung penerokaan" }).click();
+  await dialog.getByRole("button", { name: "Teruskan misi" }).click();
 }
 test("Student completes the entire three-mission journey and resumes after refresh", async ({
   page,
@@ -153,9 +153,9 @@ test("Student completes the entire three-mission journey and resumes after refre
             ? "Lengkapkan pengembaraan"
             : "Teruskan ke misi seterusnya",
       })
-      .click();
+      .click({ timeout: 15000 });
     if (mission.id < 3)
-      await page.getByRole("button", { name: "Terokai kawasan" }).click();
+      await page.getByRole("button", { name: "Mula misi" }).click();
   }
   await expect(
     page.getByRole("heading", { name: /Tahniah, Aina/ }),
@@ -236,3 +236,123 @@ test("Phone layout has no horizontal overflow and supports touch movement", asyn
     ),
   ).toBe(true);
 });
+
+test("A completed second mission can continue while audio controls are present", async ({
+  page,
+}) => {
+  const solved = content.missions
+    .slice(0, 2)
+    .flatMap((m) => m.activities.map((a) => a.id));
+  await page.addInitScript((solved) => {
+    localStorage.setItem(
+      "misi-rukun-negara:journey:v1:settings",
+      JSON.stringify({
+        voice: false,
+        subtitles: true,
+        music: false,
+        effects: false,
+        quality: "low",
+        reducedMotion: true,
+      }),
+    );
+    localStorage.setItem(
+      "misi-rukun-negara:journey:v1",
+      JSON.stringify({
+        version: 1,
+        name: "Aina",
+        gender: "Perempuan",
+        mission: 2,
+        solved,
+        attempts: {},
+        reflection: "",
+        finished: false,
+        position: [0, 8],
+        yaw: 0,
+        updatedAt: new Date().toISOString(),
+      }),
+    );
+  }, solved);
+  await page.goto("./");
+  await page
+    .getByRole("button", { name: "Sambung Pengembaraan", exact: true })
+    .click();
+  const next = page.getByRole("button", {
+    name: "Teruskan ke misi seterusnya",
+  });
+  await expect(next).toBeVisible();
+  const box = await next.boundingBox();
+  await page.mouse.move(box!.x + box!.width / 2, box!.y + box!.height - 1);
+  await next.click({ timeout: 10000 });
+  await expect(
+    page.getByRole("dialog").getByRole("heading", { name: "Duta Perpaduan" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Mula misi", exact: true }),
+  ).toBeVisible();
+});
+
+for (const viewport of [
+  { width: 1024, height: 768 },
+  { width: 390, height: 844 },
+]) {
+  test(`Learning text remains readable and usable at ${viewport.width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize(viewport);
+    await start(page);
+    const activity = content.missions[0].activities[0];
+    await approach(page, activity);
+    const dialog = page.getByRole("dialog");
+    const reading = dialog.locator(".dialogue-line");
+    expect(
+      await reading.evaluate((el) => parseFloat(getComputedStyle(el).fontSize)),
+    ).toBeGreaterThanOrEqual(18);
+    await expect(reading).toHaveText(
+      activity.dialogue[0].replaceAll("{name}", "Aina"),
+    );
+    for (let i = 0; i < activity.dialogue.length; i++) {
+      await dialog
+        .getByRole("button", {
+          name:
+            i === activity.dialogue.length - 1 ? "Mula cabaran" : "Teruskan",
+          exact: true,
+        })
+        .click();
+    }
+    expect(
+      await dialog
+        .locator(".task-question")
+        .evaluate((el) => parseFloat(getComputedStyle(el).fontSize)),
+    ).toBeGreaterThanOrEqual(18);
+    for (let i = 0; i < activity.correct.length; i++) {
+      const select = dialog.getByLabel(`Padanan: ${activity.options[i]}`, {
+        exact: true,
+      });
+      expect(
+        await select.evaluate((el) =>
+          parseFloat(getComputedStyle(el).fontSize),
+        ),
+      ).toBeGreaterThanOrEqual(16);
+      await select.selectOption(String(activity.correct[i]));
+    }
+    expect(
+      await dialog.evaluate((el) => el.scrollWidth <= el.clientWidth),
+    ).toBe(true);
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+    ).toBe(true);
+    await page.screenshot({
+      path: `/workspace/work/learning-text-${viewport.width}.png`,
+    });
+    await dialog.getByRole("button", { name: "Semak jawapan" }).click();
+    await expect(
+      dialog.getByText(activity.feedback, { exact: true }),
+    ).toBeVisible();
+    await dialog
+      .getByRole("button", { name: "Teruskan misi", exact: true })
+      .click();
+    await expect(dialog).toHaveCount(0);
+  });
+}

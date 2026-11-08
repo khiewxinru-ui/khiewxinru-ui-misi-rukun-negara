@@ -40,15 +40,26 @@ export function ActivityDialog({
     ? activity.question
     : activity.dialogue[page].replaceAll("{name}", name);
   const audioPath = task
-    ? ""
+    ? feedback === "correct"
+      ? activity.feedbackAudio
+      : hint
+        ? activity.hintAudio
+        : activity.questionAudio
     : page === 0
       ? activity.audio
       : activity.narration[page] || "";
   const hasAudio = narrationAvailable(audioPath);
+  const spokenLine = task
+    ? feedback === "correct"
+      ? activity.feedback
+      : hint
+        ? activity.hint
+        : activity.question
+    : line;
   useEffect(() => {
-    audioEngine.speak(line, audioPath);
+    audioEngine.speak(spokenLine, audioPath);
     return () => audioEngine.stopVoice();
-  }, [line, audioPath]);
+  }, [spokenLine, audioPath]);
   const chosen = (i: number) => {
     setFeedback(null);
     if (activity.kind === "multi")
@@ -113,14 +124,14 @@ export function ActivityDialog({
               className="text-button"
               disabled={!hasAudio}
               title={hasAudio ? "Ulang rakaman" : "Audio baharu sedang disemak"}
-              onClick={() => audioEngine.speak(line, audioPath)}
+              onClick={() => audioEngine.speak(spokenLine, audioPath, true)}
             >
               <Volume2 size={17} />
               {hasAudio ? "Dengar semula" : "Audio sedang disemak"}
             </button>
             <PrimaryButton onClick={() => setPage((p) => p + 1)}>
               {page === activity.dialogue.length - 1
-                ? "Terima cabaran"
+                ? "Mula cabaran"
                 : "Teruskan"}
             </PrimaryButton>
           </div>
@@ -128,6 +139,19 @@ export function ActivityDialog({
       ) : (
         <>
           <p className="task-question">{activity.question}</p>
+          {hasAudio && (
+            <button
+              className="text-button"
+              onClick={() => audioEngine.speak(spokenLine, audioPath, true)}
+            >
+              <Volume2 size={17} />
+              {feedback === "correct"
+                ? "Dengar semula"
+                : hint
+                  ? "Dengar petunjuk"
+                  : "Dengar arahan"}
+            </button>
+          )}
           {feedback === "correct" ? (
             <div className="answer-success" role="status">
               <span className="success-medal">
@@ -139,9 +163,7 @@ export function ActivityDialog({
                   : "Petunjuk direkodkan!"}
               </h3>
               <p>{activity.feedback}</p>
-              <PrimaryButton onClick={onClose}>
-                Sambung penerokaan
-              </PrimaryButton>
+              <PrimaryButton onClick={onClose}>Teruskan misi</PrimaryButton>
             </div>
           ) : (
             <>
@@ -178,8 +200,7 @@ export function ActivityDialog({
               ) : activity.kind === "order" ? (
                 <div className="order-task">
                   <p className="fine-print">
-                    <ArrowUp size={14} /> Klik tindakan mengikut urutan yang
-                    betul.
+                    <ArrowUp size={14} /> Klik tindakan satu demi satu.
                   </p>
                   <div className="order-slots">
                     {activity.options.map((_, i) => (
@@ -243,7 +264,7 @@ export function ActivityDialog({
               )}
               {feedback === "wrong" && (
                 <div className="feedback-error" role="status">
-                  Belum tepat. Gunakan petunjuk dan cuba lagi.
+                  Belum tepat. Cuba lagi.
                 </div>
               )}
               {hint && (
@@ -274,7 +295,7 @@ export function ActivityDialog({
             }}
           >
             <BookOpen size={15} />
-            Baca semula penemuan
+            Baca semula
           </button>
         </>
       )}

@@ -45,6 +45,9 @@ export const activitySchema = z
     image: mediaPath.default(""),
     audio: mediaPath.default(""),
     narration: z.array(mediaPath).max(8).default([]),
+    questionAudio: mediaPath.default(""),
+    feedbackAudio: mediaPath.default(""),
+    hintAudio: mediaPath.default(""),
     page: z.string().regex(/^\d{2}(–\d{2})?$/),
   })
   .superRefine((v, ctx) => {
@@ -84,6 +87,7 @@ export const contentSchema = z
     subtitle: short,
     introduction: z.string().min(1).max(1800),
     introductionAudio: mediaPath.default(""),
+    endingAudio: mediaPath.default(""),
     soundtrack: z
       .object({
         music: mediaPath,
@@ -111,6 +115,8 @@ export const contentSchema = z
           tagline: short,
           introduction: z.string().min(1).max(1800),
           conclusion: z.string().min(1).max(1800),
+          introductionAudio: mediaPath.default(""),
+          conclusionAudio: mediaPath.default(""),
           activities: z.array(activitySchema).min(3).max(20),
         }),
       )
@@ -130,6 +136,26 @@ export const contentSchema = z
 export type Content = z.infer<typeof contentSchema>;
 export type Activity = z.infer<typeof activitySchema>;
 export type Mission = Content["missions"][number];
+
+export function contentMediaPaths(content: Content): string[] {
+  return [
+    content.introductionAudio,
+    content.endingAudio,
+    ...Object.values(content.soundtrack),
+    ...content.missions.flatMap((m) => [
+      m.introductionAudio,
+      m.conclusionAudio,
+      ...m.activities.flatMap((a) => [
+        a.image,
+        a.audio,
+        ...a.narration,
+        a.questionAudio,
+        a.feedbackAudio,
+        a.hintAudio,
+      ]),
+    ]),
+  ].filter(Boolean);
+}
 
 export function checkAnswer(activity: Activity, answer: number[]) {
   if (activity.kind === "multi")

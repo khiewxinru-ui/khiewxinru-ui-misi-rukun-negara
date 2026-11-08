@@ -1,0 +1,1978 @@
+{
+  "voice": "ms-MY-OsmanNeural",
+  "locale": "ms-MY",
+  "method": "Full-sentence neural narration; supported rate/pitch/volume controls and editorial pauses.",
+  "clips": [
+    {
+      "id": "prologue",
+      "path": "assets/narration-osman/prologue-e4fd9f874a.mp3",
+      "source": "Setiap negara mempunyai kisah yang membentuk masa depannya. Hari ini, kamu diberi peluang untuk menyaksikan sebahagian daripada perjalanan sejarah Malaysia. Apakah yang menyatukan rakyat berbilang kaum di Malaysia?",
+      "style": "opening",
+      "segments": [
+        {
+          "text": "Setiap negara mempunyai kisah yang membentuk masa depannya.",
+          "tone": "opening",
+          "rate": "-10%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.6
+        },
+        {
+          "text": "Hari ini, kamu diberi peluang untuk menyaksikan sebahagian daripada perjalanan sejarah Malaysia.",
+          "tone": "opening",
+          "rate": "-10%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.6
+        },
+        {
+          "text": "Apakah yang menyatukan rakyat berbilang kaum di Malaysia?",
+          "tone": "question",
+          "rate": "-7%",
+          "pitch": "+2Hz",
+          "volume": "+0%",
+          "pause": 0.7
+        }
+      ],
+      "duration_seconds": 18.24
+    },
+    {
+      "id": "mission-1-intro",
+      "path": "assets/narration-osman/mission-1-intro-4a54999fab.mp3",
+      "source": "Cari 3 petunjuk. Kemudian, jawab soalan di meja penyiasat.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Cari 3 petunjuk.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        },
+        {
+          "text": "Kemudian, jawab soalan di meja penyiasat.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 7.032
+    },
+    {
+      "id": "mission-1-complete",
+      "path": "assets/narration-osman/mission-1-complete-b9af68fa5c.mp3",
+      "source": "Perbezaan kegiatan ekonomi, pengasingan tempat tinggal dan perbezaan fahaman politik ialah tiga sebab pengenalan Rukun Negara. Kini terokai matlamat dan prinsip yang mengukuhkan perpaduan.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Perbezaan kegiatan ekonomi, pengasingan tempat tinggal dan perbezaan fahaman politik ialah tiga sebab pengenalan Rukun Negara.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Kini terokai matlamat dan prinsip yang mengukuhkan perpaduan.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 13.704
+    },
+    {
+      "id": "ekonomi-dialogue-0",
+      "path": "assets/narration-osman/ekonomi-dialogue-0-39e8f07725.mp3",
+      "source": "Selamat datang, {name}. Lihat barang-barang ini: hasil tani, bijih timah dan getah. Setiap satunya menceritakan kegiatan ekonomi yang berbeza.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Selamat datang, pengembara.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Lihat barang-barang ini: hasil tani, bijih timah dan getah.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Setiap satunya menceritakan kegiatan ekonomi yang berbeza.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 14.664
+    },
+    {
+      "id": "ekonomi-dialogue-1",
+      "path": "assets/narration-osman/ekonomi-dialogue-1-be2ad7a5fa.mp3",
+      "source": "Semasa pentadbiran British, masyarakat dipisahkan mengikut kegiatan ekonomi utama. Keadaan itu mewujudkan jurang ekonomi yang tidak seimbang.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Semasa pentadbiran British, masyarakat dipisahkan mengikut kegiatan ekonomi utama.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Keadaan itu mewujudkan jurang ekonomi yang tidak seimbang.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 12.168
+    },
+    {
+      "id": "ekonomi-dialogue-2",
+      "path": "assets/narration-osman/ekonomi-dialogue-2-1d65130ad0.mp3",
+      "source": "Ini ialah gambaran pola sejarah dalam buku teks, bukan pekerjaan semua orang dalam sesuatu kaum, dan bukan gambaran masyarakat Malaysia hari ini.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Ini ialah gambaran pola sejarah dalam buku teks, bukan pekerjaan semua orang dalam sesuatu kaum, dan bukan gambaran masyarakat Malaysia hari ini.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 11.64
+    },
+    {
+      "id": "ekonomi-task",
+      "path": "assets/narration-osman/ekonomi-task-bb90600c7f.mp3",
+      "source": "Padankan barang dengan kegiatan ekonomi.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Padankan barang dengan kegiatan ekonomi.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.864
+    },
+    {
+      "id": "ekonomi-success",
+      "path": "assets/narration-osman/ekonomi-success-cc4bd421ff.mp3",
+      "source": "Tepat! Perbezaan kegiatan ekonomi ialah salah satu sebab pengenalan Rukun Negara. Corak ekonomi yang terpisah mewujudkan jurang antara masyarakat.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Tepat!",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Perbezaan kegiatan ekonomi ialah salah satu sebab pengenalan Rukun Negara.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Corak ekonomi yang terpisah mewujudkan jurang antara masyarakat.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 13.08
+    },
+    {
+      "id": "ekonomi-hint",
+      "path": "assets/narration-osman/ekonomi-hint-7e4d8956f2.mp3",
+      "source": "Bijih timah dilombong; getah dihasilkan di ladang; tanaman berkaitan pertanian.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Bijih timah dilombong; getah dihasilkan di ladang; tanaman berkaitan pertanian.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 6.792
+    },
+    {
+      "id": "penempatan-dialogue-0",
+      "path": "assets/narration-osman/penempatan-dialogue-0-6a8883e376.mp3",
+      "source": "Pada peta ini, kampung, bandar dan ladang terletak berjauhan. Cuba bayangkan jika kita jarang berjumpa dengan jiran daripada kawasan lain.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Pada peta ini, kampung, bandar dan ladang terletak berjauhan.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Cuba bayangkan jika kita jarang berjumpa dengan jiran daripada kawasan lain.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 12.264
+    },
+    {
+      "id": "penempatan-dialogue-1",
+      "path": "assets/narration-osman/penempatan-dialogue-1-2776601356.mp3",
+      "source": "Buku teks menerangkan pola sejarah: orang Melayu banyak di kampung dan pedalaman, orang Cina di bandar, dan orang India di ladang. Ini bukan keadaan semua individu.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Buku teks menerangkan pola sejarah: orang Melayu banyak di kampung dan pedalaman, orang Cina di bandar, dan orang India di ladang.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Ini bukan keadaan semua individu.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 14.64
+    },
+    {
+      "id": "penempatan-dialogue-2",
+      "path": "assets/narration-osman/penempatan-dialogue-2-3426b71399.mp3",
+      "source": "Pengasingan tempat tinggal mengurangkan peluang masyarakat untuk berinteraksi. Bagaimanakah hubungan dapat dieratkan?",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Pengasingan tempat tinggal mengurangkan peluang masyarakat untuk berinteraksi.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Bagaimanakah hubungan dapat dieratkan?",
+          "tone": "question",
+          "rate": "-7%",
+          "pitch": "+2Hz",
+          "volume": "+0%",
+          "pause": 0.7
+        }
+      ],
+      "duration_seconds": 10.032
+    },
+    {
+      "id": "penempatan-task",
+      "path": "assets/narration-osman/penempatan-task-55103fa22c.mp3",
+      "source": "Pilih 2 jawapan yang betul.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Pilih 2 jawapan yang betul.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.312
+    },
+    {
+      "id": "penempatan-success",
+      "path": "assets/narration-osman/penempatan-success-4b912ccc55.mp3",
+      "source": "Bagus. Pengasingan tempat tinggal mengurangkan interaksi. Peluang bertemu dan bekerjasama membantu mengeratkan hubungan.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Bagus.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Pengasingan tempat tinggal mengurangkan interaksi.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Peluang bertemu dan bekerjasama membantu mengeratkan hubungan.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 11.376
+    },
+    {
+      "id": "penempatan-hint",
+      "path": "assets/narration-osman/penempatan-hint-4d0c010cd3.mp3",
+      "source": "Fikirkan peluang untuk bertemu. Elakkan kenyataan yang menganggap semua orang adalah sama.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Fikirkan peluang untuk bertemu.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Elakkan kenyataan yang menganggap semua orang adalah sama.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 8.232
+    },
+    {
+      "id": "politik-dialogue-0",
+      "path": "assets/narration-osman/politik-dialogue-0-fae94db3ea.mp3",
+      "source": "Radio ini membawa kita menelusuri latar sejarah. Perbezaan fahaman politik merenggangkan hubungan antara kaum. Keadaan tidak harmoni turut menjadi latar Peristiwa 13 Mei 1969.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Radio ini membawa kita menelusuri latar sejarah.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Perbezaan fahaman politik merenggangkan hubungan antara kaum.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Keadaan tidak harmoni turut menjadi latar Peristiwa 13 Mei 1969.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 17.568
+    },
+    {
+      "id": "politik-dialogue-1",
+      "path": "assets/narration-osman/politik-dialogue-1-f5c65ea02d.mp3",
+      "source": "Selepas peristiwa tersebut, pentadbiran negara dijalankan oleh MAGERAN. Rukun Negara kemudiannya diperkenalkan untuk mengukuhkan perpaduan dan semangat kekitaan.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Selepas peristiwa tersebut, pentadbiran negara dijalankan oleh MAGERAN.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Rukun Negara kemudiannya diperkenalkan untuk mengukuhkan perpaduan dan semangat kekitaan.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 13.128
+    },
+    {
+      "id": "politik-dialogue-2",
+      "path": "assets/narration-osman/politik-dialogue-2-1a25cdacde.mp3",
+      "source": "Tiada rakaman berita sejarah dimainkan di sini. Penerangan ini ialah naratif pendidikan yang disusun berdasarkan buku teks.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Tiada rakaman berita sejarah dimainkan di sini.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Penerangan ini ialah naratif pendidikan yang disusun berdasarkan buku teks.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 11.136
+    },
+    {
+      "id": "politik-task",
+      "path": "assets/narration-osman/politik-task-24d71b0c84.mp3",
+      "source": "Susun dari awal hingga akhir.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Susun dari awal hingga akhir.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.552
+    },
+    {
+      "id": "politik-success",
+      "path": "assets/narration-osman/politik-success-ba8ce98482.mp3",
+      "source": "Betul. Perbezaan fahaman politik merenggangkan hubungan. Rukun Negara menjadi panduan untuk mengukuhkan perpaduan.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Betul.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Perbezaan fahaman politik merenggangkan hubungan.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Rukun Negara menjadi panduan untuk mengukuhkan perpaduan.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 11.376
+    },
+    {
+      "id": "politik-hint",
+      "path": "assets/narration-osman/politik-hint-9a720a1b6d.mp3",
+      "source": "Mulakan dengan perbezaan fahaman, kemudian kesannya kepada hubungan, dan akhirnya perkara yang perlu diperkukuh.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Mulakan dengan perbezaan fahaman, kemudian kesannya kepada hubungan, dan akhirnya perkara yang perlu diperkukuh.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 8.376
+    },
+    {
+      "id": "sebab-dialogue-0",
+      "path": "assets/narration-osman/sebab-dialogue-0-abed4be84b.mp3",
+      "source": "Kamu telah menemui petunjuk tentang ekonomi, tempat tinggal dan fahaman politik. Kini satukan hasil penyiasatanmu.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Kamu telah menemui petunjuk tentang ekonomi, tempat tinggal dan fahaman politik.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Kini satukan hasil penyiasatanmu.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 10.416
+    },
+    {
+      "id": "sebab-dialogue-1",
+      "path": "assets/narration-osman/sebab-dialogue-1-2490d6e1eb.mp3",
+      "source": "Peristiwa 13 Mei 1969 ialah latar sejarah yang penting. Namun, pentaksiran ini meminta tiga sebab pengenalan Rukun Negara yang dinyatakan dalam buku teks.",
+      "style": "history",
+      "segments": [
+        {
+          "text": "Peristiwa 13 Mei 1969 ialah latar sejarah yang penting.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Namun, pentaksiran ini meminta tiga sebab pengenalan Rukun Negara yang dinyatakan dalam buku teks.",
+          "tone": "history",
+          "rate": "-9%",
+          "pitch": "-2Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 15.24
+    },
+    {
+      "id": "sebab-task",
+      "path": "assets/narration-osman/sebab-task-0bc87284bb.mp3",
+      "source": "Pilih 3 sebab pengenalan Rukun Negara.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Pilih 3 sebab pengenalan Rukun Negara.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.888
+    },
+    {
+      "id": "sebab-success",
+      "path": "assets/narration-osman/sebab-success-193592a9dc.mp3",
+      "source": "Ketiga-tiga sebab tepat: perbezaan kegiatan ekonomi, pengasingan tempat tinggal dan perbezaan fahaman politik. Laluan masa seterusnya kini terbuka.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Ketiga-tiga sebab tepat: perbezaan kegiatan ekonomi, pengasingan tempat tinggal dan perbezaan fahaman politik.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Laluan masa seterusnya kini terbuka.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 11.76
+    },
+    {
+      "id": "sebab-hint",
+      "path": "assets/narration-osman/sebab-hint-bb31aad6a7.mp3",
+      "source": "Gunakan tiga petunjuk yang kamu kumpulkan. Bezakan sebab yang dinilai dengan latar peristiwa.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Gunakan tiga petunjuk yang kamu kumpulkan.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Bezakan sebab yang dinilai dengan latar peristiwa.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 8.88
+    },
+    {
+      "id": "mission-2-intro",
+      "path": "assets/narration-osman/mission-2-intro-337f89e5a8.mp3",
+      "source": "Selesaikan cabaran matlamat dan 5 cabaran prinsip.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Selesaikan cabaran matlamat dan 5 cabaran prinsip.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 4.728
+    },
+    {
+      "id": "mission-2-complete",
+      "path": "assets/narration-osman/mission-2-complete-d7f3c1cafa.mp3",
+      "source": "Kamu memahami lima matlamat dan lima prinsip Rukun Negara. Bawa bekalan ini ke Malaysia masa kini dan tunjukkan peranannya melalui tindakan.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Kamu memahami lima matlamat dan lima prinsip Rukun Negara.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Bawa bekalan ini ke Malaysia masa kini dan tunjukkan peranannya melalui tindakan.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 11.016
+    },
+    {
+      "id": "matlamat-dialogue-0",
+      "path": "assets/narration-osman/matlamat-dialogue-0-6a107defdf.mp3",
+      "source": "Selepas memahami sebab pengenalannya, kita meneroka cita-cita dan prinsip Rukun Negara. Galeri ini ialah ruang pengembaraan imaginatif, bukan bangunan sejarah sebenar.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Selepas memahami sebab pengenalannya, kita meneroka cita-cita dan prinsip Rukun Negara.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        },
+        {
+          "text": "Galeri ini ialah ruang pengembaraan imaginatif, bukan bangunan sejarah sebenar.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 13.704
+    },
+    {
+      "id": "matlamat-dialogue-1",
+      "path": "assets/narration-osman/matlamat-dialogue-1-6f278f2a95.mp3",
+      "source": "Rukun Negara diisytiharkan pada 31 Ogos 1970. Lima matlamatnya meliputi perpaduan, demokrasi, masyarakat adil, kebebasan terhadap tradisi kebudayaan yang pelbagai, dan masyarakat progresif berasaskan sains serta teknologi moden.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Rukun Negara diisytiharkan pada 31 Ogos 1970.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        },
+        {
+          "text": "Lima matlamatnya meliputi perpaduan, demokrasi, masyarakat adil, kebebasan terhadap tradisi kebudayaan yang pelbagai, dan masyarakat progresif berasaskan sains serta teknologi moden.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 20.28
+    },
+    {
+      "id": "matlamat-task",
+      "path": "assets/narration-osman/matlamat-task-a3afbc35a9.mp3",
+      "source": "Padankan tindakan dengan matlamatnya.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Padankan tindakan dengan matlamatnya.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.648
+    },
+    {
+      "id": "matlamat-success",
+      "path": "assets/narration-osman/matlamat-success-f77e5dfe2b.mp3",
+      "source": "Lima matlamat saling melengkapi: perpaduan erat, hidup demokrasi, masyarakat adil, sikap liberal terhadap tradisi kebudayaan, dan masyarakat progresif.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Lima matlamat saling melengkapi: perpaduan erat, hidup demokrasi, masyarakat adil, sikap liberal terhadap tradisi kebudayaan, dan masyarakat progresif.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 11.784
+    },
+    {
+      "id": "matlamat-hint",
+      "path": "assets/narration-osman/matlamat-hint-69a3a0ca3d.mp3",
+      "source": "Cari perkataan petunjuk: muafakat, demokrasi, adil, tradisi serta teknologi.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Cari perkataan petunjuk: muafakat, demokrasi, adil, tradisi serta teknologi.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 7.488
+    },
+    {
+      "id": "tuhan-dialogue-0",
+      "path": "assets/narration-osman/tuhan-dialogue-0-9a43a0f0b1.mp3",
+      "source": "Kepercayaan kepada Tuhan bermaksud agama sebagai pegangan utama rakyat Malaysia.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Kepercayaan kepada Tuhan bermaksud agama sebagai pegangan utama rakyat Malaysia.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 6.144
+    },
+    {
+      "id": "tuhan-dialogue-1",
+      "path": "assets/narration-osman/tuhan-dialogue-1-873871010f.mp3",
+      "source": "Prinsip ini membimbing kita menghormati amalan beragama masyarakat lain dan membantu menyatupadukan masyarakat yang berbilang kaum.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Prinsip ini membimbing kita menghormati amalan beragama masyarakat lain dan membantu menyatupadukan masyarakat yang berbilang kaum.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 9.12
+    },
+    {
+      "id": "tuhan-task",
+      "path": "assets/narration-osman/tuhan-task-fd84ed54f5.mp3",
+      "source": "Rakan kamu mengamalkan agamanya. Pilih tindakan yang betul.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Rakan kamu mengamalkan agamanya.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        },
+        {
+          "text": "Pilih tindakan yang betul.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 6.696
+    },
+    {
+      "id": "tuhan-success",
+      "path": "assets/narration-osman/tuhan-success-80f3b95a88.mp3",
+      "source": "Menghormati amalan beragama orang lain membantu masyarakat hidup bersatu padu.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Menghormati amalan beragama orang lain membantu masyarakat hidup bersatu padu.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 6.144
+    },
+    {
+      "id": "tuhan-hint",
+      "path": "assets/narration-osman/tuhan-hint-85a2d90471.mp3",
+      "source": "Prinsip ini mengajak kita menghormati pegangan dan amalan beragama.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Prinsip ini mengajak kita menghormati pegangan dan amalan beragama.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 5.64
+    },
+    {
+      "id": "raja-dialogue-0",
+      "path": "assets/narration-osman/raja-dialogue-0-fde86fce3b.mp3",
+      "source": "Kesetiaan kepada Raja dan Negara menuntut setiap warganegara memberikan sepenuh taat setia kepada Yang di-Pertuan Agong sebagai Ketua Utama Negara.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Kesetiaan kepada Raja dan Negara menuntut setiap warganegara memberikan sepenuh taat setia kepada Yang di-Pertuan Agong sebagai Ketua Utama Negara.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 9.696
+    },
+    {
+      "id": "raja-dialogue-1",
+      "path": "assets/narration-osman/raja-dialogue-1-090e047db2.mp3",
+      "source": "Prinsip ini menyatupadukan rakyat dan menyemai semangat patriotik.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Prinsip ini menyatupadukan rakyat dan menyemai semangat patriotik.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 5.472
+    },
+    {
+      "id": "raja-task",
+      "path": "assets/narration-osman/raja-task-4a5b53a46f.mp3",
+      "source": "Padankan dengan penerangan yang betul.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Padankan dengan penerangan yang betul.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.576
+    },
+    {
+      "id": "raja-success",
+      "path": "assets/narration-osman/raja-success-514d359765.mp3",
+      "source": "Tepat. Yang di-Pertuan Agong ialah Ketua Utama Negara. Taat setia menyatukan rakyat dan memupuk kecintaan kepada negara.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Tepat.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Yang di-Pertuan Agong ialah Ketua Utama Negara.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Taat setia menyatukan rakyat dan memupuk kecintaan kepada negara.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 11.976
+    },
+    {
+      "id": "raja-hint",
+      "path": "assets/narration-osman/raja-hint-66563f30eb.mp3",
+      "source": "Bezakan institusi negara, nama prinsip, dan perasaan cinta akan negara.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Bezakan institusi negara, nama prinsip, dan perasaan cinta akan negara.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 6.432
+    },
+    {
+      "id": "perlembagaan-dialogue-0",
+      "path": "assets/narration-osman/perlembagaan-dialogue-0-ee392a96e3.mp3",
+      "source": "Keluhuran Perlembagaan bermaksud Perlembagaan Persekutuan ialah undang-undang tertinggi negara.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Keluhuran Perlembagaan bermaksud Perlembagaan Persekutuan ialah undang-undang tertinggi negara.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 7.008
+    },
+    {
+      "id": "perlembagaan-dialogue-1",
+      "path": "assets/narration-osman/perlembagaan-dialogue-1-bf3d821675.mp3",
+      "source": "Tiada institusi yang dapat mengatasi ketertinggiannya. Rakyat perlu menerima, mematuhi dan mempertahankan kemuliaan Perlembagaan Persekutuan.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Tiada institusi yang dapat mengatasi ketertinggiannya.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        },
+        {
+          "text": "Rakyat perlu menerima, mematuhi dan mempertahankan kemuliaan Perlembagaan Persekutuan.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 11.472
+    },
+    {
+      "id": "perlembagaan-task",
+      "path": "assets/narration-osman/perlembagaan-task-85d7fea589.mp3",
+      "source": "Pilih undang-undang tertinggi negara.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Pilih undang-undang tertinggi negara.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.768
+    },
+    {
+      "id": "perlembagaan-success",
+      "path": "assets/narration-osman/perlembagaan-success-04f6964a1b.mp3",
+      "source": "Perlembagaan Persekutuan ialah undang-undang tertinggi negara. Peraturan lain tidak mengatasi ketertinggiannya.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Perlembagaan Persekutuan ialah undang-undang tertinggi negara.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Peraturan lain tidak mengatasi ketertinggiannya.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 9.192
+    },
+    {
+      "id": "perlembagaan-hint",
+      "path": "assets/narration-osman/perlembagaan-hint-b0f9f65ff7.mp3",
+      "source": "Cari undang-undang yang menjadi asas tertinggi bagi negara.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Cari undang-undang yang menjadi asas tertinggi bagi negara.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 5.208
+    },
+    {
+      "id": "undang-dialogue-0",
+      "path": "assets/narration-osman/undang-dialogue-0-e0d1c2e953.mp3",
+      "source": "Kedaulatan Undang-undang bermaksud rakyat menghormati dan mematuhi undang-undang yang ditetapkan.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Kedaulatan Undang-undang bermaksud rakyat menghormati dan mematuhi undang-undang yang ditetapkan.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 7.584
+    },
+    {
+      "id": "undang-dialogue-1",
+      "path": "assets/narration-osman/undang-dialogue-1-b9cce87fb4.mp3",
+      "source": "Kepatuhan ini membantu menjamin keharmonian masyarakat dan keselamatan negara.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Kepatuhan ini membantu menjamin keharmonian masyarakat dan keselamatan negara.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 6.048
+    },
+    {
+      "id": "undang-task",
+      "path": "assets/narration-osman/undang-task-72bfc39cbe.mp3",
+      "source": "Susun langkah melintas jalan.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Susun langkah melintas jalan.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.432
+    },
+    {
+      "id": "undang-success",
+      "path": "assets/narration-osman/undang-success-d99af7272d.mp3",
+      "source": "Sikap berhati-hati dan mematuhi peraturan membantu menjaga keselamatan bersama.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Sikap berhati-hati dan mematuhi peraturan membantu menjaga keselamatan bersama.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 6.144
+    },
+    {
+      "id": "undang-hint",
+      "path": "assets/narration-osman/undang-hint-b5472ba4cb.mp3",
+      "source": "Berhenti dahulu, perhatikan lalu lintas, kemudian melintas apabila selamat.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Berhenti dahulu, perhatikan lalu lintas, kemudian melintas apabila selamat.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 6.408
+    },
+    {
+      "id": "sopan-dialogue-0",
+      "path": "assets/narration-osman/sopan-dialogue-0-b5720efbfb.mp3",
+      "source": "Kesopanan dan Kesusilaan bermaksud amalan nilai murni yang mencerminkan keperibadian rakyat Malaysia.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Kesopanan dan Kesusilaan bermaksud amalan nilai murni yang mencerminkan keperibadian rakyat Malaysia.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 7.416
+    },
+    {
+      "id": "sopan-dialogue-1",
+      "path": "assets/narration-osman/sopan-dialogue-1-fb5a8ed565.mp3",
+      "source": "Nilai murni membentuk masyarakat yang berdisiplin, berakhlak mulia, saling memahami dan bekerjasama.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Nilai murni membentuk masyarakat yang berdisiplin, berakhlak mulia, saling memahami dan bekerjasama.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 8.328
+    },
+    {
+      "id": "sopan-task",
+      "path": "assets/narration-osman/sopan-task-4d9fd6dade.mp3",
+      "source": "Pilih 2 tindakan yang sopan.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Pilih 2 tindakan yang sopan.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.312
+    },
+    {
+      "id": "sopan-success",
+      "path": "assets/narration-osman/sopan-success-4c54fb6ba7.mp3",
+      "source": "Mendengar dengan tertib dan berterima kasih mengeratkan hubungan. Kelima-lima prinsip kini menjadi bekalan untuk misi seterusnya.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Mendengar dengan tertib dan berterima kasih mengeratkan hubungan.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Kelima-lima prinsip kini menjadi bekalan untuk misi seterusnya.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 10.08
+    },
+    {
+      "id": "sopan-hint",
+      "path": "assets/narration-osman/sopan-hint-6790eb56c3.mp3",
+      "source": "Pilih tindakan yang menjaga perasaan dan menghargai orang lain.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Pilih tindakan yang menjaga perasaan dan menghargai orang lain.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 5.328
+    },
+    {
+      "id": "mission-3-intro",
+      "path": "assets/narration-osman/mission-3-intro-a868589f88.mp3",
+      "source": "Bantu jiran. Selesaikan 6 cabaran.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Bantu jiran.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        },
+        {
+          "text": "Selesaikan 6 cabaran.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 5.616
+    },
+    {
+      "id": "mission-3-complete",
+      "path": "assets/narration-osman/mission-3-complete-28c830ff27.mp3",
+      "source": "Sejarah memberi kita pengajaran. Rukun Negara membimbing masyarakat menghormati kepelbagaian, mencintai negara, mematuhi undang-undang, bersatu padu, berbudi pekerti dan membina jati diri.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Sejarah memberi kita pengajaran.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Rukun Negara membimbing masyarakat menghormati kepelbagaian, mencintai negara, mematuhi undang-undang, bersatu padu, berbudi pekerti dan membina jati diri.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 15.192
+    },
+    {
+      "id": "agama-dialogue-0",
+      "path": "assets/narration-osman/agama-dialogue-0-592d32f03b.mp3",
+      "source": "Kamu kembali ke Malaysia masa kini. Jiran-jiran sedang merancang aktiviti komuniti yang disertai pelbagai agama dan kepercayaan.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Kamu kembali ke Malaysia masa kini.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        },
+        {
+          "text": "Jiran-jiran sedang merancang aktiviti komuniti yang disertai pelbagai agama dan kepercayaan.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 10.824
+    },
+    {
+      "id": "agama-dialogue-1",
+      "path": "assets/narration-osman/agama-dialogue-1-dab775a696.mp3",
+      "source": "Menghormati amalan dan keperluan masing-masing membantu kita meraikan kepelbagaian.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Menghormati amalan dan keperluan masing-masing membantu kita meraikan kepelbagaian.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 6.6
+    },
+    {
+      "id": "agama-task",
+      "path": "assets/narration-osman/agama-task-22cd588e8b.mp3",
+      "source": "Jiran perlukan ruang untuk beribadat. Pilih tindakan yang betul.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Jiran perlukan ruang untuk beribadat.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        },
+        {
+          "text": "Pilih tindakan yang betul.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 6.768
+    },
+    {
+      "id": "agama-success",
+      "path": "assets/narration-osman/agama-success-5a7e7c1f37.mp3",
+      "source": "Jiranmu berasa dihargai. Menghormati agama dan kepercayaan membina masyarakat yang bertoleransi.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Jiranmu berasa dihargai.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Menghormati agama dan kepercayaan membina masyarakat yang bertoleransi.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 9.192
+    },
+    {
+      "id": "agama-hint",
+      "path": "assets/narration-osman/agama-hint-0679fc2a0a.mp3",
+      "source": "Fikirkan cara memastikan semua jiran berasa dihormati.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Fikirkan cara memastikan semua jiran berasa dihormati.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 5.112
+    },
+    {
+      "id": "patriotik-dialogue-0",
+      "path": "assets/narration-osman/patriotik-dialogue-0-3b855d1d0d.mp3",
+      "source": "Komuniti sedang bersedia untuk sambutan Hari Kebangsaan. Semangat patriotik menyemai cinta dan taat setia kepada negara.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Komuniti sedang bersedia untuk sambutan Hari Kebangsaan.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        },
+        {
+          "text": "Semangat patriotik menyemai cinta dan taat setia kepada negara.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 9.936
+    },
+    {
+      "id": "patriotik-dialogue-1",
+      "path": "assets/narration-osman/patriotik-dialogue-1-f08714b27a.mp3",
+      "source": "Rukun Negara juga membimbing kita menghormati lambang kedaulatan negara seperti Jalur Gemilang, Jata Negara dan lagu Negaraku.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Rukun Negara juga membimbing kita menghormati lambang kedaulatan negara seperti Jalur Gemilang, Jata Negara dan lagu Negaraku.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 9.432
+    },
+    {
+      "id": "patriotik-task",
+      "path": "assets/narration-osman/patriotik-task-4d079d0780.mp3",
+      "source": "Pilih 2 tindakan yang patriotik.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Pilih 2 tindakan yang patriotik.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.504
+    },
+    {
+      "id": "patriotik-success",
+      "path": "assets/narration-osman/patriotik-success-b2381430bd.mp3",
+      "source": "Persiapan komuniti kini lebih bermakna. Menghormati lambang negara dan menyumbang kepada komuniti mencerminkan semangat patriotik.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Persiapan komuniti kini lebih bermakna.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Menghormati lambang negara dan menyumbang kepada komuniti mencerminkan semangat patriotik.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 10.368
+    },
+    {
+      "id": "patriotik-hint",
+      "path": "assets/narration-osman/patriotik-hint-6ca9d82d15.mp3",
+      "source": "Pilih perbuatan yang menunjukkan hormat dan cinta akan negara.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Pilih perbuatan yang menunjukkan hormat dan cinta akan negara.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 5.016
+    },
+    {
+      "id": "patuh-dialogue-0",
+      "path": "assets/narration-osman/patuh-dialogue-0-01be59d40b.mp3",
+      "source": "Ada rakan mengajak kamu merosakkan kemudahan awam. Undang-undang membantu menjaga keamanan dan keselamatan.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Ada rakan mengajak kamu merosakkan kemudahan awam.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        },
+        {
+          "text": "Undang-undang membantu menjaga keamanan dan keselamatan.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 9.624
+    },
+    {
+      "id": "patuh-dialogue-1",
+      "path": "assets/narration-osman/patuh-dialogue-1-b20bb0afa2.mp3",
+      "source": "Rukun Negara membimbing rakyat menghindari kegiatan jenayah dan mematuhi undang-undang.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Rukun Negara membimbing rakyat menghindari kegiatan jenayah dan mematuhi undang-undang.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 6.96
+    },
+    {
+      "id": "patuh-task",
+      "path": "assets/narration-osman/patuh-task-673e3d9b9f.mp3",
+      "source": "Pilih tindakan yang betul.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Pilih tindakan yang betul.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.048
+    },
+    {
+      "id": "patuh-success",
+      "path": "assets/narration-osman/patuh-success-8fb2f7258c.mp3",
+      "source": "Kemudahan awam terpelihara dan komuniti kekal selamat. Kamu menunjukkan sikap menghormati undang-undang.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Kemudahan awam terpelihara dan komuniti kekal selamat.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Kamu menunjukkan sikap menghormati undang-undang.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 9.36
+    },
+    {
+      "id": "patuh-hint",
+      "path": "assets/narration-osman/patuh-hint-4ebccd2d2e.mp3",
+      "source": "Pilih tindakan yang mematuhi undang-undang dan mendapatkan bantuan yang sesuai.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Pilih tindakan yang mematuhi undang-undang dan mendapatkan bantuan yang sesuai.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 6.168
+    },
+    {
+      "id": "perpaduan-dialogue-0",
+      "path": "assets/narration-osman/perpaduan-dialogue-0-726243287d.mp3",
+      "source": "Taman kejiranan memerlukan gotong-royong. Jiran daripada pelbagai latar belakang mahu menyumbang.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Taman kejiranan memerlukan gotong-royong.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        },
+        {
+          "text": "Jiran daripada pelbagai latar belakang mahu menyumbang.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 8.64
+    },
+    {
+      "id": "perpaduan-dialogue-1",
+      "path": "assets/narration-osman/perpaduan-dialogue-1-9f8fdf793c.mp3",
+      "source": "Permuafakatan, toleransi dan sikap menghormati budaya lain membantu mengukuhkan perpaduan masyarakat.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Permuafakatan, toleransi dan sikap menghormati budaya lain membantu mengukuhkan perpaduan masyarakat.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 7.776
+    },
+    {
+      "id": "perpaduan-task",
+      "path": "assets/narration-osman/perpaduan-task-cf2e3a40a2.mp3",
+      "source": "Padankan situasi dengan tindakan yang betul.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Padankan situasi dengan tindakan yang betul.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 4.104
+    },
+    {
+      "id": "perpaduan-success",
+      "path": "assets/narration-osman/perpaduan-success-950a8dc294.mp3",
+      "source": "Taman kembali ceria melalui kerjasama semua. Sikap bertoleransi dan bermuafakat mengukuhkan perpaduan.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Taman kembali ceria melalui kerjasama semua.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Sikap bertoleransi dan bermuafakat mengukuhkan perpaduan.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 9.168
+    },
+    {
+      "id": "perpaduan-hint",
+      "path": "assets/narration-osman/perpaduan-hint-b802fbd77f.mp3",
+      "source": "Kenalkan jiran, dengar pandangan, dan bahagikan kerja secara adil.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Kenalkan jiran, dengar pandangan, dan bahagikan kerja secara adil.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 6.096
+    },
+    {
+      "id": "nilai-dialogue-0",
+      "path": "assets/narration-osman/nilai-dialogue-0-80ffdecac8.mp3",
+      "source": "Seorang jiran tercicir barang ketika membawa bekalan untuk aktiviti komuniti.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Seorang jiran tercicir barang ketika membawa bekalan untuk aktiviti komuniti.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 6.168
+    },
+    {
+      "id": "nilai-dialogue-1",
+      "path": "assets/narration-osman/nilai-dialogue-1-ea098d940c.mp3",
+      "source": "Kesopanan dan budi pekerti mulia mewujudkan hubungan yang harmoni dan saling menghormati.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Kesopanan dan budi pekerti mulia mewujudkan hubungan yang harmoni dan saling menghormati.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 6.96
+    },
+    {
+      "id": "nilai-task",
+      "path": "assets/narration-osman/nilai-task-70e4e3100c.mp3",
+      "source": "Susun langkah membantu jiran.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Susun langkah membantu jiran.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.432
+    },
+    {
+      "id": "nilai-success",
+      "path": "assets/narration-osman/nilai-success-e69b17f56b.mp3",
+      "source": "Jiranmu tersenyum dan berterima kasih. Nilai murni dapat diamalkan melalui tindakan harian yang sederhana.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Jiranmu tersenyum dan berterima kasih.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Nilai murni dapat diamalkan melalui tindakan harian yang sederhana.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 9.6
+    },
+    {
+      "id": "nilai-hint",
+      "path": "assets/narration-osman/nilai-hint-3c6a410bb2.mp3",
+      "source": "Mulakan dengan meminta izin. Bantu dengan baik dan akhiri dengan kata yang sopan.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Mulakan dengan meminta izin.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        },
+        {
+          "text": "Bantu dengan baik dan akhiri dengan kata yang sopan.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 7.896
+    },
+    {
+      "id": "jati-dialogue-0",
+      "path": "assets/narration-osman/jati-dialogue-0-8071b1ce4c.mp3",
+      "source": "Perjalananmu hampir selesai, {name}. Rukun Negara membina jati diri melalui toleransi, kerjasama dan sikap saling memahami.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Perjalananmu hampir selesai, pengembara.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        },
+        {
+          "text": "Rukun Negara membina jati diri melalui toleransi, kerjasama dan sikap saling memahami.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 11.568
+    },
+    {
+      "id": "jati-dialogue-1",
+      "path": "assets/narration-osman/jati-dialogue-1-a2f1d5cc88.mp3",
+      "source": "Integriti bermaksud kejujuran yang tulen dan konsisten. Tindakan kita perlu mencerminkan nilai yang kita pegang.",
+      "style": "explain",
+      "segments": [
+        {
+          "text": "Integriti bermaksud kejujuran yang tulen dan konsisten.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        },
+        {
+          "text": "Tindakan kita perlu mencerminkan nilai yang kita pegang.",
+          "tone": "explain",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.38
+        }
+      ],
+      "duration_seconds": 9.48
+    },
+    {
+      "id": "jati-task",
+      "path": "assets/narration-osman/jati-task-fd31a576a1.mp3",
+      "source": "Pilih 3 amalan yang baik.",
+      "style": "instruction",
+      "segments": [
+        {
+          "text": "Pilih 3 amalan yang baik.",
+          "tone": "instruction",
+          "rate": "-6%",
+          "pitch": "+0Hz",
+          "volume": "+0%",
+          "pause": 0.4
+        }
+      ],
+      "duration_seconds": 3.24
+    },
+    {
+      "id": "jati-success",
+      "path": "assets/narration-osman/jati-success-3a87f973cc.mp3",
+      "source": "Kamu memilih kerjasama, toleransi dan kejujuran. Inilah antara amalan yang membentuk jati diri dan mengukuhkan perpaduan dalam kehidupan.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Kamu memilih kerjasama, toleransi dan kejujuran.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Inilah antara amalan yang membentuk jati diri dan mengukuhkan perpaduan dalam kehidupan.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 11.208
+    },
+    {
+      "id": "jati-hint",
+      "path": "assets/narration-osman/jati-hint-bba2b47467.mp3",
+      "source": "Pilih tiga amalan yang menunjukkan kerjasama, toleransi dan integriti.",
+      "style": "encourage",
+      "segments": [
+        {
+          "text": "Pilih tiga amalan yang menunjukkan kerjasama, toleransi dan integriti.",
+          "tone": "encourage",
+          "rate": "-5%",
+          "pitch": "+1Hz",
+          "volume": "+0%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 6.096
+    },
+    {
+      "id": "ending",
+      "path": "assets/narration-osman/ending-e4d2e08afc.mp3",
+      "source": "Tahniah, pengembara! Kamu telah berjaya menamatkan Misi Rukun Negara. Sejarah memberi kita pengajaran. Rukun Negara membimbing masyarakat menghormati kepelbagaian, mencintai negara, mematuhi undang-undang, bersatu padu, berbudi pekerti dan membina jati diri.",
+      "style": "success",
+      "segments": [
+        {
+          "text": "Tahniah, pengembara!",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Kamu telah berjaya menamatkan Misi Rukun Negara.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Sejarah memberi kita pengajaran.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        },
+        {
+          "text": "Rukun Negara membimbing masyarakat menghormati kepelbagaian, mencintai negara, mematuhi undang-undang, bersatu padu, berbudi pekerti dan membina jati diri.",
+          "tone": "success",
+          "rate": "-2%",
+          "pitch": "+3Hz",
+          "volume": "+3%",
+          "pause": 0.48
+        }
+      ],
+      "duration_seconds": 22.272
+    }
+  ]
+}

@@ -291,10 +291,27 @@ export function Editor({
       | "ambience"
       | "mission2"
       | "mission3"
-      | "intro",
+      | "intro"
+      | "ending"
+      | "questionAudio"
+      | "feedbackAudio"
+      | "hintAudio"
+      | "missionIntro"
+      | "missionConclusion",
     dialogueIndex?: number,
   ) => {
-    if (!session || (!current && ["image", "audio"].includes(kind))) return;
+    if (
+      !session ||
+      (!current &&
+        [
+          "image",
+          "audio",
+          "questionAudio",
+          "feedbackAudio",
+          "hintAudio",
+        ].includes(kind))
+    )
+      return;
     const id = current?.id || "overview";
     if (file.size > 6 * 1024 * 1024) {
       message("Had multimedia ialah 6 MB setiap fail.", true);
@@ -325,6 +342,18 @@ export function Editor({
       else if (kind === "intro")
         change((c) => {
           c.introductionAudio = d.path;
+          return c;
+        });
+      else if (kind === "ending")
+        change((c) => {
+          c.endingAudio = d.path;
+          return c;
+        });
+      else if (kind === "missionIntro" || kind === "missionConclusion")
+        change((c) => {
+          c.missions[dialogueIndex!][
+            kind === "missionIntro" ? "introductionAudio" : "conclusionAudio"
+          ] = d.path;
           return c;
         });
       else if (kind === "audio" && dialogueIndex !== undefined) {
@@ -655,7 +684,10 @@ export function Editor({
                   <textarea
                     value={current.question}
                     onChange={(e) =>
-                      changeActivity({ question: e.target.value })
+                      changeActivity({
+                        question: e.target.value,
+                        questionAudio: "",
+                      })
                     }
                   />
                 </label>
@@ -738,7 +770,10 @@ export function Editor({
                   <textarea
                     value={current.feedback}
                     onChange={(e) =>
-                      changeActivity({ feedback: e.target.value })
+                      changeActivity({
+                        feedback: e.target.value,
+                        feedbackAudio: "",
+                      })
                     }
                   />
                 </label>
@@ -746,9 +781,29 @@ export function Editor({
                   Petunjuk apabila salah
                   <textarea
                     value={current.hint}
-                    onChange={(e) => changeActivity({ hint: e.target.value })}
+                    onChange={(e) =>
+                      changeActivity({ hint: e.target.value, hintAudio: "" })
+                    }
                   />
                 </label>
+                {(["questionAudio", "feedbackAudio", "hintAudio"] as const).map(
+                  (key) => (
+                    <RecordingField
+                      key={key}
+                      label={
+                        {
+                          questionAudio: "Audio arahan",
+                          feedbackAudio: "Audio jawapan betul",
+                          hintAudio: "Audio petunjuk",
+                        }[key]
+                      }
+                      value={current[key]}
+                      onChange={(value) => changeActivity({ [key]: value })}
+                      disabled={!session || busy}
+                      onUpload={(file) => void upload(file, key)}
+                    />
+                  ),
+                )}
                 <fieldset>
                   <legend>Multimedia</legend>
                   <label>
@@ -1028,14 +1083,58 @@ export function Editor({
                           onChange={(e) =>
                             change((c) => {
                               c.missions[i][k] = e.target.value;
+                              if (k === "introduction")
+                                c.missions[i].introductionAudio = "";
+                              if (k === "conclusion") {
+                                c.missions[i].conclusionAudio = "";
+                                if (i === 2) c.endingAudio = "";
+                              }
                               return c;
                             })
                           }
                         />
                       </label>
                     ))}
+                    <RecordingField
+                      label="Audio arahan misi"
+                      value={m.introductionAudio}
+                      onChange={(value) =>
+                        change((c) => {
+                          c.missions[i].introductionAudio = value;
+                          return c;
+                        })
+                      }
+                      disabled={!session || busy}
+                      onUpload={(file) => void upload(file, "missionIntro", i)}
+                    />
+                    <RecordingField
+                      label="Audio misi selesai"
+                      value={m.conclusionAudio}
+                      onChange={(value) =>
+                        change((c) => {
+                          c.missions[i].conclusionAudio = value;
+                          return c;
+                        })
+                      }
+                      disabled={!session || busy}
+                      onUpload={(file) =>
+                        void upload(file, "missionConclusion", i)
+                      }
+                    />
                   </fieldset>
                 ))}
+                <RecordingField
+                  label="Audio penamat"
+                  value={content.endingAudio}
+                  onChange={(value) =>
+                    change((c) => {
+                      c.endingAudio = value;
+                      return c;
+                    })
+                  }
+                  disabled={!session || busy}
+                  onUpload={(file) => void upload(file, "ending")}
+                />
               </div>
             )}
             {status && (
@@ -1250,5 +1349,39 @@ function EditorPreview({
         />
       )}
     </>
+  );
+}
+
+function RecordingField({
+  label,
+  value,
+  onChange,
+  onUpload,
+  disabled,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  onUpload: (file: File) => void;
+  disabled: boolean;
+}) {
+  return (
+    <fieldset>
+      <legend>{label}</legend>
+      <label>
+        Laluan {label.toLowerCase()}
+        <input value={value} onChange={(e) => onChange(e.target.value)} />
+      </label>
+      <input
+        type="file"
+        aria-label={`Muat naik ${label.toLowerCase()}`}
+        accept="audio/wav,audio/mpeg,audio/ogg"
+        disabled={disabled}
+        onChange={(e) => {
+          const f = e.target.files?.[0];
+          if (f) onUpload(f);
+        }}
+      />
+    </fieldset>
   );
 }

@@ -354,7 +354,6 @@ em {
   gap: 11px;
 }
 .primary-button:hover:not(:disabled) {
-  transform: translateY(-2px);
   box-shadow: 0 9px 28px #101d1629;
 }
 .hero-actions {
@@ -628,7 +627,7 @@ em {
 .prologue p {
   color: #d4d9c7;
   max-width: 570px;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.95;
   margin-bottom: 32px;
 }
@@ -792,11 +791,11 @@ em {
   width: 24px;
 }
 .help-grid h3 {
-  font-size: 13px;
+  font-size: 18px;
   margin: 9px 0;
 }
 .help-grid p {
-  font-size: 11px;
+  font-size: 17px;
   color: #70806e;
   line-height: 1.7;
 }
@@ -808,7 +807,7 @@ em {
   border: 1px solid #d9d5bc;
   padding: 13px 15px;
   border-radius: 5px;
-  font-size: 11px !important;
+  font-size: 17px !important;
   line-height: 1.7;
   color: #63735b !important;
 }
@@ -823,7 +822,7 @@ em {
   justify-content: space-between;
   padding-top: 15px;
   border-top: 1px solid #d5d8c6;
-  font-size: 10px;
+  font-size: 14px;
   color: #788270;
 }
 .dialog-meta > span:first-child {
@@ -845,20 +844,21 @@ em {
   display: inline-block;
 }
 .dialogue-line {
-  font-size: 16px !important;
-  line-height: 1.9;
+  font-size: 20px !important;
+  line-height: 1.8;
   color: #485c49 !important;
   margin: 27px 0 30px;
 }
 .dialog-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   margin-top: 24px;
 }
-.task-question {
-  font-size: 15px;
+.modal .task-question {
+  font-size: 20px;
   line-height: 1.7;
   margin: 22px 0 18px;
   font-weight: 500;
@@ -878,7 +878,7 @@ em {
   text-align: left;
   padding: 15px;
   color: #405944;
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.6;
 }
 .answer-option.selected {
@@ -915,10 +915,10 @@ em {
   border-radius: 6px;
   background: #fffdf5;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   align-items: center;
   gap: 16px;
-  font-size: 11px;
+  font-size: 17px;
 }
 .match-row > span {
   display: flex;
@@ -940,11 +940,12 @@ em {
 .match-row select {
   width: 100%;
   min-width: 0;
-  font-size: 11px;
+  font-size: 17px;
   padding: 10px 8px;
   background: #f6f4e9;
 }
 .order-task .fine-print {
+  font-size: 17px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -962,7 +963,7 @@ em {
   border: 1px dashed #c9d1bd;
   border-radius: 5px;
   color: #94a18b;
-  font-size: 12px;
+  font-size: 17px;
   min-height: 48px;
 }
 .order-slot > span {
@@ -995,10 +996,10 @@ em {
   border-radius: 5px;
   text-align: left;
   color: #53694f;
-  font-size: 11px;
+  font-size: 17px;
 }
 .feedback-error {
-  font-size: 12px;
+  font-size: 17px;
   color: #8c4c38;
   padding: 15px 0 0;
 }
@@ -1030,7 +1031,7 @@ em {
   margin-bottom: 15px;
 }
 .answer-success p {
-  font-size: 14px;
+  font-size: 18px;
   color: #68775f;
 }
 .answer-success .primary-button {
@@ -1060,6 +1061,7 @@ em {
   font-size: 12px;
 }
 .journal-intro {
+  font-size: 17px !important;
   font-style: italic;
 }
 .journal-list {
@@ -1094,11 +1096,11 @@ em {
   border-radius: 50%;
 }
 .journal-entry strong {
-  font-size: 12px;
+  font-size: 18px;
   font-weight: 500;
 }
 .journal-entry p {
-  font-size: 11px;
+  font-size: 17px;
   margin: 6px 0 0;
   line-height: 1.8;
 }
@@ -1463,7 +1465,7 @@ em {
   margin: 20px 0;
 }
 .finish-screen > p {
-  font-size: 13px;
+  font-size: 18px;
   max-width: 590px;
   color: #bfcdb6;
 }
@@ -1491,7 +1493,7 @@ em {
   color: #edcf88;
 }
 .finish-screen label {
-  font-size: 12px;
+  font-size: 18px;
   line-height: 1.8;
   margin-bottom: 12px;
   max-width: 550px;
@@ -1502,7 +1504,7 @@ em {
   background: #233f32ad;
   border-color: #b9c79f66;
   color: #e4ead0;
-  font-size: 12px;
+  font-size: 17px;
 }
 .finish-actions {
   display: flex;
@@ -2023,10 +2025,10 @@ em {
     gap: 15px;
   }
   .help-grid p {
-    font-size: 10px;
+    font-size: 17px;
   }
   .dialogue-line {
-    font-size: 14px !important;
+    font-size: 18px !important;
   }
   .dialog-actions {
     gap: 10px;
@@ -2041,7 +2043,7 @@ em {
     gap: 10px;
   }
   .answer-option {
-    font-size: 11px;
+    font-size: 17px;
     padding: 12px;
   }
   .onboarding {
@@ -2072,7 +2074,7 @@ em {
     font-size: 43px;
   }
   .prologue p {
-    font-size: 13px;
+    font-size: 18px;
   }
   .game-header {
     top: 18px;
@@ -2307,5 +2309,33 @@ em {
   to {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+.secondary-actions {
+  flex-wrap: wrap;
+  row-gap: 12px;
+}
+
+/* Keep learning controls comfortable alongside the larger reading text. */
+.answer-option,
+.match-row select,
+.order-options button {
+  min-height: 48px;
+  line-height: 1.65;
+}
+.order-slot > span {
+  flex-shrink: 0;
+}
+.dialog-actions button {
+  min-height: 48px;
+  font-size: 15px;
+}
+@media (max-width: 640px) {
+  .modal .task-question {
+    font-size: 18px;
+  }
+  .dialog-actions .primary-button {
+    font-size: 15px;
   }
 }

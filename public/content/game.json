@@ -14,7 +14,7 @@
       "title": "Jejak Masa 1969",
       "era": "MALAYSIA · 1969",
       "tagline": "Tiga petunjuk. Satu permulaan.",
-      "introduction": "Terokai lorong ini dan temui tiga petunjuk yang membantu kamu memahami keadaan masyarakat Malaysia pada zaman tersebut. Selepas itu, satukan hasil penyiasatanmu di meja penyiasat.",
+      "introduction": "Cari 3 petunjuk. Kemudian, jawab soalan di meja penyiasat.",
       "conclusion": "Perbezaan kegiatan ekonomi, pengasingan tempat tinggal dan perbezaan fahaman politik ialah tiga sebab pengenalan Rukun Negara. Kini terokai matlamat dan prinsip yang mengukuhkan perpaduan.",
       "activities": [
         {
@@ -28,7 +28,7 @@
             "Ini ialah gambaran pola sejarah dalam buku teks, bukan pekerjaan semua orang dalam sesuatu kaum, dan bukan gambaran masyarakat Malaysia hari ini."
           ],
           "kind": "match",
-          "question": "Padankan hasil dengan kegiatan ekonominya.",
+          "question": "Padankan barang dengan kegiatan ekonomi.",
           "options": [
             "Hasil tanaman",
             "Bijih timah",
@@ -52,9 +52,16 @@
           ],
           "object": "crate",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/ekonomi-dialogue-0-39e8f07725.mp3",
           "page": "37",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/ekonomi-dialogue-0-39e8f07725.mp3",
+            "assets/narration-osman/ekonomi-dialogue-1-be2ad7a5fa.mp3",
+            "assets/narration-osman/ekonomi-dialogue-2-1d65130ad0.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/ekonomi-task-bb90600c7f.mp3",
+          "feedbackAudio": "assets/narration-osman/ekonomi-success-cc4bd421ff.mp3",
+          "hintAudio": "assets/narration-osman/ekonomi-hint-7e4d8956f2.mp3"
         },
         {
           "id": "penempatan",
@@ -67,7 +74,7 @@
             "Pengasingan tempat tinggal mengurangkan peluang masyarakat untuk berinteraksi. Bagaimanakah hubungan dapat dieratkan?"
           ],
           "kind": "multi",
-          "question": "Pilih DUA pemerhatian yang disokong oleh petunjuk ini.",
+          "question": "Pilih 2 jawapan yang betul.",
           "options": [
             "Tempat tinggal yang berasingan mengurangkan interaksi.",
             "Semua individu dalam sesuatu kaum tinggal di tempat yang sama.",
@@ -87,9 +94,16 @@
           ],
           "object": "map",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/penempatan-dialogue-0-6a8883e376.mp3",
           "page": "37",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/penempatan-dialogue-0-6a8883e376.mp3",
+            "assets/narration-osman/penempatan-dialogue-1-2776601356.mp3",
+            "assets/narration-osman/penempatan-dialogue-2-3426b71399.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/penempatan-task-55103fa22c.mp3",
+          "feedbackAudio": "assets/narration-osman/penempatan-success-4b912ccc55.mp3",
+          "hintAudio": "assets/narration-osman/penempatan-hint-4d0c010cd3.mp3"
         },
         {
           "id": "politik",
@@ -102,7 +116,7 @@
             "Tiada rakaman berita sejarah dimainkan di sini. Penerangan ini ialah naratif pendidikan yang disusun berdasarkan buku teks."
           ],
           "kind": "order",
-          "question": "Susun hubungan sebab dan keperluan ini daripada awal hingga akhir.",
+          "question": "Susun dari awal hingga akhir.",
           "options": [
             "Hubungan antara kaum menjadi renggang.",
             "Perpaduan dan semangat kekitaan perlu diperkukuh.",
@@ -122,9 +136,16 @@
           ],
           "object": "radio",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/politik-dialogue-0-fae94db3ea.mp3",
           "page": "36–37",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/politik-dialogue-0-fae94db3ea.mp3",
+            "assets/narration-osman/politik-dialogue-1-f5c65ea02d.mp3",
+            "assets/narration-osman/politik-dialogue-2-1a25cdacde.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/politik-task-24d71b0c84.mp3",
+          "feedbackAudio": "assets/narration-osman/politik-success-ba8ce98482.mp3",
+          "hintAudio": "assets/narration-osman/politik-hint-9a720a1b6d.mp3"
         },
         {
           "id": "sebab",
@@ -136,7 +157,7 @@
             "Peristiwa 13 Mei 1969 ialah latar sejarah yang penting. Namun, pentaksiran ini meminta tiga sebab pengenalan Rukun Negara yang dinyatakan dalam buku teks."
           ],
           "kind": "multi",
-          "question": "Pilih tepat TIGA sebab pengenalan Rukun Negara.",
+          "question": "Pilih 3 sebab pengenalan Rukun Negara.",
           "options": [
             "Perbezaan kegiatan ekonomi",
             "Kemajuan Internet",
@@ -159,18 +180,26 @@
           ],
           "object": "book",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/sebab-dialogue-0-abed4be84b.mp3",
           "page": "36–37",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/sebab-dialogue-0-abed4be84b.mp3",
+            "assets/narration-osman/sebab-dialogue-1-2490d6e1eb.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/sebab-task-0bc87284bb.mp3",
+          "feedbackAudio": "assets/narration-osman/sebab-success-193592a9dc.mp3",
+          "hintAudio": "assets/narration-osman/sebab-hint-bb31aad6a7.mp3"
         }
-      ]
+      ],
+      "introductionAudio": "assets/narration-osman/mission-1-intro-4a54999fab.mp3",
+      "conclusionAudio": "assets/narration-osman/mission-1-complete-b9af68fa5c.mp3"
     },
     {
       "id": 2,
       "title": "Lima Prinsip, Satu Negara",
       "era": "GALERI MASA · 1970",
       "tagline": "Temui asas yang menyatukan kita.",
-      "introduction": "Ikuti laluan galeri imaginatif. Temui lima matlamat, kemudian lengkapkan cabaran bagi setiap prinsip Rukun Negara.",
+      "introduction": "Selesaikan cabaran matlamat dan 5 cabaran prinsip.",
       "conclusion": "Kamu memahami lima matlamat dan lima prinsip Rukun Negara. Bawa bekalan ini ke Malaysia masa kini dan tunjukkan peranannya melalui tindakan.",
       "activities": [
         {
@@ -183,7 +212,7 @@
             "Rukun Negara diisytiharkan pada 31 Ogos 1970. Lima matlamatnya meliputi perpaduan, demokrasi, masyarakat adil, kebebasan terhadap tradisi kebudayaan yang pelbagai, dan masyarakat progresif berasaskan sains serta teknologi moden."
           ],
           "kind": "match",
-          "question": "Padankan tindakan dengan matlamat yang paling sesuai.",
+          "question": "Padankan tindakan dengan matlamatnya.",
           "options": [
             "Bermuafakat antara masyarakat",
             "Menghormati keputusan melalui proses demokrasi",
@@ -213,9 +242,15 @@
           ],
           "object": "notice",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/matlamat-dialogue-0-6a107defdf.mp3",
           "page": "38",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/matlamat-dialogue-0-6a107defdf.mp3",
+            "assets/narration-osman/matlamat-dialogue-1-6f278f2a95.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/matlamat-task-a3afbc35a9.mp3",
+          "feedbackAudio": "assets/narration-osman/matlamat-success-f77e5dfe2b.mp3",
+          "hintAudio": "assets/narration-osman/matlamat-hint-69a3a0ca3d.mp3"
         },
         {
           "id": "tuhan",
@@ -227,7 +262,7 @@
             "Prinsip ini membimbing kita menghormati amalan beragama masyarakat lain dan membantu menyatupadukan masyarakat yang berbilang kaum."
           ],
           "kind": "choice",
-          "question": "Seorang rakan mengamalkan agamanya. Apakah tindakan yang menepati prinsip pertama?",
+          "question": "Rakan kamu mengamalkan agamanya. Pilih tindakan yang betul.",
           "options": [
             "Memaksanya mengikut amalan kita.",
             "Menghormati amalannya dan menjaga adab.",
@@ -245,9 +280,15 @@
           ],
           "object": "lantern",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/tuhan-dialogue-0-9a43a0f0b1.mp3",
           "page": "39",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/tuhan-dialogue-0-9a43a0f0b1.mp3",
+            "assets/narration-osman/tuhan-dialogue-1-873871010f.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/tuhan-task-fd84ed54f5.mp3",
+          "feedbackAudio": "assets/narration-osman/tuhan-success-80f3b95a88.mp3",
+          "hintAudio": "assets/narration-osman/tuhan-hint-85a2d90471.mp3"
         },
         {
           "id": "raja",
@@ -259,7 +300,7 @@
             "Prinsip ini menyatupadukan rakyat dan menyemai semangat patriotik."
           ],
           "kind": "match",
-          "question": "Padankan unsur dengan penerangan yang betul.",
+          "question": "Padankan dengan penerangan yang betul.",
           "options": [
             "Yang di-Pertuan Agong",
             "Kesetiaan kepada Raja dan Negara",
@@ -283,9 +324,15 @@
           ],
           "object": "flag",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/raja-dialogue-0-fde86fce3b.mp3",
           "page": "40",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/raja-dialogue-0-fde86fce3b.mp3",
+            "assets/narration-osman/raja-dialogue-1-090e047db2.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/raja-task-4a5b53a46f.mp3",
+          "feedbackAudio": "assets/narration-osman/raja-success-514d359765.mp3",
+          "hintAudio": "assets/narration-osman/raja-hint-66563f30eb.mp3"
         },
         {
           "id": "perlembagaan",
@@ -297,7 +344,7 @@
             "Tiada institusi yang dapat mengatasi ketertinggiannya. Rakyat perlu menerima, mematuhi dan mempertahankan kemuliaan Perlembagaan Persekutuan."
           ],
           "kind": "choice",
-          "question": "Letakkan naskhah yang menjadi undang-undang tertinggi pada tempat utama.",
+          "question": "Pilih undang-undang tertinggi negara.",
           "options": [
             "Peraturan permainan",
             "Perlembagaan Persekutuan",
@@ -315,9 +362,15 @@
           ],
           "object": "book",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/perlembagaan-dialogue-0-ee392a96e3.mp3",
           "page": "41",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/perlembagaan-dialogue-0-ee392a96e3.mp3",
+            "assets/narration-osman/perlembagaan-dialogue-1-bf3d821675.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/perlembagaan-task-85d7fea589.mp3",
+          "feedbackAudio": "assets/narration-osman/perlembagaan-success-04f6964a1b.mp3",
+          "hintAudio": "assets/narration-osman/perlembagaan-hint-b0f9f65ff7.mp3"
         },
         {
           "id": "undang",
@@ -329,7 +382,7 @@
             "Kepatuhan ini membantu menjamin keharmonian masyarakat dan keselamatan negara."
           ],
           "kind": "order",
-          "question": "Susun tindakan sebelum melintas jalan di tempat yang sesuai.",
+          "question": "Susun langkah melintas jalan.",
           "options": [
             "Melintas apabila laluan selamat.",
             "Berhenti di tepi jalan.",
@@ -349,9 +402,15 @@
           ],
           "object": "notice",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/undang-dialogue-0-e0d1c2e953.mp3",
           "page": "42",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/undang-dialogue-0-e0d1c2e953.mp3",
+            "assets/narration-osman/undang-dialogue-1-b9cce87fb4.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/undang-task-72bfc39cbe.mp3",
+          "feedbackAudio": "assets/narration-osman/undang-success-d99af7272d.mp3",
+          "hintAudio": "assets/narration-osman/undang-hint-b5472ba4cb.mp3"
         },
         {
           "id": "sopan",
@@ -363,7 +422,7 @@
             "Nilai murni membentuk masyarakat yang berdisiplin, berakhlak mulia, saling memahami dan bekerjasama."
           ],
           "kind": "multi",
-          "question": "Pilih DUA tindakan yang menunjukkan kesopanan dan kesusilaan.",
+          "question": "Pilih 2 tindakan yang sopan.",
           "options": [
             "Mendengar pendapat rakan dengan tertib.",
             "Memotong percakapan dan menghina rakan.",
@@ -383,18 +442,26 @@
           ],
           "object": "bench",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/sopan-dialogue-0-b5720efbfb.mp3",
           "page": "43",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/sopan-dialogue-0-b5720efbfb.mp3",
+            "assets/narration-osman/sopan-dialogue-1-fb5a8ed565.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/sopan-task-4d9fd6dade.mp3",
+          "feedbackAudio": "assets/narration-osman/sopan-success-4c54fb6ba7.mp3",
+          "hintAudio": "assets/narration-osman/sopan-hint-6790eb56c3.mp3"
         }
-      ]
+      ],
+      "introductionAudio": "assets/narration-osman/mission-2-intro-337f89e5a8.mp3",
+      "conclusionAudio": "assets/narration-osman/mission-2-complete-d7f3c1cafa.mp3"
     },
     {
       "id": 3,
       "title": "Duta Perpaduan",
       "era": "MALAYSIA · MASA KINI",
       "tagline": "Sejarah menjadi tindakan.",
-      "introduction": "Kembali ke komuniti hari ini. Bantu jiran, buat keputusan dan amalkan peranan Rukun Negara dalam enam situasi kehidupan.",
+      "introduction": "Bantu jiran. Selesaikan 6 cabaran.",
       "conclusion": "Sejarah memberi kita pengajaran. Rukun Negara membimbing masyarakat menghormati kepelbagaian, mencintai negara, mematuhi undang-undang, bersatu padu, berbudi pekerti dan membina jati diri.",
       "activities": [
         {
@@ -407,7 +474,7 @@
             "Menghormati amalan dan keperluan masing-masing membantu kita meraikan kepelbagaian."
           ],
           "kind": "choice",
-          "question": "Seorang jiran meminta ruang untuk menunaikan amalan agamanya. Apakah pilihanmu?",
+          "question": "Jiran perlukan ruang untuk beribadat. Pilih tindakan yang betul.",
           "options": [
             "Memberikan ruang dan menghormati keperluannya.",
             "Menyuruhnya meninggalkan aktiviti.",
@@ -425,9 +492,15 @@
           ],
           "object": "lantern",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/agama-dialogue-0-592d32f03b.mp3",
           "page": "44",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/agama-dialogue-0-592d32f03b.mp3",
+            "assets/narration-osman/agama-dialogue-1-dab775a696.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/agama-task-22cd588e8b.mp3",
+          "feedbackAudio": "assets/narration-osman/agama-success-5a7e7c1f37.mp3",
+          "hintAudio": "assets/narration-osman/agama-hint-0679fc2a0a.mp3"
         },
         {
           "id": "patriotik",
@@ -439,7 +512,7 @@
             "Rukun Negara juga membimbing kita menghormati lambang kedaulatan negara seperti Jalur Gemilang, Jata Negara dan lagu Negaraku."
           ],
           "kind": "multi",
-          "question": "Pilih DUA tindakan yang memperlihatkan semangat patriotik.",
+          "question": "Pilih 2 tindakan yang patriotik.",
           "options": [
             "Menghormati Jalur Gemilang.",
             "Mempermainkan lagu Negaraku.",
@@ -459,9 +532,15 @@
           ],
           "object": "flag",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/patriotik-dialogue-0-3b855d1d0d.mp3",
           "page": "45",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/patriotik-dialogue-0-3b855d1d0d.mp3",
+            "assets/narration-osman/patriotik-dialogue-1-f08714b27a.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/patriotik-task-4d079d0780.mp3",
+          "feedbackAudio": "assets/narration-osman/patriotik-success-b2381430bd.mp3",
+          "hintAudio": "assets/narration-osman/patriotik-hint-6ca9d82d15.mp3"
         },
         {
           "id": "patuh",
@@ -473,7 +552,7 @@
             "Rukun Negara membimbing rakyat menghindari kegiatan jenayah dan mematuhi undang-undang."
           ],
           "kind": "choice",
-          "question": "Apakah tindakan yang menjaga kesejahteraan komuniti?",
+          "question": "Pilih tindakan yang betul.",
           "options": [
             "Mengikut ajakan supaya diterima rakan.",
             "Menolak ajakan dan mendapatkan bantuan orang dewasa.",
@@ -491,9 +570,15 @@
           ],
           "object": "notice",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/patuh-dialogue-0-01be59d40b.mp3",
           "page": "45",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/patuh-dialogue-0-01be59d40b.mp3",
+            "assets/narration-osman/patuh-dialogue-1-b20bb0afa2.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/patuh-task-673e3d9b9f.mp3",
+          "feedbackAudio": "assets/narration-osman/patuh-success-8fb2f7258c.mp3",
+          "hintAudio": "assets/narration-osman/patuh-hint-4ebccd2d2e.mp3"
         },
         {
           "id": "perpaduan",
@@ -505,7 +590,7 @@
             "Permuafakatan, toleransi dan sikap menghormati budaya lain membantu mengukuhkan perpaduan masyarakat."
           ],
           "kind": "match",
-          "question": "Padankan situasi dengan tindakan yang membantu kerjasama.",
+          "question": "Padankan situasi dengan tindakan yang betul.",
           "options": [
             "Jiran baharu belum mengenali sesiapa.",
             "Ahli kumpulan berbeza pendapat.",
@@ -529,9 +614,15 @@
           ],
           "object": "garden",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/perpaduan-dialogue-0-726243287d.mp3",
           "page": "45",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/perpaduan-dialogue-0-726243287d.mp3",
+            "assets/narration-osman/perpaduan-dialogue-1-9f8fdf793c.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/perpaduan-task-cf2e3a40a2.mp3",
+          "feedbackAudio": "assets/narration-osman/perpaduan-success-950a8dc294.mp3",
+          "hintAudio": "assets/narration-osman/perpaduan-hint-b802fbd77f.mp3"
         },
         {
           "id": "nilai",
@@ -543,7 +634,7 @@
             "Kesopanan dan budi pekerti mulia mewujudkan hubungan yang harmoni dan saling menghormati."
           ],
           "kind": "order",
-          "question": "Susun tindakan membantu jiran dengan sopan.",
+          "question": "Susun langkah membantu jiran.",
           "options": [
             "Ucapkan kata yang baik setelah membantu.",
             "Minta izin untuk membantu.",
@@ -563,9 +654,15 @@
           ],
           "object": "bench",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/nilai-dialogue-0-80ffdecac8.mp3",
           "page": "46",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/nilai-dialogue-0-80ffdecac8.mp3",
+            "assets/narration-osman/nilai-dialogue-1-ea098d940c.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/nilai-task-70e4e3100c.mp3",
+          "feedbackAudio": "assets/narration-osman/nilai-success-e69b17f56b.mp3",
+          "hintAudio": "assets/narration-osman/nilai-hint-3c6a410bb2.mp3"
         },
         {
           "id": "jati",
@@ -577,7 +674,7 @@
             "Integriti bermaksud kejujuran yang tulen dan konsisten. Tindakan kita perlu mencerminkan nilai yang kita pegang."
           ],
           "kind": "multi",
-          "question": "Pilih TIGA amalan yang akan kamu bawa pulang.",
+          "question": "Pilih 3 amalan yang baik.",
           "options": [
             "Bekerjasama dengan rakan pelbagai latar belakang.",
             "Meniru dalam peperiksaan apabila sukar.",
@@ -599,18 +696,27 @@
           ],
           "object": "arch",
           "image": "",
-          "audio": "",
+          "audio": "assets/narration-osman/jati-dialogue-0-8071b1ce4c.mp3",
           "page": "46",
-          "narration": []
+          "narration": [
+            "assets/narration-osman/jati-dialogue-0-8071b1ce4c.mp3",
+            "assets/narration-osman/jati-dialogue-1-a2f1d5cc88.mp3"
+          ],
+          "questionAudio": "assets/narration-osman/jati-task-fd31a576a1.mp3",
+          "feedbackAudio": "assets/narration-osman/jati-success-3a87f973cc.mp3",
+          "hintAudio": "assets/narration-osman/jati-hint-bba2b47467.mp3"
         }
-      ]
+      ],
+      "introductionAudio": "assets/narration-osman/mission-3-intro-a868589f88.mp3",
+      "conclusionAudio": "assets/narration-osman/mission-3-complete-28c830ff27.mp3"
     }
   ],
-  "introductionAudio": "",
+  "introductionAudio": "assets/narration-osman/prologue-e4fd9f874a.mp3",
   "soundtrack": {
     "music": "assets/journey.wav",
     "ambience": "assets/ambience.wav",
     "mission2": "assets/hope.wav",
     "mission3": "assets/together.wav"
-  }
+  },
+  "endingAudio": "assets/narration-osman/ending-e4d2e08afc.mp3"
 }

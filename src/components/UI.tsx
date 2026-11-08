@@ -10,6 +10,32 @@ import {
   RotateCcw,
 } from "lucide-react";
 import type { AudioSettings } from "../game/audio";
+import { audioEngine } from "../game/audio";
+import { narrationAvailable } from "../game/narration";
+
+export function NarrationButton({
+  text,
+  path,
+  light = false,
+  label = "Dengar semula",
+}: {
+  text: string;
+  path: string;
+  light?: boolean;
+  label?: string;
+}) {
+  const available = narrationAvailable(path);
+  return (
+    <button
+      className={`text-button ${light ? "light" : ""}`}
+      disabled={!available}
+      onClick={() => audioEngine.speak(text, path, true)}
+    >
+      <Volume2 size={17} />
+      {available ? label : "Audio sedang disemak"}
+    </button>
+  );
+}
 
 export function Emblem({ small = false }: { small?: boolean }) {
   return (
@@ -184,7 +210,8 @@ export function Settings({
         />
       </label>
       <p className="fine-print">
-        Rakaman dialog baharu sedang disemak. Teks dialog sentiasa tersedia.
+        Suara lelaki Osman, Bahasa Melayu Malaysia. Teks dialog sentiasa
+        tersedia.
       </p>
     </div>
   );

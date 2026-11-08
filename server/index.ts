@@ -6,7 +6,7 @@ import express, {
 import { randomBytes, randomUUID, createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { contentSchema } from "../src/shared/content";
+import { contentSchema, contentMediaPaths } from "../src/shared/content";
 import {
   Config,
   EditorStore,
@@ -391,15 +391,7 @@ export function createEditorApp(
       publishing = true;
       try {
         const content = contentSchema.parse(JSON.parse(draft.content));
-        const used = new Set(
-          [
-            content.introductionAudio,
-            ...Object.values(content.soundtrack),
-            ...content.missions.flatMap((m) =>
-              m.activities.flatMap((a) => [a.image, a.audio, ...a.narration]),
-            ),
-          ].filter(Boolean),
-        );
+        const used = new Set(contentMediaPaths(content));
         const media = (
           store.db.prepare("SELECT path,body FROM media").all() as {
             path: string;

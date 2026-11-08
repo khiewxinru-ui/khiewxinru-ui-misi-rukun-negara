@@ -32,7 +32,13 @@ import {
   writeSettings,
   type Save,
 } from "./game/save";
-import { Modal, Emblem, PrimaryButton, Settings } from "./components/UI";
+import {
+  Modal,
+  Emblem,
+  PrimaryButton,
+  Settings,
+  NarrationButton,
+} from "./components/UI";
 import { ActivityDialog } from "./components/ActivityDialog";
 const GameView = lazy(() =>
   import("./components/GameView").then((m) => ({ default: m.GameView })),
@@ -213,6 +219,26 @@ export default function App() {
     }
     setActivity(a);
   };
+  const rootNarration =
+    !content || modal || activity || hash === "#guru"
+      ? null
+      : screen === "prologue"
+        ? { text: content.introduction, path: content.introductionAudio }
+        : screen === "game" && intro && mission
+          ? { text: mission.introduction, path: mission.introductionAudio }
+          : screen === "game" && complete && mission
+            ? { text: mission.conclusion, path: mission.conclusionAudio }
+            : screen === "finish"
+              ? {
+                  text: content.missions[2].conclusion,
+                  path: content.endingAudio,
+                }
+              : null;
+  useEffect(() => {
+    if (!rootNarration) return;
+    audioEngine.speak(rootNarration.text, rootNarration.path);
+    return () => audioEngine.stopVoice();
+  }, [rootNarration?.path, rootNarration?.text, settings.voice]);
   if (hash === "#guru")
     return (
       <Suspense
@@ -332,6 +358,21 @@ export default function App() {
                 <Headphones size={17} />
                 Tetapan Audio
               </button>
+              {!settings.voice &&
+                narrationAvailable(content.introductionAudio) && (
+                  <>
+                    <span />
+                    <button
+                      onClick={() => {
+                        setSettings((s) => ({ ...s, voice: true }));
+                        void audioEngine.unlock();
+                      }}
+                    >
+                      <Volume2 size={17} />
+                      Hidupkan suara
+                    </button>
+                  </>
+                )}
             </div>
           </section>
           <aside className="time-stamp">
@@ -450,18 +491,12 @@ export default function App() {
           </h1>
           <p>{content.introduction}</p>
           <PrimaryButton onClick={enter}>Masuki lorong masa</PrimaryButton>
-          <button
-            className="text-button light"
-            disabled={!narrationAvailable(content.introductionAudio)}
-            onClick={() =>
-              audioEngine.speak(content.introduction, content.introductionAudio)
-            }
-          >
-            <Volume2 size={17} />
-            {narrationAvailable(content.introductionAudio)
-              ? "Dengar kisah permulaan"
-              : "Audio sedang disemak"}
-          </button>
+          <NarrationButton
+            text={content.introduction}
+            path={content.introductionAudio}
+            light
+            label="Dengar cerita"
+          />
         </main>
       )}
       {screen === "transition" && (
@@ -515,6 +550,11 @@ export default function App() {
             Kamu Duta Perpaduan!
           </h1>
           <p>{content.missions[2].conclusion}</p>
+          <NarrationButton
+            text={content.missions[2].conclusion}
+            path={content.endingAudio}
+            light
+          />
           <div className="achievement-row">
             <span>
               <strong>3</strong>Misi diselesaikan
@@ -577,40 +617,30 @@ export default function App() {
         </Modal>
       )}
       {modal === "help" && (
-        <Modal title="Dunia ini menanti kamu" onClose={() => setModal(null)}>
-          <p>
-            Terokai dunia melalui mata pengembara. Tiada had masa — ikuti
-            rentakmu sendiri.
-          </p>
+        <Modal title="Cara Bermain" onClose={() => setModal(null)}>
+          <p>Ikut langkah ini. Tiada had masa.</p>
           <div className="help-grid">
             <div>
               <Compass />
               <h3>Terokai</h3>
               <p>
-                Komputer: W A S D untuk bergerak. Tetikus atau anak panah
-                kiri/kanan untuk melihat. Esc melepaskan tetikus.
+                Tekan W A S D untuk bergerak. Gerakkan tetikus untuk melihat.
               </p>
             </div>
             <div>
               <Sparkles />
               <h3>Temui</h3>
-              <p>
-                Dekati penanda emas. Tekan E atau klik butang interaksi untuk
-                memeriksa objek.
-              </p>
+              <p>Dekati objek bertanda emas. Tekan E untuk buka.</p>
             </div>
             <div>
               <BookOpen />
               <h3>Fahami</h3>
-              <p>
-                Baca dialog, selesaikan cabaran dan catat penemuan dalam buku
-                pengembaraan.
-              </p>
+              <p>Dengar atau baca dialog. Kemudian, buat tugasan.</p>
             </div>
           </div>
           <p className="hint-box">
-            Telefon dan tablet: gunakan joystick dan leret skrin untuk melihat.
-            Jika grafik berat, pilih kualiti rendah dalam tetapan.
+            Telefon: gerakkan joystick untuk berjalan. Leret skrin untuk
+            melihat.
           </p>
           <PrimaryButton onClick={() => setModal(null)}>
             Saya bersedia
@@ -707,14 +737,21 @@ export default function App() {
             MISI {mission.id} · {mission.era}
           </span>
           <p className="dialogue-line">{mission.introduction}</p>
-          <PrimaryButton
-            onClick={() => {
-              setIntro(false);
-              void audioEngine.unlock();
-            }}
-          >
-            Terokai kawasan
-          </PrimaryButton>
+          <div className="dialog-actions">
+            <NarrationButton
+              text={mission.introduction}
+              path={mission.introductionAudio}
+              label="Dengar arahan"
+            />
+            <PrimaryButton
+              onClick={() => {
+                setIntro(false);
+                void audioEngine.unlock();
+              }}
+            >
+              Mula misi
+            </PrimaryButton>
+          </div>
         </Modal>
       )}
       {activity && save && (
@@ -755,11 +792,17 @@ export default function App() {
           </div>
           <span className="eyebrow">MISI {mission.id} SELESAI</span>
           <p className="dialogue-line">{mission.conclusion}</p>
-          <PrimaryButton onClick={nextMission}>
-            {save?.mission === 3
-              ? "Lengkapkan pengembaraan"
-              : "Teruskan ke misi seterusnya"}
-          </PrimaryButton>
+          <div className="dialog-actions">
+            <NarrationButton
+              text={mission.conclusion}
+              path={mission.conclusionAudio}
+            />
+            <PrimaryButton onClick={nextMission}>
+              {save?.mission === 3
+                ? "Lengkapkan pengembaraan"
+                : "Teruskan ke misi seterusnya"}
+            </PrimaryButton>
+          </div>
         </Modal>
       )}
     </div>

@@ -49,6 +49,8 @@ Semua aset permainan dan fon dihoskan bersama website. Sambungan Internet diperl
 
 Telefon/tablet: gunakan joystick dan leret dunia untuk melihat. Kualiti grafik rendah boleh dipilih dalam tetapan. Ujian emulasi telefon tidak menggantikan penilaian prestasi pada telefon fizikal sekolah.
 
+Teks pembelajaran diperbesar: dialog dan soalan sekitar 20 px pada komputer, dialog 18 px pada telefon, serta jawapan/petunjuk/catatan 17–18 px. Dialog panjang boleh ditatal tanpa memendekkan kandungan sejarah.
+
 ## Tiga misi
 
 | Misi                      | Aktiviti | Kandungan                                           |
@@ -145,15 +147,25 @@ Bangunan GLB asal dimodelkan dengan arked melengkung, kaki lima, tiang, cornice,
 
 Imej menu ialah ilustrasi sinematik yang dijana; ia bukan tangkapan skrin gameplay. Paparan permainan sebenar ialah dunia 3D dalam `src/game/World.tsx`. Aset tidak mewakili dokumentasi tepat sebuah bandar atau bangunan tahun 1969.
 
-Muzik, kesan dan bunyi persekitaran dijana untuk projek ini. Naratif eSpeak terdahulu telah ditarik balik kerana sebutannya tidak sesuai dengan Bahasa Melayu Malaysia. Rakaman pengganti perlu disemak sebelum diterbitkan; permainan kini menggunakan teks dialog. Fon DM Sans dan Libre Caslon Display menggunakan SIL Open Font License; salinan lesen tersedia dalam `docs/licenses/`.
+Muzik, kesan dan bunyi persekitaran dijana untuk projek ini. Naratif eSpeak terdahulu telah ditarik balik. Pemilik memilih **Osman**, suara lelaki neural **ms-MY**, untuk menggantikannya. Rakaman baharu menggunakan arahan pada peringkat ayat: pembukaan, penerangan sejarah, arahan, petunjuk dan maklum balas kejayaan mempunyai jeda serta kadar pertuturan yang berbeza. Fon DM Sans dan Libre Caslon Display menggunakan SIL Open Font License; salinan lesen tersedia dalam `docs/licenses/`.
 
 Model boleh dijana semula dengan Blender melalui `scripts/build-heritage.py`. Skrip muzik dan bunyi persekitaran memerlukan Python. **Semua hasil aset telah disertakan** — Blender dan Python tidak diperlukan oleh murid atau untuk build website.
 
-## Semakan suara pengganti
+## Naratif Osman dan arahan ringkas
 
-Naratif eSpeak telah ditarik balik. Suara pengganti belum digunakan dalam permainan. Dua sampel sintesis neural berlocale **ms-MY** disediakan untuk semakan pemilik:
+Pemilik memilih **Microsoft Osman (`ms-MY-OsmanNeural`)**. Sebanyak **91 klip MP3** disertakan untuk prolog, dialog, arahan, petunjuk, maklum balas, peralihan misi dan penamat. Murid tidak perlu mempunyai akaun perkhidmatan suara.
 
-- [Yasmin — suara perempuan](https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/assets/previews/ms-my-yasmin.mp3)
-- [Osman — suara lelaki](https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/assets/previews/ms-my-osman.mp3)
+- Ayat penuh dikekalkan supaya intonasi neural tidak terputus di tengah perkataan.
+- Jeda, kelajuan, pic dan aras suara diarahkan mengikut maksud ayat; soalan mempunyai ruang untuk murid berfikir.
+- Muzik dan bunyi persekitaran dikecilkan semasa pertuturan, kemudian dipulihkan.
+- Klik Teruskan atau tutup dialog akan menghentikan rakaman semasa. Dengar semula memainkan fail yang sama.
+- Pilihan suara OFF yang telah disimpan dihormati. Klik **Hidupkan suara** di menu untuk mengaktifkannya semula; butang dengar manual juga boleh digunakan.
+- Tiada fallback kepada suara TTS pelayar yang tidak dipilih.
 
-Sumber sampel: Microsoft Edge Read Aloud, `ms-MY-YasminNeural` dan `ms-MY-OsmanNeural`. Penetapan locale bukan bukti bahawa sebutan telah disahkan untuk PdP; pemilik perlu menilai sampel sebelum penerbitan naratif penuh.
+[Halaman dengar empat rakaman sebenar dalam permainan](https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/voice-preview.html)
+
+Sebanyak **19 arahan tugasan/misi** dipendekkan kepada 4–9 perkataan. Dialog sejarah, pilihan, padanan, jawapan betul, petunjuk ilmu dan rumusan dikekalkan. [Audit perubahan arahan](docs/instruction-review.json) merekodkan sebelum/selepas serta hash kandungan sejarah yang tidak berubah.
+
+[Manifest arah suara](docs/narration-direction.json) merekodkan teks sumber, parameter ayat, fail dan durasi. Penghasilan menggunakan kawalan rate/pitch/volume yang disokong serta jeda suntingan; ia tidak mengandaikan sokongan gaya lakonan berlabel daripada penyedia.
+
+Untuk menjana semula aset selepas penyuntingan yang telah disemak, pasang `edge-tts` dan ffmpeg, kemudian jalankan `python scripts/build-osman-narration.py` dari direktori projek. Fail audio telah disertakan, jadi alat penjanaan ini tidak diperlukan untuk build atau permainan murid.

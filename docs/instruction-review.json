@@ -1,0 +1,112 @@
+{
+  "history_sha256": "1ea4730ec76e6011aac8cb8c862faccc9c985670bfb9718606b32551e1f47f4f",
+  "history_unchanged": true,
+  "protected_fields": [
+    "source",
+    "prologue",
+    "dialogue",
+    "options",
+    "matches",
+    "correct",
+    "feedback",
+    "hint",
+    "conclusion"
+  ],
+  "changes": [
+    {
+      "id": "mission-1",
+      "before": "Terokai lorong ini dan temui tiga petunjuk yang membantu kamu memahami keadaan masyarakat Malaysia pada zaman tersebut. Selepas itu, satukan hasil penyiasatanmu di meja penyiasat.",
+      "after": "Cari 3 petunjuk. Kemudian, jawab soalan di meja penyiasat."
+    },
+    {
+      "id": "ekonomi",
+      "before": "Padankan hasil dengan kegiatan ekonominya.",
+      "after": "Padankan barang dengan kegiatan ekonomi."
+    },
+    {
+      "id": "penempatan",
+      "before": "Pilih DUA pemerhatian yang disokong oleh petunjuk ini.",
+      "after": "Pilih 2 jawapan yang betul."
+    },
+    {
+      "id": "politik",
+      "before": "Susun hubungan sebab dan keperluan ini daripada awal hingga akhir.",
+      "after": "Susun dari awal hingga akhir."
+    },
+    {
+      "id": "sebab",
+      "before": "Pilih tepat TIGA sebab pengenalan Rukun Negara.",
+      "after": "Pilih 3 sebab pengenalan Rukun Negara."
+    },
+    {
+      "id": "mission-2",
+      "before": "Ikuti laluan galeri imaginatif. Temui lima matlamat, kemudian lengkapkan cabaran bagi setiap prinsip Rukun Negara.",
+      "after": "Selesaikan cabaran matlamat dan 5 cabaran prinsip."
+    },
+    {
+      "id": "matlamat",
+      "before": "Padankan tindakan dengan matlamat yang paling sesuai.",
+      "after": "Padankan tindakan dengan matlamatnya."
+    },
+    {
+      "id": "tuhan",
+      "before": "Seorang rakan mengamalkan agamanya. Apakah tindakan yang menepati prinsip pertama?",
+      "after": "Rakan kamu mengamalkan agamanya. Pilih tindakan yang betul."
+    },
+    {
+      "id": "raja",
+      "before": "Padankan unsur dengan penerangan yang betul.",
+      "after": "Padankan dengan penerangan yang betul."
+    },
+    {
+      "id": "perlembagaan",
+      "before": "Letakkan naskhah yang menjadi undang-undang tertinggi pada tempat utama.",
+      "after": "Pilih undang-undang tertinggi negara."
+    },
+    {
+      "id": "undang",
+      "before": "Susun tindakan sebelum melintas jalan di tempat yang sesuai.",
+      "after": "Susun langkah melintas jalan."
+    },
+    {
+      "id": "sopan",
+      "before": "Pilih DUA tindakan yang menunjukkan kesopanan dan kesusilaan.",
+      "after": "Pilih 2 tindakan yang sopan."
+    },
+    {
+      "id": "mission-3",
+      "before": "Kembali ke komuniti hari ini. Bantu jiran, buat keputusan dan amalkan peranan Rukun Negara dalam enam situasi kehidupan.",
+      "after": "Bantu jiran. Selesaikan 6 cabaran."
+    },
+    {
+      "id": "agama",
+      "before": "Seorang jiran meminta ruang untuk menunaikan amalan agamanya. Apakah pilihanmu?",
+      "after": "Jiran perlukan ruang untuk beribadat. Pilih tindakan yang betul."
+    },
+    {
+      "id": "patriotik",
+      "before": "Pilih DUA tindakan yang memperlihatkan semangat patriotik.",
+      "after": "Pilih 2 tindakan yang patriotik."
+    },
+    {
+      "id": "patuh",
+      "before": "Apakah tindakan yang menjaga kesejahteraan komuniti?",
+      "after": "Pilih tindakan yang betul."
+    },
+    {
+      "id": "perpaduan",
+      "before": "Padankan situasi dengan tindakan yang membantu kerjasama.",
+      "after": "Padankan situasi dengan tindakan yang betul."
+    },
+    {
+      "id": "nilai",
+      "before": "Susun tindakan membantu jiran dengan sopan.",
+      "after": "Susun langkah membantu jiran."
+    },
+    {
+      "id": "jati",
+      "before": "Pilih TIGA amalan yang akan kamu bawa pulang.",
+      "after": "Pilih 3 amalan yang baik."
+    }
+  ]
+}
