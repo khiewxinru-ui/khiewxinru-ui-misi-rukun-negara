@@ -8,6 +8,7 @@ import {
 import { DatabaseSync } from "node:sqlite";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
+import { createClient, type Client } from "@libsql/client/http";
 import { contentSchema, type Content } from "../src/shared/content";
 
 export class HttpError extends Error {
@@ -23,6 +24,8 @@ export type Config = {
   apiUrl: string;
   clientId: string;
   clientSecret: string;
+  connector?: string;
+  authSecret?: string;
   owner: string;
   repo: string;
   branch: string;
@@ -125,6 +128,101 @@ export class EditorStore {
   }
   close() {
     this.db.close();
+  }
+}
+
+export type DraftRow = {
+  content: string;
+  revision: string;
+  source_sha: string;
+  updated: string;
+};
+
+export interface EditorStorage {
+  get<T>(sql: string, ...args: any[]): Promise<T | undefined>;
+  all<T>(sql: string, ...args: any[]): Promise<T[]>;
+  run(sql: string, ...args: any[]): Promise<{ changes: number }>;
+  getDraft(): Promise<DraftRow | undefined>;
+  initializeDraft(content: Content, sha: string): Promise<DraftRow>;
+  saveDraft(content: Content, revision: string): Promise<DraftRow>;
+}
+
+export class LocalEditorStorage implements EditorStorage {
+  constructor(public store: EditorStore) {}
+  async get<T>(sql: string, ...args: any[]) {
+    return this.store.db.prepare(sql).get(...args) as T | undefined;
+  }
+  async all<T>(sql: string, ...args: any[]) {
+    return this.store.db.prepare(sql).all(...args) as T[];
+  }
+  async run(sql: string, ...args: any[]) {
+    const result = this.store.db.prepare(sql).run(...args);
+    return { changes: Number(result.changes) };
+  }
+  async getDraft() { return this.store.getDraft(); }
+  async initializeDraft(content: Content, sha: string) {
+    return this.store.initializeDraft(content, sha);
+  }
+  async saveDraft(content: Content, revision: string) {
+    return this.store.saveDraft(content, revision);
+  }
+}
+
+export class TursoEditorStorage implements EditorStorage {
+  private ready: Promise<void>;
+  constructor(private client: Client) {
+    this.ready = this.setup();
+  }
+  static fromEnv() {
+    const url = process.env.TURSO_DATABASE_URL;
+    const authToken = process.env.TURSO_AUTH_TOKEN;
+    if (!url || !authToken) throw new Error("Turso is not configured.");
+    return new TursoEditorStorage(createClient({ url, authToken }));
+  }
+  private async setup() {
+    await this.client.batch([
+      "CREATE TABLE IF NOT EXISTS sessions(id TEXT PRIMARY KEY, token TEXT NOT NULL, csrf TEXT NOT NULL, login TEXT NOT NULL, expires INTEGER NOT NULL)",
+      "CREATE TABLE IF NOT EXISTS oauth(state TEXT PRIMARY KEY, verifier TEXT NOT NULL, expires INTEGER NOT NULL)",
+      "CREATE TABLE IF NOT EXISTS draft(id INTEGER PRIMARY KEY CHECK(id=1), content TEXT NOT NULL, revision TEXT NOT NULL, source_sha TEXT NOT NULL, updated TEXT NOT NULL)",
+      "CREATE TABLE IF NOT EXISTS media(path TEXT PRIMARY KEY,mime TEXT NOT NULL,body TEXT NOT NULL,created INTEGER NOT NULL)",
+      "CREATE TABLE IF NOT EXISTS versions(sha TEXT PRIMARY KEY,content TEXT NOT NULL,login TEXT NOT NULL,created TEXT NOT NULL)",
+    ], "write");
+    await this.client.batch([
+      { sql: "DELETE FROM sessions WHERE expires < ?", args: [Date.now()] },
+      { sql: "DELETE FROM oauth WHERE expires < ?", args: [Date.now()] },
+      { sql: "DELETE FROM media WHERE created < ?", args: [Date.now() - 7 * 86400000] },
+    ], "write");
+  }
+  private async execute(sql: string, args: any[]) {
+    await this.ready;
+    return this.client.execute({ sql, args: args as never[] });
+  }
+  async get<T>(sql: string, ...args: any[]) {
+    const result = await this.execute(sql, args);
+    return result.rows[0] as T | undefined;
+  }
+  async all<T>(sql: string, ...args: any[]) {
+    const result = await this.execute(sql, args);
+    return result.rows as unknown as T[];
+  }
+  async run(sql: string, ...args: any[]) {
+    const result = await this.execute(sql, args);
+    return { changes: result.rowsAffected };
+  }
+  async getDraft() {
+    return this.get<DraftRow>("SELECT * FROM draft WHERE id=1");
+  }
+  async initializeDraft(content: Content, sha: string) {
+    const now = new Date().toISOString();
+    await this.run("INSERT OR IGNORE INTO draft VALUES(1,?,?,?,?)", JSON.stringify(content), nonce(), sha, now);
+    await this.run("INSERT OR IGNORE INTO versions VALUES(?,?,?,?)", "source-" + sha, JSON.stringify(content), "GitHub · kandungan asal", now);
+    return (await this.getDraft())!;
+  }
+  async saveDraft(content: Content, revision: string) {
+    const next = nonce(), updated = new Date().toISOString();
+    const result = await this.run("UPDATE draft SET content=?,revision=?,updated=? WHERE id=1 AND revision=?", JSON.stringify(content), next, updated, revision);
+    if (!result.changes) throw new HttpError(409, "Draf telah berubah. Eksport salinan anda, kemudian muatkan semula draf terkini.");
+    return (await this.getDraft())!;
   }
 }
 

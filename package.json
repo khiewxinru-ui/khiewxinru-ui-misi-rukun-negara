@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "tsx scripts/validate-assets.ts && tsc -b && vite build",
+    "build": "tsx scripts/validate-assets.ts && tsc -b && node scripts/bundle-api.mjs && vite build",
     "preview": "vite preview --host 0.0.0.0",
     "server": "node --env-file-if-exists=.env.server --import tsx server/index.ts",
     "server:dev": "tsx watch server/index.ts",
@@ -13,8 +13,11 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@auth/express": "^0.12.3",
+    "@libsql/client": "^0.18.0",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.0",
+    "@vercel/connect": "^2.9.0",
     "express": "^5.1.0",
     "lucide-react": "^0.468.0",
     "react": "^19.2.0",

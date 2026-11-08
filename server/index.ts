@@ -6,10 +6,16 @@ import express, {
 import { randomBytes, randomUUID, createHash } from "node:crypto";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { ExpressAuth, getSession, type ExpressAuthConfig } from "@auth/express";
+import { connect } from "@vercel/connect/authjs";
+import { getToken as getConnectToken } from "@vercel/connect";
 import { contentSchema, contentMediaPaths } from "../src/shared/content";
 import {
   Config,
   EditorStore,
+  type EditorStorage,
+  LocalEditorStorage,
+  TursoEditorStorage,
   GitHubService,
   HttpError,
   decrypt,
@@ -25,6 +31,8 @@ export function configFromEnv(): Config {
     apiUrl: process.env.PUBLIC_API_URL || "http://localhost:8787",
     clientId: process.env.GITHUB_CLIENT_ID || "",
     clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
+    connector: process.env.CONNECTOR_GITHUB || "",
+    authSecret: process.env.AUTH_SECRET || "",
     owner: process.env.GITHUB_OWNER || "khiewxinru-ui",
     repo: process.env.GITHUB_REPO || "khiewxinru-ui-misi-rukun-negara",
     branch: process.env.GITHUB_BRANCH || "main",
@@ -58,20 +66,53 @@ const asyncRoute =
 
 export function createEditorApp(
   config: Config,
-  store = new EditorStore(config.dataDir),
+  storage?: EditorStorage | EditorStore,
   github = new GitHubService(config),
 ) {
+  const store: EditorStorage = storage instanceof EditorStore
+    ? new LocalEditorStorage(storage)
+    : storage || (process.env.TURSO_DATABASE_URL
+      ? TursoEditorStorage.fromEnv()
+      : new LocalEditorStorage(new EditorStore(config.dataDir)));
   const app = express();
   app.disable("x-powered-by");
   app.set("trust proxy", 1);
   const origin = new URL(config.appUrl).origin,
     secure = new URL(config.apiUrl).protocol === "https:";
+  const connector = config.connector || "";
+  const connectMode = !!connector && !!config.authSecret;
   const configured =
-    !!config.clientId &&
-    !!config.clientSecret &&
+    (connectMode || (!!config.clientId && !!config.clientSecret)) &&
     /^[0-9a-f]{64}$/i.test(config.key) &&
     config.teachers.length > 0;
   let publishing = false;
+  const authConfig: ExpressAuthConfig | null = connectMode
+    ? {
+        secret: config.authSecret,
+        trustHost: true,
+        basePath: "/auth/connect",
+        providers: [connect({ id: "github", name: "GitHub", connector })],
+        callbacks: {
+          async signIn({ profile }) {
+            const subject = String(profile?.sub || "");
+            if (!subject) return false;
+            try {
+              const githubToken = await getConnectToken(connector, { subject: { type: "user", id: subject } });
+              await github.authorized(githubToken);
+              return true;
+            } catch { return false; }
+          },
+          jwt({ token, profile }) {
+            if (profile?.sub) token.connectSubject = profile.sub;
+            return token;
+          },
+          session({ session, token }) {
+            (session as any).connectSubject = token.connectSubject;
+            return session;
+          },
+        },
+      }
+    : null;
   const cookies = (
     res: Response,
     name: string,
@@ -130,12 +171,10 @@ export function createEditorApp(
       for (const [k, v] of rates) if (v.reset < now) rates.delete(k);
     next();
   });
-  const session = (req: Request, res: Response): Session | null => {
+  const session = async (req: Request, res: Response): Promise<Session | null> => {
     const raw = cookie(req, "mrn_session");
     const s = raw
-      ? (store.db
-          .prepare("SELECT * FROM sessions WHERE id=? AND expires>?")
-          .get(hash(raw), Date.now()) as Session | undefined)
+      ? await store.get<Session>("SELECT * FROM sessions WHERE id=? AND expires>?", hash(raw), Date.now())
       : undefined;
     if (!s) {
       res.status(401).json({ error: "Sila log masuk sebagai guru." });
@@ -143,8 +182,20 @@ export function createEditorApp(
     }
     return s;
   };
-  const authenticate = (req: Request, res: Response, next: NextFunction) => {
-    const s = session(req, res);
+  const authenticate = async (req: Request, res: Response, next: NextFunction) => {
+    if (authConfig) {
+      const authSession = await getSession(req, authConfig);
+      const subject = String((authSession as any)?.connectSubject || "");
+      if (!subject) return res.status(401).json({ error: "Sila log masuk sebagai guru." });
+      const githubToken = await getConnectToken(connector, { subject: { type: "user", id: subject } });
+      const user = await github.authorized(githubToken);
+      const csrf = hash(`${subject}:${config.key}`);
+      res.locals.session = { id: subject, token: githubToken, csrf, login: user.login, expires: Date.now() + 3600000 } satisfies Session;
+      if (req.method !== "GET" && (!req.headers.origin || req.headers.origin !== origin || !safeEqual(String(req.headers["x-csrf-token"] || ""), csrf)))
+        return res.status(403).json({ error: "Pengesahan keselamatan gagal. Muatkan semula halaman." });
+      return next();
+    }
+    const s = await session(req, res);
     if (!s) return;
     res.locals.session = s;
     if (
@@ -158,8 +209,9 @@ export function createEditorApp(
       });
     next();
   };
-  const token = (res: Response) =>
-    decrypt((res.locals.session as Session).token, config.key);
+  const token = (res: Response) => connectMode
+    ? (res.locals.session as Session).token
+    : decrypt((res.locals.session as Session).token, config.key);
   app.get("/health", (_req, res) =>
     res.json({
       ok: true,
@@ -167,6 +219,7 @@ export function createEditorApp(
       repository: `${config.owner}/${config.repo}`,
     }),
   );
+  if (authConfig) app.use("/auth/connect", ExpressAuth(authConfig));
   app.get(
     "/auth/github",
     asyncRoute(async (req, res) => {
@@ -175,11 +228,10 @@ export function createEditorApp(
           503,
           "Log masuk guru belum dikonfigurasi. Sediakan OAuth GitHub dan kunci sesi pada backend.",
         );
+      if (authConfig) return res.redirect("/auth/connect/signin");
       const state = nonce(),
         verifier = nonce();
-      store.db
-        .prepare("INSERT INTO oauth VALUES(?,?,?)")
-        .run(hash(state), verifier, Date.now() + 600000);
+      await store.run("INSERT INTO oauth VALUES(?,?,?)", hash(state), verifier, Date.now() + 600000);
       cookies(res, "mrn_oauth", state, 600, "Lax");
       const url = new URL("https://github.com/login/oauth/authorize");
       url.search = new URLSearchParams({
@@ -206,10 +258,8 @@ export function createEditorApp(
           403,
           "Sesi log masuk tidak sah. Mulakan log masuk semula.",
         );
-      const row = store.db
-        .prepare("SELECT verifier FROM oauth WHERE state=? AND expires>?")
-        .get(hash(state), Date.now()) as { verifier: string } | undefined;
-      store.db.prepare("DELETE FROM oauth WHERE state=?").run(hash(state));
+      const row = await store.get<{ verifier: string }>("SELECT verifier FROM oauth WHERE state=? AND expires>?", hash(state), Date.now());
+      await store.run("DELETE FROM oauth WHERE state=?", hash(state));
       cookies(res, "mrn_oauth", "", 0, "Lax");
       if (!row || typeof req.query.code !== "string")
         throw new HttpError(403, "Kod log masuk telah tamat atau tidak sah.");
@@ -239,9 +289,7 @@ export function createEditorApp(
         );
       const user = await github.authorized(oauth.access_token);
       const raw = nonce();
-      store.db
-        .prepare("INSERT INTO sessions VALUES(?,?,?,?,?)")
-        .run(
+      await store.run("INSERT INTO sessions VALUES(?,?,?,?,?)",
           hash(raw),
           encrypt(oauth.access_token, config.key),
           nonce(),
@@ -261,20 +309,23 @@ export function createEditorApp(
       repository: `${config.owner}/${config.repo}`,
     });
   });
-  app.post("/api/logout", (req, res) => {
-    store.db
-      .prepare("DELETE FROM sessions WHERE id=?")
-      .run(hash(cookie(req, "mrn_session")));
+  app.post("/api/logout", asyncRoute(async (req, res) => {
+    if (authConfig) {
+      cookies(res, "authjs.session-token", "", 0);
+      cookies(res, "__Secure-authjs.session-token", "", 0);
+      return res.json({ ok: true });
+    }
+    await store.run("DELETE FROM sessions WHERE id=?", hash(cookie(req, "mrn_session")));
     cookies(res, "mrn_session", "", 0);
     res.json({ ok: true });
-  });
+  }));
   app.get(
     "/api/draft",
     asyncRoute(async (_req, res) => {
-      let draft = store.getDraft();
+      let draft = await store.getDraft();
       if (!draft) {
         const remote = await github.current(token(res));
-        draft = store.initializeDraft(remote.content, remote.sha);
+        draft = await store.initializeDraft(remote.content, remote.sha);
       }
       res.json({
         content: JSON.parse(draft.content),
@@ -283,7 +334,7 @@ export function createEditorApp(
       });
     }),
   );
-  app.post("/api/draft", (req, res, next) => {
+  app.post("/api/draft", asyncRoute(async (req, res) => {
     try {
       if (publishing)
         throw new HttpError(
@@ -293,13 +344,11 @@ export function createEditorApp(
       const content = contentSchema.parse(req.body.content);
       if (typeof req.body.revision !== "string")
         throw new HttpError(400, "Versi draf diperlukan.");
-      const d = store.saveDraft(content, req.body.revision);
+      const d = await store.saveDraft(content, req.body.revision);
       res.json({ revision: d.revision, updatedAt: d.updated });
-    } catch (e) {
-      next(e);
-    }
-  });
-  app.post("/api/media", (req, res, next) => {
+    } catch (e) { throw e; }
+  }));
+  app.post("/api/media", asyncRoute(async (req, res) => {
     try {
       const { mime, body } = req.body;
       if (
@@ -353,51 +402,37 @@ export function createEditorApp(
           400,
           "Format tidak disokong. Gunakan PNG, JPEG, WebP, WAV, MP3 atau OGG.",
         );
-      const count = store.db
-        .prepare("SELECT COUNT(*) AS n FROM media")
-        .get() as { n: number };
+      const count = (await store.get<{ n: number }>("SELECT COUNT(*) AS n FROM media"))!;
       if (count.n >= 100)
         throw new HttpError(
           409,
           "Had fail sementara dicapai. Terbitkan atau bersihkan fail lama dahulu.",
         );
       const path = `assets/uploads/${randomUUID()}.${ext}`;
-      store.db
-        .prepare("INSERT INTO media VALUES(?,?,?,?)")
-        .run(path, mime, body, Date.now());
+      await store.run("INSERT INTO media VALUES(?,?,?,?)", path, mime, body, Date.now());
       res.json({
         path,
         preview: `${config.apiUrl}/api/media/${path.split("/").pop()}`,
       });
-    } catch (e) {
-      next(e);
-    }
-  });
-  app.get("/api/media/:file", (req, res) => {
-    const row = store.db
-      .prepare("SELECT mime,body FROM media WHERE path=?")
-      .get(`assets/uploads/${req.params.file}`) as
-      { mime: string; body: string } | undefined;
+    } catch (e) { throw e; }
+  }));
+  app.get("/api/media/:file", asyncRoute(async (req, res) => {
+    const row = await store.get<{ mime: string; body: string }>("SELECT mime,body FROM media WHERE path=?", `assets/uploads/${req.params.file}`);
     if (!row) return res.sendStatus(404);
     res.type(row.mime).send(Buffer.from(row.body, "base64"));
-  });
+  }));
   app.post(
     "/api/publish",
     asyncRoute(async (req, res) => {
       if (publishing) throw new HttpError(409, "Penerbitan sedang dijalankan.");
-      const draft = store.getDraft();
+      const draft = await store.getDraft();
       if (!draft || draft.revision !== req.body.revision)
         throw new HttpError(409, "Simpan draf terkini sebelum menerbitkan.");
       publishing = true;
       try {
         const content = contentSchema.parse(JSON.parse(draft.content));
         const used = new Set(contentMediaPaths(content));
-        const media = (
-          store.db.prepare("SELECT path,body FROM media").all() as {
-            path: string;
-            body: string;
-          }[]
-        ).filter((m) => used.has(m.path));
+        const media = (await store.all<{ path: string; body: string }>("SELECT path,body FROM media")).filter((m) => used.has(m.path));
         const sessionToken = token(res);
         await github.authorized(sessionToken);
         const result = await github.publish(
@@ -406,12 +441,8 @@ export function createEditorApp(
           draft.source_sha,
           media,
         );
-        store.db
-          .prepare("UPDATE draft SET source_sha=? WHERE id=1")
-          .run(result.contentSha);
-        store.db
-          .prepare("INSERT INTO versions VALUES(?,?,?,?)")
-          .run(
+        await store.run("UPDATE draft SET source_sha=? WHERE id=1", result.contentSha);
+        await store.run("INSERT INTO versions VALUES(?,?,?,?)",
             result.commit,
             JSON.stringify(content),
             (res.locals.session as Session).login,
@@ -460,24 +491,16 @@ export function createEditorApp(
       );
     }),
   );
-  app.get("/api/versions", (_req, res) =>
-    res.json({
-      versions: store.db
-        .prepare(
-          "SELECT sha,login,created FROM versions ORDER BY created DESC LIMIT 25",
-        )
-        .all(),
-    }),
-  );
+  app.get("/api/versions", asyncRoute(async (_req, res) => res.json({
+    versions: await store.all("SELECT sha,login,created FROM versions ORDER BY created DESC LIMIT 25"),
+  })));
   app.post(
     "/api/restore",
     asyncRoute(async (req, res) => {
       if (publishing) throw new HttpError(409, "Penerbitan sedang dijalankan.");
-      const row = store.db
-        .prepare("SELECT content FROM versions WHERE sha=?")
-        .get(String(req.body.sha)) as { content: string } | undefined;
+      const row = await store.get<{ content: string }>("SELECT content FROM versions WHERE sha=?", String(req.body.sha));
       if (!row) throw new HttpError(404, "Versi tidak ditemui.");
-      const draft = store.saveDraft(
+      const draft = await store.saveDraft(
         contentSchema.parse(JSON.parse(row.content)),
         String(req.body.revision),
       );

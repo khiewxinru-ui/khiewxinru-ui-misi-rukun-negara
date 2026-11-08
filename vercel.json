@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "functions": {
+    "api/index.js": {
+      "maxDuration": 60,
+      "regions": ["hnd1"]
+    }
+  },
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/index" },
+    { "source": "/auth/:path*", "destination": "/api/index" },
+    { "source": "/health", "destination": "/api/index" }
+  ],
+  "redirects": [
+    { "source": "/", "destination": "/guru.html", "permanent": false }
+  ]
+}

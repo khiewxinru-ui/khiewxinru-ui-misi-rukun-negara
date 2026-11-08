@@ -28,6 +28,8 @@ type Session = { login: string; csrf: string; repository: string };
 type Version = { sha: string; login: string; created: string };
 const LOCAL_DRAFT = "misi-rukun-negara:teacher-local-draft";
 function savedApi() {
+  if (import.meta.env.VITE_EDITOR_SAME_ORIGIN === "1")
+    return window.location.origin;
   try {
     return (
       localStorage.getItem("mrn:editor-api") ||
@@ -470,16 +472,10 @@ export function Editor({
                 : "Penerbitan guru belum dihubungkan. GitHub Pages memerlukan backend tambahan untuk pengesahan dan penerbitan yang selamat."}
             </span>
           </div>
-          <label htmlFor="api-url">
+          {import.meta.env.VITE_EDITOR_SAME_ORIGIN !== "1" && <label htmlFor="api-url">
             URL backend Teacher Editor
-            <input
-              id="api-url"
-              type="url"
-              placeholder="https://editor-api.sekolah.edu.my"
-              value={api}
-              onChange={(e) => setApi(e.target.value)}
-            />
-          </label>
+            <input id="api-url" type="url" placeholder="https://editor-api.sekolah.edu.my" value={api} onChange={(e) => setApi(e.target.value)} />
+          </label>}
           <PrimaryButton
             disabled={!base}
             onClick={() => {

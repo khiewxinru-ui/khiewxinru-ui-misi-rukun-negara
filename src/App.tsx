@@ -276,7 +276,7 @@ export default function App() {
         <Editor
           initialContent={content}
           onHome={() => {
-            location.href = import.meta.env.BASE_URL;
+            location.href = import.meta.env.VITE_STUDENT_URL || import.meta.env.BASE_URL;
           }}
         />
       </Suspense>
