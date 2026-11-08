@@ -13,6 +13,7 @@ const content = contentSchema.parse(
 const KEY = "misi-rukun-negara:journey:v1";
 async function start(page: Page, waitForCanvas = true) {
   await page.addInitScript(() => {
+    if (window.top !== window) return;
     localStorage.setItem(
       "misi-rukun-negara:journey:v1:settings",
       JSON.stringify({
@@ -31,6 +32,9 @@ async function start(page: Page, waitForCanvas = true) {
   await page.getByRole("button", { name: "Perempuan", exact: true }).click();
   await page.getByLabel("Nama pengembara").fill("Aina");
   await page.getByRole("button", { name: "Mulakan perjalanan" }).click();
+  await page
+    .getByRole("button", { name: "Teruskan pengembaraan", exact: true })
+    .click();
   await page.getByRole("button", { name: "Masuki lorong masa" }).click();
   await page.getByRole("button", { name: "Mula misi" }).click();
   if (waitForCanvas)
@@ -86,6 +90,17 @@ async function solve(page: Page, a: Activity, wrong = false) {
         exact: true,
       })
       .click();
+  if (a.observation) {
+    const inquiry = dialog.getByRole("region", { name: "Soalan pemerhatian" });
+    await inquiry
+      .getByRole("radio", {
+        name: a.observation.options[a.observation.correct],
+        exact: true,
+      })
+      .click();
+    await inquiry.getByRole("button", { name: "Semak pemerhatian" }).click();
+    await inquiry.getByRole("button", { name: "Teruskan cabaran" }).click();
+  }
   if (a.kind === "match")
     for (let i = 0; i < a.correct.length; i++)
       await dialog
@@ -157,6 +172,51 @@ test("Student completes the entire three-mission journey and resumes after refre
     if (mission.id < 3)
       await page.getByRole("button", { name: "Mula misi" }).click();
   }
+  await expect(
+    page.getByRole("heading", { name: "Pentaksiran Akhir — Misi Perpaduan" }),
+  ).toBeVisible();
+  for (
+    let sectionIndex = 0;
+    sectionIndex < content.finalAssessment!.length;
+    sectionIndex++
+  ) {
+    const section = content.finalAssessment![sectionIndex];
+    await page
+      .getByRole("button", { name: `Bahagian ${section.id}`, exact: true })
+      .click();
+    for (const q of section.questions) {
+      const field = page.getByRole("group", { name: q.question, exact: true });
+      if (q.kind === "match")
+        for (let i = 0; i < q.correct.length; i++)
+          await field
+            .getByLabel(q.options[i], { exact: true })
+            .selectOption(String(q.correct[i]));
+      else
+        for (const i of q.correct)
+          await field
+            .getByRole(
+              q.kind === "multi"
+                ? "checkbox"
+                : q.kind === "choice"
+                  ? "radio"
+                  : "button",
+              { name: q.options[i], exact: true },
+            )
+            .click();
+    }
+    await page
+      .getByLabel(section.writtenPrompt, { exact: true })
+      .fill(section.rubric.join(" "));
+  }
+  await page
+    .getByRole("button", { name: "Semak pentaksiran", exact: true })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "Keputusan mengikut objektif" }),
+  ).toBeVisible();
+  await page
+    .getByRole("button", { name: "Lihat pencapaian", exact: true })
+    .click();
   await expect(
     page.getByRole("heading", { name: /Tahniah, Aina/ }),
   ).toBeVisible();
@@ -319,6 +379,15 @@ for (const viewport of [
         })
         .click();
     }
+    const inquiry = dialog.getByRole("region", { name: "Soalan pemerhatian" });
+    await inquiry
+      .getByRole("radio", {
+        name: activity.observation!.options[activity.observation!.correct],
+        exact: true,
+      })
+      .click();
+    await inquiry.getByRole("button", { name: "Semak pemerhatian" }).click();
+    await inquiry.getByRole("button", { name: "Teruskan cabaran" }).click();
     expect(
       await dialog
         .locator(".task-question")

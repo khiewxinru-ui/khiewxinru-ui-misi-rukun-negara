@@ -1,3 +1,4 @@
+import { VisualEditor, LearningSettingsEditor } from "./LearningEditor";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
@@ -297,7 +298,9 @@ export function Editor({
       | "feedbackAudio"
       | "hintAudio"
       | "missionIntro"
-      | "missionConclusion",
+      | "missionConclusion"
+      | "visualImage"
+      | "visualAudio",
     dialogueIndex?: number,
   ) => {
     if (
@@ -355,6 +358,14 @@ export function Editor({
             kind === "missionIntro" ? "introductionAudio" : "conclusionAudio"
           ] = d.path;
           return c;
+        });
+      else if (kind === "visualImage" || kind === "visualAudio")
+        changeActivity({
+          visuals: current!.visuals.map((v, i) =>
+            i === dialogueIndex
+              ? { ...v, [kind === "visualImage" ? "path" : "audio"]: d.path }
+              : v,
+          ),
         });
       else if (kind === "audio" && dialogueIndex !== undefined) {
         const narration = [...current!.narration];
@@ -804,6 +815,14 @@ export function Editor({
                     />
                   ),
                 )}
+                <VisualEditor
+                  activity={current}
+                  onChange={changeActivity}
+                  disabled={!session || busy}
+                  onUpload={(file, kind, index) =>
+                    void upload(file, kind, index)
+                  }
+                />
                 <fieldset>
                   <legend>Multimedia</legend>
                   <label>
@@ -987,6 +1006,10 @@ export function Editor({
                     }
                   />
                 </label>
+                <LearningSettingsEditor
+                  content={content}
+                  onChange={(patch) => change((c) => ({ ...c, ...patch }))}
+                />
                 <label>
                   Naratif permulaan
                   <textarea
@@ -1339,6 +1362,7 @@ function EditorPreview({
           name="Guru"
           alreadySolved={save.solved.includes(activity.id)}
           onClose={() => setActivity(null)}
+          onObservation={() => {}}
           onAttempt={() => {}}
           onComplete={() =>
             setSave((s) => ({

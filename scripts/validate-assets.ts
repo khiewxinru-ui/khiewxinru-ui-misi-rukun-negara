@@ -7,6 +7,12 @@ const content = contentSchema.parse(
 const paths = new Set(
   [
     "assets/shophouse.glb",
+    ...[
+      "companion",
+      "companion-female",
+      "civic-gallery",
+      "community-school",
+    ].map((n) => `assets/${n}.glb`),
     "assets/heritage-street.webp",
     "assets/road.jpg",
     "assets/stone.jpg",

@@ -238,9 +238,9 @@ export function GameView({
                 <small>
                   {save.solved.includes(nearest.id)
                     ? "LIHAT SEMULA"
-                    : "PERIKSA OBJEK"}
+                    : "BERCAKAP"}
                 </small>
-                {nearest.label}
+                {nearest.speaker.split(",")[0]} · {nearest.label}
               </span>
               <ChevronRight size={19} />
             </button>

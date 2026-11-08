@@ -9,6 +9,20 @@ const saveSchema = z.object({
   mission: z.number().int().min(1).max(3),
   solved: z.array(z.string()).max(100),
   attempts: z.record(z.string(), z.number().int().nonnegative()).default({}),
+  assessmentAnswers: z
+    .record(z.string(), z.array(z.number().int().min(-1).max(11)).max(12))
+    .default({}),
+  assessmentWriting: z.record(z.string(), z.string().max(2500)).default({}),
+  assessmentSubmitted: z.boolean().default(false),
+  observations: z
+    .record(
+      z.string(),
+      z.object({
+        answer: z.number().int().min(0).max(5),
+        note: z.string().max(700).default(""),
+      }),
+    )
+    .default({}),
   reflection: z.string().max(1000).default(""),
   finished: z.boolean().default(false),
   position: z
@@ -45,6 +59,10 @@ export function createSave(name: string, gender: Save["gender"]): Save {
     mission: 1,
     solved: [],
     attempts: {},
+    assessmentAnswers: {},
+    assessmentWriting: {},
+    assessmentSubmitted: false,
+    observations: {},
     reflection: "",
     finished: false,
     position: [0, 8],

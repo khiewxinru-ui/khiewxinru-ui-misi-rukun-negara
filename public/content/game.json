@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "MISI RUKUN NEGARA",
-  "subtitle": "Pengembaraan Merentas Masa",
+  "subtitle": "Merentas Masa, Memahami Perpaduan",
   "introduction": "Setiap negara mempunyai kisah yang membentuk masa depannya. Hari ini, kamu diberi peluang untuk menyaksikan sebahagian daripada perjalanan sejarah Malaysia. Apakah yang menyatukan rakyat berbilang kaum di Malaysia?",
   "source": {
     "url": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
@@ -61,7 +61,65 @@
           ],
           "questionAudio": "assets/narration-osman/ekonomi-task-bb90600c7f.mp3",
           "feedbackAudio": "assets/narration-osman/ekonomi-success-cc4bd421ff.mp3",
-          "hintAudio": "assets/narration-osman/ekonomi-hint-7e4d8956f2.mp3"
+          "hintAudio": "assets/narration-osman/ekonomi-hint-7e4d8956f2.mp3",
+          "visuals": [
+            {
+              "id": "ekonomi",
+              "path": "assets/visuals/ekonomi.svg",
+              "title": "Tiga kegiatan ekonomi",
+              "caption": "Hasil tani, bijih timah dan getah.",
+              "alt": "Hasil tani, bijih timah dan getah.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Gambaran konsep ekonomi dahulu; bukan foto 1969",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Perhatikan hasil dan tempat kerja yang berbeza. Kegiatan ekonomi yang terpisah mengehadkan hubungan masyarakat.",
+              "audio": "assets/narration-osman/ekonomi-visual-0-2d9aa9ad39.mp3"
+            },
+            {
+              "id": "tin-archive",
+              "path": "assets/visuals/tin-archive.jpg",
+              "title": "Perlombongan bijih timah di Malaya",
+              "caption": "Pam kerikil dalam foto arkib. Tarikh rakaman tidak dinyatakan; bukan bukti foto 1969.",
+              "alt": "Kawasan perlombongan bijih timah dengan pam kerikil dalam foto hitam putih.",
+              "kind": "Foto sejarah",
+              "date": "Tarikh rakaman tidak dinyatakan",
+              "creator": "The National Archives UK, CO 1069/493/21",
+              "license": "No known copyright restrictions — Flickr Commons",
+              "sourceUrl": "https://www.flickr.com/photos/nationalarchives/7888162576/",
+              "sourceTitle": "The National Archives UK • CO 1069/493/21",
+              "explanation": "Foto ini menunjukkan satu cara perlombongan bijih timah. Bandingkan dengan pertanian dan perladangan getah.",
+              "audio": "assets/narration-osman/ekonomi-visual-1-56913fbc6c.mp3"
+            },
+            {
+              "id": "rubber-archive",
+              "path": "assets/visuals/rubber-archive.webp",
+              "title": "Menoreh getah, sekitar 1910",
+              "caption": "Foto awal kegiatan menoreh getah. Diambil sekitar 1910, bukan pada 1969.",
+              "alt": "Seorang penoreh berdiri di sisi pokok getah yang ditoreh.",
+              "kind": "Foto sejarah",
+              "date": "Sekitar 1910",
+              "creator": "C. J. Kleingrothe • Koleksi KITLV, Leiden University Libraries, 79940",
+              "license": "Public domain • karya terbit sebelum 1931; pengarang meninggal pada 1942",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:KITLV_-_79940_-_Kleingrothe,_C.J._-_Medan_-_Tapping_of_a_23-year-old_rubber_tree_on_a_plantation_in_Malaysia_-_circa_1910.tif",
+              "sourceTitle": "KITLV 79940 • Leiden University Libraries / Wikimedia Commons",
+              "explanation": "Perhatikan torehan pada batang pokok dan bekas pengumpulan. Foto ini membantu mengenal kegiatan perladangan getah, bukan merakam tahun 1969.",
+              "audio": "assets/narration-osman/ekonomi-visual-2-33d1977c8f.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Apakah perbezaan yang kamu lihat?",
+            "options": [
+              "Hasil dan tempat kerja berbeza.",
+              "Semua menghasilkan bijih timah.",
+              "Semua bekerja di bandar."
+            ],
+            "correct": 0,
+            "feedback": "Hasil tani, bijih timah dan getah datang daripada kegiatan ekonomi berbeza.",
+            "audio": "assets/narration-osman/ekonomi-observe-b3bb3f8425.mp3"
+          }
         },
         {
           "id": "penempatan",
@@ -103,7 +161,35 @@
           ],
           "questionAudio": "assets/narration-osman/penempatan-task-55103fa22c.mp3",
           "feedbackAudio": "assets/narration-osman/penempatan-success-4b912ccc55.mp3",
-          "hintAudio": "assets/narration-osman/penempatan-hint-4d0c010cd3.mp3"
+          "hintAudio": "assets/narration-osman/penempatan-hint-4d0c010cd3.mp3",
+          "visuals": [
+            {
+              "id": "penempatan",
+              "path": "assets/visuals/penempatan.svg",
+              "title": "Kampung, bandar dan ladang",
+              "caption": "Rajah perbandingan tempat tinggal; bukan peta sebenar.",
+              "alt": "Rajah perbandingan tempat tinggal; bukan peta sebenar.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Rajah konsep masyarakat dahulu; bukan peta 1969",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Tempat tinggal yang terpisah mengurangkan peluang berinteraksi. Rajah ini tidak menetapkan pekerjaan atau tempat tinggal semua orang mengikut kaum.",
+              "audio": "assets/narration-osman/penempatan-visual-0-4d0e5cea32.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Apakah kesan tempat tinggal berjauhan?",
+            "options": [
+              "Interaksi pasti lebih kerap.",
+              "Peluang berinteraksi berkurang.",
+              "Semua masyarakat sama."
+            ],
+            "correct": 1,
+            "feedback": "Jarak mengurangkan peluang berinteraksi, bukan menentukan sifat sesuatu kaum.",
+            "audio": "assets/narration-osman/penempatan-observe-638ce0082c.mp3"
+          }
         },
         {
           "id": "politik",
@@ -145,7 +231,50 @@
           ],
           "questionAudio": "assets/narration-osman/politik-task-24d71b0c84.mp3",
           "feedbackAudio": "assets/narration-osman/politik-success-ba8ce98482.mp3",
-          "hintAudio": "assets/narration-osman/politik-hint-9a720a1b6d.mp3"
+          "hintAudio": "assets/narration-osman/politik-hint-9a720a1b6d.mp3",
+          "visuals": [
+            {
+              "id": "politik",
+              "path": "assets/visuals/politik.svg",
+              "title": "Fahaman politik berbeza",
+              "caption": "Rajah konsep yang tidak mewakili mana-mana parti.",
+              "alt": "Rajah konsep yang tidak mewakili mana-mana parti.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Rajah konsep; bukan bahan kempen sebenar",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Perbezaan fahaman politik boleh merenggangkan hubungan. Keperluan memperkukuh perpaduan menjadi latar pengenalan Rukun Negara.",
+              "audio": "assets/narration-osman/politik-visual-0-b781215e18.mp3"
+            },
+            {
+              "id": "latar",
+              "path": "assets/visuals/latar.svg",
+              "title": "13 Mei, MAGERAN dan Rukun Negara",
+              "caption": "Garis masa pendidikan tanpa visual keganasan. MAGERAN ialah Majlis Gerakan Negara.",
+              "alt": "Garis masa pendidikan tanpa visual keganasan.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Latar 1969–1970; rajah diterbitkan untuk pembelajaran",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Peristiwa 13 Mei 1969 menjadi latar penting. MAGERAN berusaha memulihkan keamanan. Rukun Negara diisytiharkan pada 31 Ogos 1970.",
+              "audio": "assets/narration-osman/politik-visual-1-8909f0be7d.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Mengapa pandangan berbeza perlu diurus dengan baik?",
+            "options": [
+              "Supaya semua pandangan dihapuskan.",
+              "Supaya satu kaum dipersalahkan.",
+              "Supaya hubungan tidak renggang."
+            ],
+            "correct": 2,
+            "feedback": "Perbezaan fahaman politik boleh merenggangkan hubungan. Kita perlu memperkukuh perpaduan.",
+            "audio": "assets/narration-osman/politik-observe-fdd90649ec.mp3"
+          }
         },
         {
           "id": "sebab",
@@ -188,7 +317,65 @@
           ],
           "questionAudio": "assets/narration-osman/sebab-task-0bc87284bb.mp3",
           "feedbackAudio": "assets/narration-osman/sebab-success-193592a9dc.mp3",
-          "hintAudio": "assets/narration-osman/sebab-hint-bb31aad6a7.mp3"
+          "hintAudio": "assets/narration-osman/sebab-hint-bb31aad6a7.mp3",
+          "visuals": [
+            {
+              "id": "latar",
+              "path": "assets/visuals/latar.svg",
+              "title": "13 Mei, MAGERAN dan Rukun Negara",
+              "caption": "Garis masa pendidikan tanpa visual keganasan. MAGERAN ialah Majlis Gerakan Negara.",
+              "alt": "Garis masa pendidikan tanpa visual keganasan.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Latar 1969–1970; rajah diterbitkan untuk pembelajaran",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Peristiwa 13 Mei 1969 menjadi latar penting. MAGERAN berusaha memulihkan keamanan. Rukun Negara diisytiharkan pada 31 Ogos 1970.",
+              "audio": "assets/narration-osman/sebab-visual-0-8909f0be7d.mp3"
+            },
+            {
+              "id": "ekonomi",
+              "path": "assets/visuals/ekonomi.svg",
+              "title": "Tiga kegiatan ekonomi",
+              "caption": "Hasil tani, bijih timah dan getah.",
+              "alt": "Hasil tani, bijih timah dan getah.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Gambaran konsep ekonomi dahulu; bukan foto 1969",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Perhatikan hasil dan tempat kerja yang berbeza. Kegiatan ekonomi yang terpisah mengehadkan hubungan masyarakat.",
+              "audio": "assets/narration-osman/sebab-visual-1-2d9aa9ad39.mp3"
+            },
+            {
+              "id": "penempatan",
+              "path": "assets/visuals/penempatan.svg",
+              "title": "Kampung, bandar dan ladang",
+              "caption": "Rajah perbandingan tempat tinggal; bukan peta sebenar.",
+              "alt": "Rajah perbandingan tempat tinggal; bukan peta sebenar.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Rajah konsep masyarakat dahulu; bukan peta 1969",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Tempat tinggal yang terpisah mengurangkan peluang berinteraksi. Rajah ini tidak menetapkan pekerjaan atau tempat tinggal semua orang mengikut kaum.",
+              "audio": "assets/narration-osman/sebab-visual-2-4d0e5cea32.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Apakah hubungan tiga petunjuk ini?",
+            "options": [
+              "Ketiga-tiganya sebab pengenalan Rukun Negara.",
+              "Ketiga-tiganya nama prinsip.",
+              "Ketiga-tiganya tarikh pengisytiharan."
+            ],
+            "correct": 0,
+            "feedback": "Ekonomi, tempat tinggal dan fahaman politik ialah tiga sebab. Peristiwa 13 Mei ialah latar sejarah.",
+            "audio": "assets/narration-osman/sebab-observe-d7bda8ea71.mp3"
+          }
         }
       ],
       "introductionAudio": "assets/narration-osman/mission-1-intro-4a54999fab.mp3",
@@ -250,7 +437,110 @@
           ],
           "questionAudio": "assets/narration-osman/matlamat-task-a3afbc35a9.mp3",
           "feedbackAudio": "assets/narration-osman/matlamat-success-f77e5dfe2b.mp3",
-          "hintAudio": "assets/narration-osman/matlamat-hint-69a3a0ca3d.mp3"
+          "hintAudio": "assets/narration-osman/matlamat-hint-69a3a0ca3d.mp3",
+          "visuals": [
+            {
+              "id": "latar",
+              "path": "assets/visuals/latar.svg",
+              "title": "Pengisytiharan Rukun Negara",
+              "caption": "31 Ogos 1970: Rukun Negara diisytiharkan. MAGERAN ialah Majlis Gerakan Negara.",
+              "alt": "31 Ogos 1970: Rukun Negara diisytiharkan.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Rajah latar 1969–1970",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://www.arkib.gov.my/images/penerbitan/edaran%20awam/Rukun%20Negara.pdf",
+              "sourceTitle": "Arkib Negara Malaysia • Rukun Negara",
+              "explanation": "Rukun Negara diisytiharkan pada 31 Ogos 1970. Bahan rasmi Arkib Negara boleh dirujuk melalui pautan sumber.",
+              "audio": "assets/narration-osman/matlamat-visual-0-f8d12fef15.mp3"
+            },
+            {
+              "id": "perpaduan",
+              "path": "assets/visuals/perpaduan.svg",
+              "title": "Perpaduan lebih erat",
+              "caption": "Kerjasama merapatkan hubungan seluruh masyarakat.",
+              "alt": "Kerjasama merapatkan hubungan seluruh masyarakat.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Contoh konsep; bukan foto majlis 1970",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Kerjasama merapatkan hubungan seluruh masyarakat.",
+              "audio": "assets/narration-osman/matlamat-visual-1-d72684ecb6.mp3"
+            },
+            {
+              "id": "demokrasi",
+              "path": "assets/visuals/demokrasi.svg",
+              "title": "Cara hidup demokratik",
+              "caption": "Perbincangan dan penyertaan membantu membuat keputusan bersama.",
+              "alt": "Perbincangan dan penyertaan membantu membuat keputusan bersama.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Contoh konsep; bukan foto majlis 1970",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Perbincangan dan penyertaan membantu membuat keputusan bersama.",
+              "audio": "assets/narration-osman/matlamat-visual-2-bda267752e.mp3"
+            },
+            {
+              "id": "adil",
+              "path": "assets/visuals/adil.svg",
+              "title": "Masyarakat adil",
+              "caption": "Kemakmuran perlu dinikmati bersama secara adil dan saksama.",
+              "alt": "Kemakmuran perlu dinikmati bersama secara adil dan saksama.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Contoh konsep; bukan foto majlis 1970",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Kemakmuran perlu dinikmati bersama secara adil dan saksama.",
+              "audio": "assets/narration-osman/matlamat-visual-3-f818da3fb0.mp3"
+            },
+            {
+              "id": "budaya",
+              "path": "assets/visuals/budaya.svg",
+              "title": "Sikap liberal terhadap tradisi kebudayaan",
+              "caption": "Kita menerima dan menghormati tradisi kebudayaan yang pelbagai.",
+              "alt": "Kita menerima dan menghormati tradisi kebudayaan yang pelbagai.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Contoh konsep; bukan foto majlis 1970",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Kita menerima dan menghormati tradisi kebudayaan yang pelbagai.",
+              "audio": "assets/narration-osman/matlamat-visual-4-223c9e8320.mp3"
+            },
+            {
+              "id": "sains",
+              "path": "assets/visuals/sains.svg",
+              "title": "Masyarakat progresif",
+              "caption": "Sains dan teknologi moden membantu kemajuan masyarakat.",
+              "alt": "Sains dan teknologi moden membantu kemajuan masyarakat.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Contoh konsep; bukan foto majlis 1970",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Sains dan teknologi moden membantu kemajuan masyarakat.",
+              "audio": "assets/narration-osman/matlamat-visual-5-16306f7d21.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Gambar perbincangan dan pilihan bersama menunjukkan matlamat apa?",
+            "options": [
+              "Kemajuan sains sahaja.",
+              "Cara hidup demokratik.",
+              "Pengasingan tempat tinggal."
+            ],
+            "correct": 1,
+            "feedback": "Penyertaan dan keputusan bersama membantu menerangkan cara hidup demokratik.",
+            "audio": "assets/narration-osman/matlamat-observe-601b6a22f8.mp3"
+          }
         },
         {
           "id": "tuhan",
@@ -288,7 +578,35 @@
           ],
           "questionAudio": "assets/narration-osman/tuhan-task-fd84ed54f5.mp3",
           "feedbackAudio": "assets/narration-osman/tuhan-success-80f3b95a88.mp3",
-          "hintAudio": "assets/narration-osman/tuhan-hint-85a2d90471.mp3"
+          "hintAudio": "assets/narration-osman/tuhan-hint-85a2d90471.mp3",
+          "visuals": [
+            {
+              "id": "agama",
+              "path": "assets/visuals/agama.svg",
+              "title": "Kepercayaan kepada Tuhan",
+              "caption": "Agama menjadi pegangan utama. Hormati amalan agama dan kepercayaan.",
+              "alt": "Agama menjadi pegangan utama. Hormati amalan agama dan kepercayaan.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Agama menjadi pegangan utama. Hormati amalan agama dan kepercayaan.",
+              "audio": "assets/narration-osman/tuhan-visual-0-fa603519bc.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Mengapa ruang ibadat dijaga tenang?",
+            "options": [
+              "Supaya agama orang lain dihalang.",
+              "Supaya semua mesti beragama sama.",
+              "Supaya amalan agama dihormati."
+            ],
+            "correct": 2,
+            "feedback": "Menghormati amalan agama menunjukkan Kepercayaan kepada Tuhan.",
+            "audio": "assets/narration-osman/tuhan-observe-04eaf6fc20.mp3"
+          }
         },
         {
           "id": "raja",
@@ -332,7 +650,35 @@
           ],
           "questionAudio": "assets/narration-osman/raja-task-4a5b53a46f.mp3",
           "feedbackAudio": "assets/narration-osman/raja-success-514d359765.mp3",
-          "hintAudio": "assets/narration-osman/raja-hint-66563f30eb.mp3"
+          "hintAudio": "assets/narration-osman/raja-hint-66563f30eb.mp3",
+          "visuals": [
+            {
+              "id": "raja",
+              "path": "assets/visuals/raja.svg",
+              "title": "Kesetiaan kepada Raja dan Negara",
+              "caption": "Yang di-Pertuan Agong ialah Ketua Utama Negara. Rakyat memberikan taat setia kepada Raja dan negara.",
+              "alt": "Yang di-Pertuan Agong ialah Ketua Utama Negara. Rakyat memberikan taat setia kepada Raja dan negara.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Yang di-Pertuan Agong ialah Ketua Utama Negara. Rakyat memberikan taat setia kepada Raja dan negara.",
+              "audio": "assets/narration-osman/raja-visual-0-9e9416072c.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Apakah institusi yang dirujuk oleh simbol ini?",
+            "options": [
+              "Institusi Raja.",
+              "Sebuah parti politik.",
+              "Ketua kelas."
+            ],
+            "correct": 0,
+            "feedback": "Rajah ini menunjukkan peranan Yang di-Pertuan Agong sebagai Ketua Utama Negara.",
+            "audio": "assets/narration-osman/raja-observe-ab266ca887.mp3"
+          }
         },
         {
           "id": "perlembagaan",
@@ -370,7 +716,35 @@
           ],
           "questionAudio": "assets/narration-osman/perlembagaan-task-85d7fea589.mp3",
           "feedbackAudio": "assets/narration-osman/perlembagaan-success-04f6964a1b.mp3",
-          "hintAudio": "assets/narration-osman/perlembagaan-hint-b0f9f65ff7.mp3"
+          "hintAudio": "assets/narration-osman/perlembagaan-hint-b0f9f65ff7.mp3",
+          "visuals": [
+            {
+              "id": "perlembagaan",
+              "path": "assets/visuals/perlembagaan.svg",
+              "title": "Keluhuran Perlembagaan",
+              "caption": "Perlembagaan Persekutuan ialah undang-undang tertinggi negara.",
+              "alt": "Perlembagaan Persekutuan ialah undang-undang tertinggi negara.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Perlembagaan Persekutuan ialah undang-undang tertinggi negara.",
+              "audio": "assets/narration-osman/perlembagaan-visual-0-cca052bb50.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Mengapa dokumen ini menjadi panduan negara?",
+            "options": [
+              "Ia menggantikan semua prinsip.",
+              "Ia undang-undang tertinggi negara.",
+              "Ia hanya peraturan sebuah kelas."
+            ],
+            "correct": 1,
+            "feedback": "Perlembagaan Persekutuan ialah undang-undang tertinggi negara.",
+            "audio": "assets/narration-osman/perlembagaan-observe-b7622136b6.mp3"
+          }
         },
         {
           "id": "undang",
@@ -410,7 +784,35 @@
           ],
           "questionAudio": "assets/narration-osman/undang-task-72bfc39cbe.mp3",
           "feedbackAudio": "assets/narration-osman/undang-success-d99af7272d.mp3",
-          "hintAudio": "assets/narration-osman/undang-hint-b5472ba4cb.mp3"
+          "hintAudio": "assets/narration-osman/undang-hint-b5472ba4cb.mp3",
+          "visuals": [
+            {
+              "id": "undang",
+              "path": "assets/visuals/undang.svg",
+              "title": "Kedaulatan Undang-undang",
+              "caption": "Undang-undang dipatuhi untuk menjaga keselamatan dan keamanan.",
+              "alt": "Undang-undang dipatuhi untuk menjaga keselamatan dan keamanan.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Undang-undang dipatuhi untuk menjaga keselamatan dan keamanan.",
+              "audio": "assets/narration-osman/undang-visual-0-38ad2b4f90.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Mengapa murid berhenti sebelum melintas?",
+            "options": [
+              "Untuk melambatkan orang lain.",
+              "Untuk mengelakkan perbincangan.",
+              "Untuk mematuhi aturan keselamatan."
+            ],
+            "correct": 2,
+            "feedback": "Mematuhi aturan melindungi diri dan orang lain.",
+            "audio": "assets/narration-osman/undang-observe-c90fe3420c.mp3"
+          }
         },
         {
           "id": "sopan",
@@ -450,7 +852,35 @@
           ],
           "questionAudio": "assets/narration-osman/sopan-task-4d9fd6dade.mp3",
           "feedbackAudio": "assets/narration-osman/sopan-success-4c54fb6ba7.mp3",
-          "hintAudio": "assets/narration-osman/sopan-hint-6790eb56c3.mp3"
+          "hintAudio": "assets/narration-osman/sopan-hint-6790eb56c3.mp3",
+          "visuals": [
+            {
+              "id": "sopan",
+              "path": "assets/visuals/sopan.svg",
+              "title": "Kesopanan dan Kesusilaan",
+              "caption": "Amalan nilai murni mencerminkan keperibadian rakyat Malaysia.",
+              "alt": "Amalan nilai murni mencerminkan keperibadian rakyat Malaysia.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Amalan nilai murni mencerminkan keperibadian rakyat Malaysia.",
+              "audio": "assets/narration-osman/sopan-visual-0-1dfb06e071.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Apakah amalan yang ditunjukkan?",
+            "options": [
+              "Mendengar dan mengucapkan terima kasih.",
+              "Membuat keputusan melalui undian.",
+              "Menoreh pokok getah."
+            ],
+            "correct": 0,
+            "feedback": "Mendengar dengan tertib dan berterima kasih ialah amalan kesopanan.",
+            "audio": "assets/narration-osman/sopan-observe-b701ff74a3.mp3"
+          }
         }
       ],
       "introductionAudio": "assets/narration-osman/mission-2-intro-337f89e5a8.mp3",
@@ -500,7 +930,35 @@
           ],
           "questionAudio": "assets/narration-osman/agama-task-22cd588e8b.mp3",
           "feedbackAudio": "assets/narration-osman/agama-success-5a7e7c1f37.mp3",
-          "hintAudio": "assets/narration-osman/agama-hint-0679fc2a0a.mp3"
+          "hintAudio": "assets/narration-osman/agama-hint-0679fc2a0a.mp3",
+          "visuals": [
+            {
+              "id": "agama",
+              "path": "assets/visuals/agama.svg",
+              "title": "Meraikan kepelbagaian agama",
+              "caption": "Memberi ruang dan menjaga ketenangan menunjukkan hormat kepada kepercayaan jiran.",
+              "alt": "Memberi ruang dan menjaga ketenangan menunjukkan hormat kepada kepercayaan jiran.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Memberi ruang dan menjaga ketenangan menunjukkan hormat kepada kepercayaan jiran.",
+              "audio": "assets/narration-osman/agama-visual-0-6dfcbc6a39.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Peranan apakah yang berkaitan dengan situasi ini?",
+            "options": [
+              "Menggantikan kepercayaan jiran.",
+              "Meraikan kepelbagaian agama dan kepercayaan.",
+              "Memilih kegiatan ekonomi."
+            ],
+            "correct": 1,
+            "feedback": "Menghormati keperluan ibadat membantu kehidupan harmoni.",
+            "audio": "assets/narration-osman/agama-observe-0b7bfadfd1.mp3"
+          }
         },
         {
           "id": "patriotik",
@@ -540,7 +998,50 @@
           ],
           "questionAudio": "assets/narration-osman/patriotik-task-4d079d0780.mp3",
           "feedbackAudio": "assets/narration-osman/patriotik-success-b2381430bd.mp3",
-          "hintAudio": "assets/narration-osman/patriotik-hint-6ca9d82d15.mp3"
+          "hintAudio": "assets/narration-osman/patriotik-hint-6ca9d82d15.mp3",
+          "visuals": [
+            {
+              "id": "patriotik",
+              "path": "assets/visuals/patriotik.svg",
+              "title": "Masyarakat patriotik",
+              "caption": "Cinta akan negara ditunjukkan melalui hormat dan sumbangan kepada masyarakat.",
+              "alt": "Cinta akan negara ditunjukkan melalui hormat dan sumbangan kepada masyarakat.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Cinta akan negara ditunjukkan melalui hormat dan sumbangan kepada masyarakat.",
+              "audio": "assets/narration-osman/patriotik-visual-0-7ffd74738a.mp3"
+            },
+            {
+              "id": "jalur-gemilang",
+              "path": "assets/visuals/jalur-gemilang.svg",
+              "title": "Jalur Gemilang",
+              "caption": "Bendera Malaysia. Imej vektor untuk mengenali dan menghormati lambang negara, bukan foto sambutan 1970.",
+              "alt": "Bendera Malaysia: empat belas jalur merah dan putih, petak biru, bulan sabit serta bintang kuning.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Reka bentuk bendera Malaysia sejak 1963",
+              "creator": "MapGrid; versi terdahulu SKopp, Zscout370 dan Ranking Update",
+              "license": "Public domain — pelepasan pencipta, seluruh dunia",
+              "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flag_of_Malaysia.svg",
+              "sourceTitle": "Wikimedia Commons • reka bentuk berasaskan spesifikasi kerajaan",
+              "explanation": "Cinta akan negara ditunjukkan melalui hormat dan sumbangan kepada masyarakat.",
+              "audio": "assets/narration-osman/patriotik-visual-0-7ffd74738a.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Apakah makna menyumbang dalam sambutan kebangsaan?",
+            "options": [
+              "Hanya mahu mendapat hadiah.",
+              "Hanya mengikut warna pakaian.",
+              "Menunjukkan cinta akan negara."
+            ],
+            "correct": 2,
+            "feedback": "Patriotisme merangkumi rasa cinta dan tanggungjawab kepada negara.",
+            "audio": "assets/narration-osman/patriotik-observe-a369effe9d.mp3"
+          }
         },
         {
           "id": "patuh",
@@ -578,7 +1079,35 @@
           ],
           "questionAudio": "assets/narration-osman/patuh-task-673e3d9b9f.mp3",
           "feedbackAudio": "assets/narration-osman/patuh-success-8fb2f7258c.mp3",
-          "hintAudio": "assets/narration-osman/patuh-hint-4ebccd2d2e.mp3"
+          "hintAudio": "assets/narration-osman/patuh-hint-4ebccd2d2e.mp3",
+          "visuals": [
+            {
+              "id": "patuh",
+              "path": "assets/visuals/patuh.svg",
+              "title": "Menghormati undang-undang",
+              "caption": "Menjaga kemudahan awam dan menolak vandalisme membantu keamanan masyarakat.",
+              "alt": "Menjaga kemudahan awam dan menolak vandalisme membantu keamanan masyarakat.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Menjaga kemudahan awam dan menolak vandalisme membantu keamanan masyarakat.",
+              "audio": "assets/narration-osman/patuh-visual-0-77e98d8fb9.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Mengapa bangku awam perlu dijaga?",
+            "options": [
+              "Undang-undang melindungi kemudahan bersama.",
+              "Bangku hanya milik seorang murid.",
+              "Menjaganya ialah kegiatan perlombongan."
+            ],
+            "correct": 0,
+            "feedback": "Mematuhi undang-undang membantu menjaga hak dan keselamatan masyarakat.",
+            "audio": "assets/narration-osman/patuh-observe-56086f11a6.mp3"
+          }
         },
         {
           "id": "perpaduan",
@@ -622,7 +1151,35 @@
           ],
           "questionAudio": "assets/narration-osman/perpaduan-task-cf2e3a40a2.mp3",
           "feedbackAudio": "assets/narration-osman/perpaduan-success-950a8dc294.mp3",
-          "hintAudio": "assets/narration-osman/perpaduan-hint-b802fbd77f.mp3"
+          "hintAudio": "assets/narration-osman/perpaduan-hint-b802fbd77f.mp3",
+          "visuals": [
+            {
+              "id": "perpaduan",
+              "path": "assets/visuals/perpaduan.svg",
+              "title": "Mengukuhkan perpaduan",
+              "caption": "Masyarakat berbilang kaum bekerjasama dan membahagikan tugas dengan adil.",
+              "alt": "Masyarakat berbilang kaum bekerjasama dan membahagikan tugas dengan adil.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Masyarakat berbilang kaum bekerjasama dan membahagikan tugas dengan adil.",
+              "audio": "assets/narration-osman/perpaduan-visual-0-d565ce8e59.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Apakah bukti kerjasama dalam gambar?",
+            "options": [
+              "Semua hanya melihat.",
+              "Tugas dikongsi antara jiran.",
+              "Setiap orang perlu menjauh."
+            ],
+            "correct": 1,
+            "feedback": "Pembahagian tugas membolehkan jiran berbilang latar bekerjasama.",
+            "audio": "assets/narration-osman/perpaduan-observe-dacce1aed8.mp3"
+          }
         },
         {
           "id": "nilai",
@@ -662,7 +1219,35 @@
           ],
           "questionAudio": "assets/narration-osman/nilai-task-70e4e3100c.mp3",
           "feedbackAudio": "assets/narration-osman/nilai-success-e69b17f56b.mp3",
-          "hintAudio": "assets/narration-osman/nilai-hint-3c6a410bb2.mp3"
+          "hintAudio": "assets/narration-osman/nilai-hint-3c6a410bb2.mp3",
+          "visuals": [
+            {
+              "id": "nilai",
+              "path": "assets/visuals/nilai.svg",
+              "title": "Menerapkan nilai murni",
+              "caption": "Bantuan yang sopan dan ikhlas menunjukkan nilai murni.",
+              "alt": "Bantuan yang sopan dan ikhlas menunjukkan nilai murni.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Bantuan yang sopan dan ikhlas menunjukkan nilai murni.",
+              "audio": "assets/narration-osman/nilai-visual-0-b0228e6142.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Apakah yang patut dilakukan sebelum membantu?",
+            "options": [
+              "Mengambil barang tanpa izin.",
+              "Menunggu untuk dipuji.",
+              "Meminta izin dengan sopan."
+            ],
+            "correct": 2,
+            "feedback": "Bantuan yang menghormati orang lain menunjukkan nilai murni.",
+            "audio": "assets/narration-osman/nilai-observe-803511811c.mp3"
+          }
         },
         {
           "id": "jati",
@@ -704,7 +1289,35 @@
           ],
           "questionAudio": "assets/narration-osman/jati-task-fd31a576a1.mp3",
           "feedbackAudio": "assets/narration-osman/jati-success-3a87f973cc.mp3",
-          "hintAudio": "assets/narration-osman/jati-hint-bba2b47467.mp3"
+          "hintAudio": "assets/narration-osman/jati-hint-bba2b47467.mp3",
+          "visuals": [
+            {
+              "id": "jati",
+              "path": "assets/visuals/jati.svg",
+              "title": "Membentuk jati diri",
+              "caption": "Kejujuran, toleransi dan kerjasama membentuk peribadi yang baik.",
+              "alt": "Kejujuran, toleransi dan kerjasama membentuk peribadi yang baik.",
+              "kind": "Ilustrasi pendidikan",
+              "date": "Situasi rekaan masa kini",
+              "creator": "Misi Rukun Negara",
+              "license": "CC BY 4.0",
+              "sourceUrl": "https://fliphtml5.com/itcew/pnmn/Sejarah_Tahun_6/",
+              "sourceTitle": "Rujukan isi: Buku Teks Sejarah Tahun 6, hlm. 36–46",
+              "explanation": "Kejujuran, toleransi dan kerjasama membentuk peribadi yang baik.",
+              "audio": "assets/narration-osman/jati-visual-0-1ac6ac8494.mp3"
+            }
+          ],
+          "observation": {
+            "question": "Apakah nilai pada dokumen hasil sendiri?",
+            "options": [
+              "Integriti.",
+              "Pengasingan.",
+              "Perbezaan ekonomi."
+            ],
+            "correct": 0,
+            "feedback": "Menyiapkan hasil sendiri menunjukkan kejujuran dan membentuk jati diri.",
+            "audio": "assets/narration-osman/jati-observe-230dfb3ec6.mp3"
+          }
         }
       ],
       "introductionAudio": "assets/narration-osman/mission-3-intro-a868589f88.mp3",
@@ -718,5 +1331,187 @@
     "mission2": "assets/hope.wav",
     "mission3": "assets/together.wav"
   },
-  "endingAudio": "assets/narration-osman/ending-e4d2e08afc.mp3"
+  "endingAudio": "assets/narration-osman/ending-e4d2e08afc.mp3",
+  "learningObjectives": [
+    "Menyatakan tiga sebab pengenalan Rukun Negara dengan betul.",
+    "Menerangkan lima matlamat dan lima prinsip Rukun Negara dengan betul.",
+    "Menjelaskan sekurang-kurangnya tiga peranan Rukun Negara melalui contoh."
+  ],
+  "openingVideo": "https://www.youtube.com/watch?v=2FgimpUv8q8",
+  "openingQuestion": "Malaysia mempunyai rakyat yang berbilang kaum, agama dan budaya. Apakah yang menjadi panduan kepada rakyat untuk terus hidup bersatu padu dan harmoni?",
+  "openingNarration": "Untuk mencari jawapannya, kamu perlu kembali ke masa lalu. Mengapakah negara kita memerlukan Rukun Negara? Apakah matlamat dan prinsipnya? Bagaimanakah Rukun Negara membimbing kehidupan kita pada hari ini?",
+  "finalAssessment": [
+    {
+      "id": "A",
+      "title": "Sebab pengenalan Rukun Negara",
+      "objective": "Menyatakan tiga sebab pengenalan Rukun Negara dengan betul.",
+      "questions": [
+        {
+          "id": "akhir-sebab",
+          "question": "Pilih tiga sebab pengenalan Rukun Negara.",
+          "kind": "multi",
+          "options": [
+            "Perbezaan kegiatan ekonomi",
+            "Peristiwa 13 Mei 1969",
+            "Pengasingan tempat tinggal",
+            "Perbezaan fahaman politik"
+          ],
+          "correct": [
+            0,
+            2,
+            3
+          ],
+          "feedback": "Tiga sebab ialah ekonomi, pengasingan tempat tinggal dan fahaman politik. Peristiwa 13 Mei ialah latar sejarah.",
+          "revision": "Bezakan latar peristiwa dengan tiga sebab. Lihat semula Misi 1.",
+          "matches": []
+        },
+        {
+          "id": "akhir-hubungan",
+          "question": "Susun hubungan sebab dan keperluan ini.",
+          "kind": "order",
+          "options": [
+            "Hubungan antara masyarakat menjadi renggang",
+            "Perpaduan perlu diperkukuh melalui Rukun Negara",
+            "Masyarakat kurang berinteraksi kerana pengasingan tempat tinggal"
+          ],
+          "correct": [
+            2,
+            0,
+            1
+          ],
+          "feedback": "Kurang interaksi boleh merenggangkan hubungan. Rukun Negara menjadi panduan memperkukuh perpaduan.",
+          "revision": "Mulakan dengan keadaan tempat tinggal, kemudian kesan dan keperluannya.",
+          "matches": []
+        }
+      ],
+      "writtenPrompt": "Terangkan tiga sebab pengenalan Rukun Negara. Nyatakan kesan setiap sebab terhadap hubungan masyarakat.",
+      "rubric": [
+        "Nyatakan perbezaan kegiatan ekonomi, pengasingan tempat tinggal dan perbezaan fahaman politik.",
+        "Terangkan bagaimana setiap sebab boleh mengurangkan interaksi atau merenggangkan hubungan.",
+        "Hubungkan penjelasan dengan keperluan memperkukuh perpaduan. Jangan menggantikan salah satu sebab dengan Peristiwa 13 Mei."
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Matlamat dan prinsip",
+      "objective": "Menerangkan lima matlamat dan lima prinsip Rukun Negara dengan betul.",
+      "questions": [
+        {
+          "id": "akhir-matlamat",
+          "question": "Padankan setiap situasi dengan matlamatnya.",
+          "kind": "match",
+          "options": [
+            "Penduduk berbilang kaum bekerjasama",
+            "Masyarakat menyertai perbincangan dan membuat pilihan",
+            "Kemakmuran dinikmati secara adil dan saksama",
+            "Tradisi kebudayaan pelbagai diterima dengan terbuka",
+            "Ilmu sains dan teknologi moden digunakan"
+          ],
+          "correct": [
+            2,
+            4,
+            0,
+            3,
+            1
+          ],
+          "feedback": "Lima matlamat merangkumi perpaduan, demokrasi, keadilan, sikap liberal terhadap tradisi kebudayaan dan masyarakat progresif.",
+          "revision": "Semak situasi satu demi satu. Perhatikan kata kerjasama, pilihan, saksama, tradisi dan teknologi.",
+          "matches": [
+            "Masyarakat adil",
+            "Masyarakat progresif",
+            "Perpaduan lebih erat",
+            "Sikap liberal terhadap tradisi kebudayaan",
+            "Cara hidup demokratik"
+          ]
+        },
+        {
+          "id": "akhir-prinsip",
+          "question": "Padankan prinsip dengan maksudnya.",
+          "kind": "match",
+          "options": [
+            "Kepercayaan kepada Tuhan",
+            "Kesetiaan kepada Raja dan Negara",
+            "Keluhuran Perlembagaan",
+            "Kedaulatan Undang-undang",
+            "Kesopanan dan Kesusilaan"
+          ],
+          "correct": [
+            3,
+            0,
+            4,
+            1,
+            2
+          ],
+          "feedback": "Setiap prinsip mempunyai maksud tersendiri: pegangan agama, taat setia, undang-undang tertinggi, pematuhan undang-undang dan nilai murni.",
+          "revision": "Bezakan undang-undang tertinggi daripada pematuhan undang-undang. Lihat semula Misi 2.",
+          "matches": [
+            "Taat setia kepada Raja dan negara",
+            "Menghormati dan mematuhi undang-undang",
+            "Mengamalkan nilai murni",
+            "Agama sebagai pegangan utama",
+            "Perlembagaan Persekutuan ialah undang-undang tertinggi negara"
+          ]
+        }
+      ],
+      "writtenPrompt": "Pilih satu matlamat dan satu prinsip. Terangkan maksud kedua-duanya dan beri contoh bagi setiap satu.",
+      "rubric": [
+        "Nama matlamat dan prinsip mestilah tepat serta dibezakan.",
+        "Maksud perlu diterangkan dengan kata sendiri yang mengekalkan isi buku teks.",
+        "Contoh mesti menunjukkan hubungan dengan matlamat atau prinsip yang dipilih."
+      ]
+    },
+    {
+      "id": "C",
+      "title": "Peranan dalam kehidupan",
+      "objective": "Menjelaskan sekurang-kurangnya tiga peranan Rukun Negara melalui contoh.",
+      "questions": [
+        {
+          "id": "akhir-peranan",
+          "question": "Padankan situasi dengan peranan yang paling langsung.",
+          "kind": "match",
+          "options": [
+            "Jiran bekerjasama membaiki taman",
+            "Murid menyiapkan hasil sendiri tanpa meniru",
+            "Aktiviti komuniti memberi ruang untuk keperluan ibadat"
+          ],
+          "correct": [
+            1,
+            2,
+            0
+          ],
+          "feedback": "Kerjasama mengukuhkan perpaduan; kejujuran membentuk jati diri; ruang ibadat meraikan kepelbagaian agama dan kepercayaan.",
+          "revision": "Kenal pasti tindakan utama dalam situasi, bukan sekadar menyebut bahawa tindakan itu baik.",
+          "matches": [
+            "Meraikan kepelbagaian agama dan kepercayaan",
+            "Mengukuhkan perpaduan masyarakat",
+            "Membentuk jati diri"
+          ]
+        },
+        {
+          "id": "akhir-patriotik",
+          "question": "Murid membantu persediaan Hari Kebangsaan tanpa mengharapkan hadiah. Peranan apakah yang paling langsung?",
+          "kind": "choice",
+          "options": [
+            "Membentuk masyarakat patriotik",
+            "Memupuk sikap menghormati undang-undang",
+            "Meraikan kepelbagaian agama dan kepercayaan"
+          ],
+          "correct": [
+            0
+          ],
+          "feedback": "Sumbangan untuk sambutan kebangsaan menunjukkan cinta dan tanggungjawab terhadap negara, iaitu patriotisme.",
+          "revision": "Tumpukan kaitan tindakan dengan cinta akan negara, bukan aturan atau keperluan ibadat.",
+          "matches": []
+        }
+      ],
+      "writtenPrompt": "Jelaskan sekurang-kurangnya tiga peranan Rukun Negara. Beri satu contoh tindakan dan kesannya bagi setiap peranan.",
+      "rubric": [
+        "Kenal pasti sekurang-kurangnya tiga peranan yang tepat daripada enam peranan buku teks.",
+        "Beri contoh tindakan yang relevan bagi setiap peranan, bukan mengulang frasa yang sama.",
+        "Jelaskan kesan tindakan terhadap diri atau masyarakat. Semakan guru menilai hubungan peranan, tindakan dan kesan."
+      ]
+    }
+  ],
+  "openingQuestionAudio": "assets/narration-osman/opening-question-ba24ccc875.mp3",
+  "openingNarrationAudio": "assets/narration-osman/opening-journey-ab88e188e1.mp3"
 }

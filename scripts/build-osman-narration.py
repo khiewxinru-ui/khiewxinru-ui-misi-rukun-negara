@@ -43,12 +43,16 @@ async def main():
   relative=f'assets/narration-osman/{identifier}-{fingerprint}.mp3'
   jobs.append(dict(target=target,key=key,source=text,style=style,segments=segments,path=relative,id=identifier))
  job(content,'introductionAudio',content['introduction'],'opening','prologue')
+ if content.get('openingQuestion'):job(content,'openingQuestionAudio',content['openingQuestion'],'question','opening-question')
+ if content.get('openingNarration'):job(content,'openingNarrationAudio',content['openingNarration'],'opening','opening-journey')
  for m in content['missions']:
   job(m,'introductionAudio',m['introduction'],'instruction',f"mission-{m['id']}-intro")
   job(m,'conclusionAudio',m['conclusion'],'success',f"mission-{m['id']}-complete")
   for a in m['activities']:
    a['narration']=['']*len(a['dialogue'])
    for i,text in enumerate(a['dialogue']):job(a['narration'],i,text,'history' if m['id']==1 else 'explain',f"{a['id']}-dialogue-{i}")
+   for i,visual in enumerate(a.get('visuals',[])):job(visual,'audio',visual['explanation'],'history' if m['id']==1 else 'explain',f"{a['id']}-visual-{i}")
+   if a.get('observation'):job(a['observation'],'audio',a['observation']['question'],'question',f"{a['id']}-observe")
    job(a,'questionAudio',a['question'],'instruction',f"{a['id']}-task")
    job(a,'feedbackAudio',a['feedback'],'success',f"{a['id']}-success")
    job(a,'hintAudio',a['hint'],'encourage',f"{a['id']}-hint")

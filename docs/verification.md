@@ -1,74 +1,49 @@
-# Laporan pengujian
+# Laporan pengujian — kemas kini penerokaan visual
 
 ## Binaan dan kandungan
 
-- **Lulus**: TypeScript dan binaan produksi Vite.
-- **Lulus**: 100 laluan aset kandungan/dunia wujud sebelum build, termasuk 91 rakaman Osman yang dipilih, model GLB, tekstur, muzik dan bunyi persekitaran.
-- **Lulus**: 11 ujian kandungan, API dan pergerakan melalui `npm test`.
+- TypeScript dan binaan produksi Vite lulus.
+- 169 laluan aset kandungan/dunia disahkan sebelum build, termasuk 135 rakaman Osman, 21 imej unik dan empat model baharu.
+- 14 ujian kandungan, pentaksiran, API dan pergerakan melalui `npm test` lulus.
+- Audit [visual-history-review.json](visual-history-review.json) membandingkan commit asas dengan versi baharu: dialog sejarah, soalan asal, pilihan, padanan, jawapan, maklum balas ilmu, petunjuk dan rumusan kekal sama.
 
-Ujian merangkumi jawapan tiga sebab yang tepat, skema dan laluan kandungan, enkripsi sesi, akses guru/CSRF, draf bersama, pengesahan fail, konflik versi, penerbitan atomik, pemulihan versi, pergerakan pada kadar bingkai berbeza, collision dan sempadan peta.
+## Senario browser
 
-Semakan penerbitan GitHub dipautkan kepada commit induk yang sama dan ref dikemas kini tanpa force push. Perubahan serentak tidak digabungkan secara senyap dengan draf lama.
+Pengujian menggunakan binaan produksi dalam Chromium, grafik perisian dan kualiti rendah. Senario perjalanan lengkap menggerakkan pemain melalui kawalan sebenar; ia tidak mengisi terus senarai aktiviti selesai. Senario khusus menggunakan checkpoint untuk mengasingkan perkara yang diuji.
 
-## Senario browser — lulus
+| Senario                | Pengesahan                                                                                                                                                                                                                              |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Perjalanan lengkap     | Pilihan watak/nama → video pilihan pemilik → prolog/portal → semua 16 aktiviti dan pemerhatian dalam tiga misi → enam tugasan objektif serta tiga jawapan bertulis → keputusan mengikut objektif → refleksi → pemulihan selepas refresh |
+| Gambar dan pemerhatian | Gambar dipaksa 404; Retry berjaya. Foto arkib/kredit/tarikh, paparan besar, fokus papan kekunci/Escape, jawapan salah/cuba semula dan catatan tersimpan diuji                                                                           |
+| Tiga dunia             | Lorong warisan, dewan sivik dan sekolah/komuniti dimuatkan tanpa ralat JavaScript; NPC serta papan bergambar dilihat melalui screenshot                                                                                                 |
+| Telefon dan saiz teks  | Viewport 390 × 844, joystick menggerakkan pemain, dialog penuh dan teks besar, jawapan boleh dipilih/dihantar, tiada overflow mendatar                                                                                                  |
+| Audio                  | Rakaman lelaki memainkan audio, Next menghentikan rakaman lama, muzik diperlahankan semasa suara dan dipulihkan selepas dialog; penerangan gambar memainkan fail Osman yang berkaitan                                                   |
+| Suara ditolak          | Laluan eSpeak lama dan fallback TTS pelayar tidak digunakan, walaupun tetapan/kandungan lama masih ada                                                                                                                                  |
+| Pentaksiran separa     | Padanan yang belum lengkap dan jawapan bertulis kekal selepas refresh; jawapan yang belum lengkap tidak boleh dihantar sebagai pentaksiran lengkap                                                                                      |
+| Editor tempatan        | Draf boleh disunting, disimpan, dipratonton dan dimuatkan semula; Terbitkan dinyahaktifkan tanpa sesi backend                                                                                                                           |
+| Ralat 3D               | Fail model dipaksa 404; mesej ralat dan Retry berjaya                                                                                                                                                                                   |
+| Simpanan lama          | Checkpoint di tepi peta, refleksi dan tetapan rosak pulih dengan selamat; medan pemerhatian/pentaksiran baharu mempunyai nilai lalai                                                                                                    |
 
-| Senario                  | Bukti                                                                                                                                                                                                                                                         |
-| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Perjalanan lengkap murid | Pilih watak/nama, bergerak melalui kawalan sebenar, selesaikan semua 16 aktiviti dalam tiga misi, jawab salah dan cuba semula, capai penamat dan tulis refleksi. Semua misi dan refleksi dipulihkan selepas refresh. Tiada ralat JavaScript dalam aliran ini. |
-| Ralat aset dan Retry     | Model 3D dipaksa pulang 404; mesej ralat dipaparkan dan Retry berjaya memuatkan dunia.                                                                                                                                                                        |
-| Teacher Editor tempatan  | Sunting tajuk, simpan draf, pratonton 3D, muatkan semula draf. Butang penerbitan global dinyahaktifkan tanpa sesi backend.                                                                                                                                    |
-| Telefon                  | Viewport 390 × 844, tiada overflow mendatar, joystick analog menggerakkan pemain.                                                                                                                                                                             |
-| Sempadan simpanan        | Simpanan selesai pada X=4.85 kekal boleh disambung, refleksi dipulihkan, dan tetapan kelantangan/sensitiviti rosak dipulihkan kepada lalai.                                                                                                                   |
+Keputusan akhir senario perjalanan lengkap dan pemeriksaan visual: **5 passed (8.0m)**, termasuk perjalanan lengkap selama **6.7 minit**. Senario lain lulus secara berasingan. Binaan selepas pelarasan mod grafik rendah turut lulus enam senario regresi; ujian animasi tambahan lulus secara berasingan.
 
-Perjalanan lengkap diuji pada binaan produksi dalam Chromium dengan grafik perisian dan tetapan kualiti rendah. Larian lengkap yang diasingkan dengan rakaman Osman dan arahan baharu lulus; senario lain diuji secara berasingan. Pengujian tidak mengisi terus senarai aktiviti selesai untuk senario perjalanan lengkap.
+## Batas pengujian video
 
-Pengujian ini ialah emulasi browser, bukan ujian prestasi pada komputer atau telefon fizikal sekolah.
+Pautan **2FgimpUv8q8** diberikan oleh pemilik. URL iframe yang tepat, pautan asal, susun atur responsif dan pilihan meneruskan apabila iframe gagal telah diuji. Halaman embed mengembalikan HTTP 200, tetapi konfigurasi pemain di Cloud memaparkan **Video player configuration error**. Oleh itu, pengujian ini **tidak membuktikan penstriman video atau ketersediaan sari kata pada peranti murid**. Pautan rasmi YouTube sentiasa disediakan; tiada salinan video dihoskan semula.
 
-## Backend yang dijalankan secara setempat
+## Status penerbitan
 
-Arahan `npm run server` berjaya memulakan servis Node. `GET /health` mengembalikan `ok: true` dan **`configured: false`** apabila OAuth belum disediakan. Permintaan tanpa sesi ke `/api/draft` ditolak dengan **HTTP 401**.
-
-Ujian API menggunakan penyedia GitHub tiruan untuk mengesahkan simpanan/penerbitan secara selamat. **Ini tidak membuktikan OAuth produksi atau penerbitan guru sebenar telah tersedia.**
-
-## GitHub Pages — bukti penerbitan terdahulu
-
-Binaan asas telah diterbitkan. Deployment [42385002591](https://github.com/khiewxinru-ui/khiewxinru-ui-misi-rukun-negara/actions/runs/42385002591) berjaya: ujian, build, konfigurasi Pages dan job deploy semuanya lulus. Pemilik telah menetapkan Source kepada GitHub Actions.
-
-URL website sebenar:
+Laman murid menggunakan URL yang sama:
 
 https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/
 
-- Halaman utama mengembalikan **HTTPS 200**.
-- Semakan sebelum penarikan balik suara meliputi 41 laluan model/audio/media yang mengembalikan HTTP 200; fail eSpeak kemudian ditarik balik selepas semakan kualiti pemilik.
-- Sampel model GLB, muzik dan naratif yang diterbitkan mempunyai SHA-256 sama dengan fail sumber.
-- Perjalanan lengkap pada URL sebenar lulus: semua 16 aktiviti, tiga misi, refleksi dan pemulihan selepas refresh (4.7 minit). Ralat aset/Retry, editor tempatan, joystick telefon dan pemulihan sempadan juga lulus.
-- Permintaan browser dalam Cloud disalurkan melalui klien permintaan yang mengesahkan TLS menggunakan CA proksi persekitaran. Pengesahan sijil tidak dinyahaktifkan.
+Workflow [Deploy to GitHub Pages](https://github.com/khiewxinru-ui/khiewxinru-ui-misi-rukun-negara/actions/workflows/pages.yml) menjalankan ujian, build dan deployment selepas push. Semak workflow pada commit semasa untuk keputusan penerbitan; build tempatan tidak dianggap bukti bahawa deployment telah berjaya.
 
-Status binaan terkini boleh disemak pada [Actions](https://github.com/khiewxinru-ui/khiewxinru-ui-misi-rukun-negara/actions). Bukti URL sebenar di atas merujuk binaan asas; keputusan pengujian Osman dan saiz teks di bawah merujuk binaan produksi tempatan sehingga workflow kemas kini selesai.
+## Backend guru
 
-## Masih memerlukan konfigurasi pemilik
+Servis Node/SQLite dan laluan penerbitan GitHub tersedia dalam kod, dengan ujian akses guru/CSRF, penyimpanan draf, validasi fail, konflik versi dan penerbitan atomik. Pengujian API menggunakan penyedia GitHub tiruan. Log masuk OAuth produksi dan penerbitan melalui akaun guru **belum dikonfigurasi serta diuji**.
 
-- Hosting backend Node dengan HTTPS dan volum kekal.
-- GitHub OAuth App, rahsia pelayan dan senarai akaun guru.
-- Log masuk guru sebenar, penerbitan melalui akaun guru, serta pengesahan perubahan pada URL murid yang sama.
-- Ujian browser dan prestasi pada peranti fizikal sekolah.
+Konfigurasi yang masih diperlukan: hosting backend Node HTTPS dengan volum kekal, GitHub OAuth App dan rahsia pelayan, senarai akaun guru, `APP_URL` dan repository variable `EDITOR_API_URL`. Rujuk [teacher-backend.md](teacher-backend.md). Tiada token disimpan dalam frontend dan tiada Vercel digunakan.
 
-Rujuk [panduan backend](teacher-backend.md) untuk langkah persediaan dan senarai penerimaan produksi.
+## Had penilaian
 
-## Status kualiti suara
-
-Pemilik memilih suara lelaki **ms-MY-OsmanNeural**. 91 rakaman menggunakan kadar pertuturan, nada, kelantangan dan jeda mengikut jenis ayat. Ini ialah rakaman sintetik; ujian automatik mengesahkan main balik dan kawalan audio, bukan penilaian manusia terhadap ketepatan sebutan atau keberkesanan emosi. Halaman `voice-preview.html` memainkan empat rakaman sebenar daripada permainan untuk semakan pemilik.
-
-Rakaman eSpeak terdahulu dan fallback TTS pelayar kekal disekat, termasuk apabila kandungan/tetapan lama masih tersimpan.
-
-## Kemas kini bahasa dan arahan suara
-
-Pemilik memilih Osman lelaki (ms-MY) dan meminta arahan pendek serta kandungan sejarah dikekalkan. 91 fail audio dijana dan dinyahkod semasa penghasilan. Arahan tugasan/misi dipendekkan kepada 4–9 perkataan, dengan perbandingan hash yang mengesahkan dialog sejarah, pilihan, padanan, jawapan, maklum balas ilmu dan rumusan tidak berubah.
-
-Ujian browser rakaman baharu lulus: rakaman memainkan audio, butang Teruskan menghentikan rakaman lama, muzik menjadi perlahan semasa pertuturan dan kembali kepada aras asal selepas dialog ditutup. Fail eSpeak serta TTS pelayar kekal disekat.
-
-## Saiz teks pembelajaran
-
-Dialog 20 px pada komputer dan 18 px pada telefon. Soalan 20/18 px; pilihan, padanan, susunan, petunjuk dan catatan 17–18 px, dengan jarak baris yang lebih selesa. Kawalan jawapan sekurang-kurangnya 48 px tinggi. Kandungan sejarah tidak dipendekkan untuk memuatkan skrin.
-
-Semakan browser pada 1024 × 768 dan 390 × 844 menguji paparan dialog penuh, saiz teks sebenar, pemilihan jawapan, skrol, penghantaran dan penutupan dialog tanpa overflow mendatar. Senario joystick, peralihan misi dan kedua-dua regresi audio turut lulus.
+Ujian browser ialah emulasi, bukan ujian prestasi pada peranti fizikal sekolah. Skor objektif tidak memberi markah automatik untuk penerangan bertulis; rubrik dan semakan guru masih diperlukan. Ujian audio membuktikan fail boleh dimainkan dan kawalan berfungsi, bukan penilaian manusia bahawa semua sebutan atau emosi telah sempurna. Model dan ilustrasi ialah rekaan pendidikan, bukan rekonstruksi ukur tepat atau gambar sejarah sebenar.

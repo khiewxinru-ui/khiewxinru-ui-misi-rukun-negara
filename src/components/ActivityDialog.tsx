@@ -12,6 +12,7 @@ import {
 import { type Activity, checkAnswer, assetUrl } from "../shared/content";
 import { audioEngine } from "../game/audio";
 import { narrationAvailable } from "../game/narration";
+import { VisualAlbum, VisualInquiry } from "./VisualAlbum";
 import { Modal, PrimaryButton } from "./UI";
 
 export function ActivityDialog({
@@ -21,6 +22,7 @@ export function ActivityDialog({
   onClose,
   onComplete,
   onAttempt,
+  onObservation,
 }: {
   activity: Activity;
   name: string;
@@ -28,12 +30,16 @@ export function ActivityDialog({
   onClose: () => void;
   onComplete: () => void;
   onAttempt: () => void;
+  onObservation: (answer: number, note: string) => void;
 }) {
   const wasAlreadySolved = useRef(alreadySolved).current;
   const [page, setPage] = useState(0),
     [answer, setAnswer] = useState<number[]>([]),
     [feedback, setFeedback] = useState<"wrong" | "correct" | null>(null),
     [hint, setHint] = useState(false);
+  const [observed, setObserved] = useState(false);
+  const inquiry =
+    page >= activity.dialogue.length && activity.observation && !observed;
   const task = page >= activity.dialogue.length;
   const [showText, setShowText] = useState(false);
   const line = task
@@ -57,9 +63,9 @@ export function ActivityDialog({
         : activity.question
     : line;
   useEffect(() => {
-    audioEngine.speak(spokenLine, audioPath);
+    if (!inquiry) audioEngine.speak(spokenLine, audioPath);
     return () => audioEngine.stopVoice();
-  }, [spokenLine, audioPath]);
+  }, [spokenLine, audioPath, inquiry]);
   const chosen = (i: number) => {
     setFeedback(null);
     if (activity.kind === "multi")
@@ -96,7 +102,16 @@ export function ActivityDialog({
           {task ? "CABARAN" : `${page + 1} / ${activity.dialogue.length}`}
         </span>
       </div>
-      {!task ? (
+      {activity.visuals.length > 0 && !feedback && (page === 0 || inquiry) && (
+        <VisualAlbum visuals={activity.visuals} speaker={activity.speaker} />
+      )}
+      {inquiry ? (
+        <VisualInquiry
+          activity={activity}
+          onContinue={() => setObserved(true)}
+          onResponse={onObservation}
+        />
+      ) : !task ? (
         <>
           {activity.image && page === 0 && (
             <img

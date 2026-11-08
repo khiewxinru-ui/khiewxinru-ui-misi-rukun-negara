@@ -16,7 +16,11 @@ Menu permainan:
 
 Persekitaran 3D dalam pelayar:
 
-![Gameplay 3D sebenar](docs/screenshots/gameplay.webp)
+![Lorong warisan dengan NPC dan papan bergambar](docs/screenshots/mission-1.webp)
+
+![Galeri sivik 1970](docs/screenshots/mission-2.webp)
+
+![Sekolah dan komuniti masa kini](docs/screenshots/mission-3.webp)
 
 ## Menjalankan projek
 
@@ -63,6 +67,16 @@ Kandungan disemak daripada halaman **bercetak 36–46** buku teks yang dinyataka
 
 [Pemetaan kandungan dan pentaksiran](docs/content-map.md) · [Master prompt](docs/MASTER-PROMPT.md)
 
+## Pemerhatian visual dan pentaksiran akhir
+
+Setiap satu daripada 16 penemuan mempunyai album yang berkaitan dengan isi pelajaran. 21 imej unik digunakan dalam 27 konteks aktiviti: dua foto arkib, 18 rajah asal dan imej Jalur Gemilang. Murid melihat gambar di papan 3D, membuka album NPC, membesarkan gambar, menyemak kapsyen/sumber, mendengar penerangan dan menjawab soalan pemerhatian. Respons serta catatan disimpan ke Buku Pengembaraan selepas penemuan diselesaikan.
+
+Foto getah bertarikh sekitar **1910**, manakala tarikh rakaman foto bijih timah **tidak dinyatakan**. Kedua-duanya tidak dipersembahkan sebagai foto 1969. Garis masa MAGERAN/13 Mei/31 Ogos 1970 dan situasi masyarakat ialah **ilustrasi pendidikan**, bukan foto atau keratan akhbar sebenar. Tiada visual keganasan. [Pemetaan dan sumber visual](docs/visual-learning.md).
+
+Video pembukaan menggunakan [pautan yang diberikan pemilik](https://www.youtube.com/watch?v=2FgimpUv8q8), dengan embed YouTube, pautan asal dan pilihan teruskan. Tiada salinan video dimuat turun. Ketersediaan embed, kawalan dan sari kata tertakluk kepada YouTube serta pemilik video.
+
+Selepas tiga misi, **Pentaksiran Akhir — Misi Perpaduan** menyediakan Bahagian A, B dan C. Enam tugasan objektif menggunakan pilihan, padanan dan susunan, diikuti tiga jawapan penerangan. Keputusan dipisahkan mengikut objektif; jawapan bertulis menunggu semakan guru dengan rubrik. Skor objektif tidak didakwa membuktikan penguasaan menerangkan/menjelaskan. Jawapan separa disimpan pada peranti dan boleh dicetak bersama rubrik.
+
 ## Teacher Editor
 
 Buka **Ruang Guru** di menu atau tambah `#guru` pada URL.
@@ -92,6 +106,8 @@ Backend Node.js disertakan dalam `server/`. Ia menyediakan:
 Kandungan utama ialah `public/content/game.json`. Permainan memuatkannya ketika dibuka, menggunakan laluan relatif yang serasi dengan subfolder GitHub Pages. Guru juga boleh mengubahnya melalui editor selepas backend dihubungkan.
 
 - `missions[].activities[]`: dialog, soalan, pilihan dan jawapan, maklum balas, petunjuk dan objek.
+- `visuals[]` dan `observation`: gambar, sumber, kapsyen, penerangan serta soalan pemerhatian.
+- `finalAssessment`, `learningObjectives`, `openingVideo`, `openingQuestion`, `openingNarration`: kurikulum, pembukaan dan pentaksiran akhir.
 - `position`: `[x, z]`, dalam sempadan laluan permainan.
 - `audio`: audio halaman dialog pertama; `narration[]`: audio mengikut halaman dialog.
 - `soundtrack`: muzik latar dan bunyi persekitaran.
@@ -143,17 +159,17 @@ Konfigurasi browser menggunakan Chromium pada `/usr/bin/chromium`; tetapkan `PLA
 
 ## Aset dan skop visual
 
-Bangunan GLB asal dimodelkan dengan arked melengkung, kaki lima, tiang, cornice, tingkap berbidai, pintu berpanel dan jubin bumbung. Tekstur plaster, kayu, batu dan jalan disertakan. Misi menggunakan kawasan warisan bersaiz kecil dengan variasi pasar, galeri dan taman komuniti.
+Bangunan GLB asal dimodelkan dengan arked melengkung, kaki lima, tiang, cornice, tingkap berbidai, pintu berpanel dan jubin bumbung. Tekstur plaster, kayu, batu dan jalan disertakan. Misi 1 menggunakan lorong warisan. Misi 2 menggunakan dewan sivik berkolum dan siling berpanel, manakala Misi 3 menggunakan sekolah moden, anjung komuniti dan taman. NPC manusia asal mempunyai pandangan ke arah pemain, gerak isyarat dan animasi asas; ia bukan tokoh sejarah sebenar.
 
 Imej menu ialah ilustrasi sinematik yang dijana; ia bukan tangkapan skrin gameplay. Paparan permainan sebenar ialah dunia 3D dalam `src/game/World.tsx`. Aset tidak mewakili dokumentasi tepat sebuah bandar atau bangunan tahun 1969.
 
 Muzik, kesan dan bunyi persekitaran dijana untuk projek ini. Naratif eSpeak terdahulu telah ditarik balik. Pemilik memilih **Osman**, suara lelaki neural **ms-MY**, untuk menggantikannya. Rakaman baharu menggunakan arahan pada peringkat ayat: pembukaan, penerangan sejarah, arahan, petunjuk dan maklum balas kejayaan mempunyai jeda serta kadar pertuturan yang berbeza. Fon DM Sans dan Libre Caslon Display menggunakan SIL Open Font License; salinan lesen tersedia dalam `docs/licenses/`.
 
-Model boleh dijana semula dengan Blender melalui `scripts/build-heritage.py`. Skrip muzik dan bunyi persekitaran memerlukan Python. **Semua hasil aset telah disertakan** — Blender dan Python tidak diperlukan oleh murid atau untuk build website.
+Model boleh dijana semula dengan Blender melalui `scripts/build-heritage.py` dan `scripts/build-companions.py`. Skrip muzik dan bunyi persekitaran memerlukan Python. **Semua hasil aset telah disertakan** — Blender dan Python tidak diperlukan oleh murid atau untuk build website.
 
 ## Naratif Osman dan arahan ringkas
 
-Pemilik memilih **Microsoft Osman (`ms-MY-OsmanNeural`)**. Sebanyak **91 klip MP3** disertakan untuk prolog, dialog, arahan, petunjuk, maklum balas, peralihan misi dan penamat. Murid tidak perlu mempunyai akaun perkhidmatan suara.
+Pemilik memilih **Microsoft Osman (`ms-MY-OsmanNeural`)**. Sebanyak **135 klip MP3** disertakan untuk prolog, dialog, arahan, petunjuk, maklum balas, penerangan gambar, soalan pemerhatian, peralihan misi dan penamat. Murid tidak perlu mempunyai akaun perkhidmatan suara.
 
 - Ayat penuh dikekalkan supaya intonasi neural tidak terputus di tengah perkataan.
 - Jeda, kelajuan, pic dan aras suara diarahkan mengikut maksud ayat; soalan mempunyai ruang untuk murid berfikir.

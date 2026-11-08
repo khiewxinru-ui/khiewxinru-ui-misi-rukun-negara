@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { finalAssessmentSchema } from "./assessment";
 
 const short = z.string().trim().min(1).max(300);
 const mediaPath = z
@@ -11,6 +12,38 @@ const mediaPath = z
         !s.split("/").includes("..") &&
         !s.includes("//")),
     "Gunakan laluan aset tempatan yang sah.",
+  );
+const secureUrl = z
+  .string()
+  .url()
+  .refine((value) => new URL(value).protocol === "https:", "Gunakan HTTPS.");
+export const visualSchema = z.object({
+  id: z.string().regex(/^[a-z][a-z0-9-]{1,59}$/),
+  path: mediaPath.refine(Boolean),
+  title: short,
+  caption: z.string().min(1).max(700),
+  alt: z.string().min(1).max(700),
+  kind: z.enum(["Foto sejarah", "Ilustrasi pendidikan", "Rekonstruksi"]),
+  date: short,
+  creator: short,
+  license: short,
+  sourceUrl: secureUrl,
+  sourceTitle: short,
+  explanation: z.string().min(1).max(1800),
+  audio: mediaPath.default(""),
+});
+export type LearningVisual = z.infer<typeof visualSchema>;
+const observationSchema = z
+  .object({
+    question: short,
+    options: z.array(short).min(2).max(6),
+    correct: z.number().int().min(0).max(5),
+    feedback: z.string().min(1).max(1800),
+    audio: mediaPath.default(""),
+  })
+  .refine(
+    (v) => v.correct < v.options.length,
+    "Jawapan pemerhatian tidak sah.",
   );
 export const activitySchema = z
   .object({
@@ -42,6 +75,8 @@ export const activitySchema = z
       "bench",
       "arch",
     ]),
+    visuals: z.array(visualSchema).max(8).default([]),
+    observation: observationSchema.nullable().default(null),
     image: mediaPath.default(""),
     audio: mediaPath.default(""),
     narration: z.array(mediaPath).max(8).default([]),
@@ -85,6 +120,23 @@ export const contentSchema = z
     version: z.literal(1),
     title: short,
     subtitle: short,
+    finalAssessment: finalAssessmentSchema.optional(),
+    learningObjectives: z.array(short).max(6).default([]),
+    openingVideo: z
+      .string()
+      .default("")
+      .refine(
+        (v) =>
+          !v ||
+          /^https:\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[a-zA-Z0-9_-]{11}([?&].*)?$/.test(
+            v,
+          ),
+        "Gunakan pautan video YouTube yang sah.",
+      ),
+    openingQuestion: z.string().max(1800).default(""),
+    openingNarration: z.string().max(1800).default(""),
+    openingQuestionAudio: mediaPath.default(""),
+    openingNarrationAudio: mediaPath.default(""),
     introduction: z.string().min(1).max(1800),
     introductionAudio: mediaPath.default(""),
     endingAudio: mediaPath.default(""),
@@ -140,12 +192,16 @@ export type Mission = Content["missions"][number];
 export function contentMediaPaths(content: Content): string[] {
   return [
     content.introductionAudio,
+    content.openingQuestionAudio,
+    content.openingNarrationAudio,
     content.endingAudio,
     ...Object.values(content.soundtrack),
     ...content.missions.flatMap((m) => [
       m.introductionAudio,
       m.conclusionAudio,
       ...m.activities.flatMap((a) => [
+        ...a.visuals.flatMap((v) => [v.path, v.audio]),
+        a.observation?.audio || "",
         a.image,
         a.audio,
         ...a.narration,

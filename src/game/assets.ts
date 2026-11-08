@@ -11,7 +11,11 @@ import {
 } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { assetUrl } from "../shared/content";
 
-export type WorldAssets = { model: GLTF; textures: Record<string, Texture> };
+export type WorldAssets = {
+  model: GLTF;
+  textures: Record<string, Texture>;
+  companions: Record<string, GLTF>;
+};
 export function useWorldAssets(retry: number) {
   const [state, setState] = useState<{
     assets?: WorldAssets;
@@ -79,11 +83,40 @@ export function useWorldAssets(retry: number) {
           textures[name] = texture;
           finished++;
           if (alive && !ctrl.signal.aborted)
-            setState({ progress: 80 + (finished / 3) * 20, bytes: loaded });
+            setState({ progress: 80 + (finished / 7) * 20, bytes: loaded });
+        }),
+      );
+      const companions: Record<string, GLTF> = {};
+      await Promise.all(
+        [
+          "companion",
+          "companion-female",
+          "civic-gallery",
+          "community-school",
+        ].map(async (name) => {
+          const response = await fetch(assetUrl(`assets/${name}.glb`), {
+            signal: ctrl.signal,
+          });
+          if (!response.ok)
+            throw new Error(
+              `Aset ${name} gagal dimuatkan (${response.status}).`,
+            );
+          const bytes = await response.arrayBuffer();
+          companions[name] = await new GLTFLoader().parseAsync(
+            bytes,
+            assetUrl("assets/"),
+          );
+          finished++;
+          if (alive && !ctrl.signal.aborted)
+            setState({ progress: 80 + (finished / 7) * 20, bytes: loaded });
         }),
       );
       if (alive && !ctrl.signal.aborted)
-        setState({ assets: { model, textures }, progress: 100, bytes: loaded });
+        setState({
+          assets: { model, textures, companions },
+          progress: 100,
+          bytes: loaded,
+        });
       clearTimeout(timer);
     })().catch((e) => {
       clearTimeout(timer);

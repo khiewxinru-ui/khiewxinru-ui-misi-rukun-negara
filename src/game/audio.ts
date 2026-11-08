@@ -26,6 +26,7 @@ class AudioEngine {
   private context: AudioContext | null = null;
   private music = new Audio(assetUrl("assets/journey.wav"));
   private ambience = new Audio(assetUrl("assets/ambience.wav"));
+  private sequenceVersion = 0;
   private voiceAudio: HTMLAudioElement | null = null;
   private setLevels() {
     const speaking = this.voiceAudio !== null;
@@ -117,7 +118,23 @@ class AudioEngine {
     }
     return "unavailable";
   }
+  speakSequence(clips: { text: string; path: string }[]) {
+    const play = (index: number) => {
+      const clip = clips[index];
+      if (!clip || this.speak(clip.text, clip.path) !== "recorded") return;
+      const version = this.sequenceVersion;
+      this.voiceAudio?.addEventListener(
+        "ended",
+        () => {
+          if (version === this.sequenceVersion) play(index + 1);
+        },
+        { once: true },
+      );
+    };
+    play(0);
+  }
   stopVoice() {
+    this.sequenceVersion++;
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
     this.voiceAudio?.pause();
     this.voiceAudio = null;

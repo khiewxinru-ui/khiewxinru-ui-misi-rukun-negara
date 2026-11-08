@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useRef, type MutableRefObject } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Sky, Billboard } from "@react-three/drei";
+import { Sky } from "@react-three/drei";
 import * as THREE from "three";
-import type { Mission, Activity } from "../shared/content";
+import type { Mission } from "../shared/content";
 import type { WorldAssets } from "./assets";
 import type { AudioSettings } from "./audio";
 import { audioEngine } from "./audio";
 import { movePlayer } from "./movement";
+import { SupportingObject } from "./SupportingObject";
+import { Companion, PictureBoard } from "./Companion";
 import { VintageCar } from "./VintageCar";
 
 export type ControlInput = {
@@ -486,177 +488,6 @@ function SceneDetails({ mission }: { mission: number }) {
   );
 }
 
-function Prop({
-  activity,
-  solved,
-  near,
-  mission,
-  reducedMotion,
-}: {
-  activity: Activity;
-  solved: boolean;
-  near: boolean;
-  mission: number;
-  reducedMotion: boolean;
-}) {
-  const float = useRef<THREE.Group>(null);
-  const marker = useRef<THREE.Mesh>(null);
-  const base = activity.position;
-  useFrame(({ clock }) => {
-    if (reducedMotion) return;
-    if (float.current)
-      float.current.position.y =
-        2.6 + Math.sin(clock.elapsedTime * 1.7 + base[1]) * 0.09;
-    if (marker.current) marker.current.rotation.z = clock.elapsedTime * 0.2;
-  });
-  const color = solved ? "#a6d5b2" : near ? "#fbe2a5" : "#d7b16b";
-  const book = activity.object === "book";
-  const notice = ["map", "notice"].includes(activity.object);
-  return (
-    <group position={[base[0], 0, base[1]]}>
-      <mesh castShadow position={[0, 0.43, 0]}>
-        <cylinderGeometry args={[0.62, 0.72, 0.86, 8]} />
-        <meshStandardMaterial
-          color={mission === 2 ? "#a9a185" : "#776b4b"}
-          roughness={0.95}
-        />
-      </mesh>
-      {activity.object === "radio" ? (
-        <group position={[0, 1.15, 0]}>
-          <mesh castShadow>
-            <boxGeometry args={[0.85, 0.65, 0.34]} />
-            <meshStandardMaterial color="#6e4026" />
-          </mesh>
-          <mesh position={[-0.12, 0, 0.18]}>
-            <planeGeometry args={[0.45, 0.45]} />
-            <meshStandardMaterial color="#c4ad7f" />
-          </mesh>
-          {[-0.18, 0.12].map((y) => (
-            <mesh
-              key={y}
-              position={[0.28, y, 0.21]}
-              rotation={[Math.PI / 2, 0, 0]}
-            >
-              <cylinderGeometry args={[0.055, 0.055, 0.07, 12]} />
-              <meshStandardMaterial color="#b39653" />
-            </mesh>
-          ))}
-        </group>
-      ) : book ? (
-        <group position={[0, 0.97, 0]} rotation={[0.15, 0.2, 0]}>
-          <mesh castShadow>
-            <boxGeometry args={[0.82, 0.17, 0.6]} />
-            <meshStandardMaterial color="#183f36" />
-          </mesh>
-          <mesh position={[0, 0.06, 0.01]}>
-            <boxGeometry args={[0.76, 0.09, 0.54]} />
-            <meshStandardMaterial color="#e4d8ad" />
-          </mesh>
-        </group>
-      ) : notice ? (
-        <group position={[0, 1.44, 0]}>
-          <mesh castShadow>
-            <boxGeometry args={[1, 0.94, 0.12]} />
-            <meshStandardMaterial color="#6a4e2d" />
-          </mesh>
-          <mesh position={[0, 0, 0.07]}>
-            <planeGeometry args={[0.86, 0.8]} />
-            <meshStandardMaterial color="#d9caa2" />
-          </mesh>
-          {[-0.2, 0, 0.2].map((y) => (
-            <mesh key={y} position={[0, y, 0.08]}>
-              <planeGeometry args={[0.62, 0.02]} />
-              <meshBasicMaterial color="#65785b" />
-            </mesh>
-          ))}
-        </group>
-      ) : activity.object === "lantern" ? (
-        <group position={[0, 1.16, 0]}>
-          <mesh>
-            <cylinderGeometry args={[0.17, 0.23, 0.55, 10]} />
-            <meshStandardMaterial
-              color="#d9bc77"
-              emissive="#c49039"
-              emissiveIntensity={0.4}
-            />
-          </mesh>
-          <mesh position={[0, 0.32, 0]}>
-            <coneGeometry args={[0.28, 0.2, 10]} />
-            <meshStandardMaterial color="#385448" />
-          </mesh>
-        </group>
-      ) : activity.object === "garden" ? (
-        <group>
-          <mesh position={[0, 1, 0]}>
-            <cylinderGeometry args={[0.4, 0.25, 0.3, 12]} />
-            <meshStandardMaterial color="#a8603a" />
-          </mesh>
-          {[-0.28, 0, 0.28].map((x) => (
-            <group key={x} position={[x, 1.4, 0]}>
-              <mesh>
-                <cylinderGeometry args={[0.015, 0.02, 0.7, 5]} />
-                <meshStandardMaterial color="#4e6c3d" />
-              </mesh>
-              <mesh position={[0, 0.37, 0]}>
-                <sphereGeometry args={[0.13, 8, 6]} />
-                <meshStandardMaterial color={solved ? "#e3b86b" : "#a9b58a"} />
-              </mesh>
-            </group>
-          ))}
-        </group>
-      ) : activity.object === "flag" ? (
-        <group>
-          <mesh position={[0, 1.8, 0]}>
-            <cylinderGeometry args={[0.025, 0.025, 2.2, 8]} />
-            <meshStandardMaterial color="#a99f7d" />
-          </mesh>
-          <mesh position={[0.31, 2.47, 0]}>
-            <boxGeometry args={[0.6, 0.4, 0.03]} />
-            <meshStandardMaterial color="#315c50" />
-          </mesh>
-          <mesh position={[0.3, 2.47, 0.025]} rotation={[0, 0, Math.PI / 4]}>
-            <planeGeometry args={[0.12, 0.12]} />
-            <meshBasicMaterial color="#dfc284" />
-          </mesh>
-        </group>
-      ) : (
-        <group position={[0, 1.1, 0]}>
-          <mesh castShadow>
-            <boxGeometry args={[0.7, 0.48, 0.55]} />
-            <meshStandardMaterial color="#8a6643" />
-          </mesh>
-          {[-0.2, 0.2].map((x) => (
-            <mesh key={x} position={[x, 0, 0.29]}>
-              <boxGeometry args={[0.05, 0.46, 0.02]} />
-              <meshStandardMaterial color="#b99c67" />
-            </mesh>
-          ))}
-        </group>
-      )}
-      <group ref={float} position={[0, 2.6, 0]}>
-        <Billboard>
-          <mesh ref={marker} rotation={[0, 0, Math.PI / 4]}>
-            <ringGeometry args={[0.18, 0.22, 4]} />
-            <meshBasicMaterial color={color} side={THREE.DoubleSide} />
-          </mesh>
-          <mesh>
-            <circleGeometry args={[0.07, 16]} />
-            <meshBasicMaterial color={color} />
-          </mesh>
-        </Billboard>
-      </group>
-      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.025, 0]}>
-        <ringGeometry args={[0.83, 0.88, 32]} />
-        <meshBasicMaterial
-          color={color}
-          transparent
-          opacity={near ? 0.8 : 0.35}
-        />
-      </mesh>
-    </group>
-  );
-}
-
 function Player({
   mission,
   active,
@@ -892,6 +723,18 @@ export function World(props: WorldProps) {
         <color attach="background" args={["#cdd6ce"]} />
       )}
       <hemisphereLight args={["#dfe7da", "#716a42", 1.35]} />
+      {mission.id === 2 &&
+        settings.quality === "high" &&
+        [-1, -13, -26].map((z) => (
+          <pointLight
+            key={z}
+            position={[0, 4.5, z]}
+            color="#ffe8bd"
+            intensity={45}
+            distance={20}
+            decay={2}
+          />
+        ))}
       <directionalLight
         castShadow={settings.quality === "high"}
         position={[-12, 18, -8]}
@@ -921,7 +764,13 @@ export function World(props: WorldProps) {
         <meshStandardMaterial
           map={road}
           roughness={0.95}
-          color={mission.id === 2 ? "#c2b896" : "#a6a69d"}
+          color={
+            mission.id === 2
+              ? "#e2d9bd"
+              : mission.id === 3
+                ? "#bac5b1"
+                : "#a6a69d"
+          }
         />
       </mesh>
       {[-1, 1].map((side) => (
@@ -934,15 +783,16 @@ export function World(props: WorldProps) {
             <planeGeometry args={[3.1, 54]} />
             <meshStandardMaterial map={pavement} roughness={1} />
           </mesh>
-          {[10, 3, -4, -11, -18, -25].map((z, i) => (
-            <Shop
-              key={z}
-              assets={assets}
-              x={side * 11}
-              z={z}
-              index={i + (side < 0 ? 1 : 0)}
-            />
-          ))}
+          {mission.id === 1 &&
+            [10, 3, -4, -11, -18, -25].map((z, i) => (
+              <Shop
+                key={z}
+                assets={assets}
+                x={side * 11}
+                z={z}
+                index={i + (side < 0 ? 1 : 0)}
+              />
+            ))}
           {[-1, -15, -29].map((z) => (
             <Lamp key={z} x={side * 5.35} z={z} />
           ))}
@@ -951,6 +801,26 @@ export function World(props: WorldProps) {
           ))}
         </group>
       ))}
+      {mission.id !== 1 && (
+        <primitive
+          rotation={[0, Math.PI, 0]}
+          object={
+            assets.companions[
+              mission.id === 2 ? "civic-gallery" : "community-school"
+            ].scene
+          }
+        />
+      )}
+      {mission.id === 3 &&
+        [-1, 1].flatMap((side) =>
+          [-2, -10, -19, -28].map((z) => (
+            <Palm
+              key={`${side}-${z}`}
+              position={[side * 6.8, 0, z]}
+              scale={0.7}
+            />
+          )),
+        )}
       <SceneDetails mission={mission.id} />
       {mission.id === 1 && (
         <VintageCar reducedMotion={settings.reducedMotion} />
@@ -973,14 +843,28 @@ export function World(props: WorldProps) {
         </mesh>
       </group>
       {mission.activities.map((a) => (
-        <Prop
-          key={a.id}
-          activity={a}
-          solved={solved.includes(a.id)}
-          near={near.current === a.id}
-          mission={mission.id}
-          reducedMotion={settings.reducedMotion}
-        />
+        <group key={a.id}>
+          <Companion
+            activity={a}
+            assets={assets}
+            solved={solved.includes(a.id)}
+            reducedMotion={settings.reducedMotion}
+          />
+          <PictureBoard activity={a} />
+          <SupportingObject
+            activity={a}
+            mission={mission.id}
+            solved={solved.includes(a.id)}
+          />
+          {solved.includes(a.id) && (
+            <group position={[a.position[0], 0, a.position[1]]}>
+              <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.025, 0]}>
+                <ringGeometry args={[0.65, 0.72, 32]} />
+                <meshBasicMaterial color="#b8cc99" />
+              </mesh>
+            </group>
+          )}
+        </group>
       ))}
       <Player
         {...props}

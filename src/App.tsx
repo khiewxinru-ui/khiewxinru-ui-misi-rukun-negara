@@ -39,6 +39,9 @@ import {
   Settings,
   NarrationButton,
 } from "./components/UI";
+import { FinalAssessment } from "./components/FinalAssessment";
+import { OpeningVideo } from "./components/OpeningVideo";
+import { VisualAlbum } from "./components/VisualAlbum";
 import { ActivityDialog } from "./components/ActivityDialog";
 const GameView = lazy(() =>
   import("./components/GameView").then((m) => ({ default: m.GameView })),
@@ -48,7 +51,14 @@ const Editor = lazy(() =>
 );
 
 type Screen =
-  "menu" | "character" | "prologue" | "transition" | "game" | "finish";
+  | "menu"
+  | "character"
+  | "video"
+  | "prologue"
+  | "transition"
+  | "game"
+  | "assessment"
+  | "finish";
 export default function App() {
   const [content, setContent] = useState<Content | null>(null),
     [error, setError] = useState(""),
@@ -155,6 +165,7 @@ export default function App() {
     setComplete(false);
   };
   const resumeAudio = () => {
+    audioEngine.stopVoice();
     void audioEngine.unlock();
     setModal(null);
   };
@@ -167,7 +178,7 @@ export default function App() {
     const s = createSave(name.trim(), gender);
     setSave(s);
     if (!writeSave(s)) setStorageError(true);
-    setScreen("prologue");
+    setScreen(content?.openingVideo ? "video" : "prologue");
     void audioEngine.unlock();
   };
   const enter = () => {
@@ -196,7 +207,7 @@ export default function App() {
     if (save.mission === 3) {
       update((s) => ({ ...s, finished: true }));
       setComplete(false);
-      setScreen("finish");
+      setScreen(content?.finalAssessment ? "assessment" : "finish");
       audioEngine.effect("success");
       return;
     }
@@ -223,7 +234,10 @@ export default function App() {
     !content || modal || activity || hash === "#guru"
       ? null
       : screen === "prologue"
-        ? { text: content.introduction, path: content.introductionAudio }
+        ? {
+            text: content.openingQuestion || content.introduction,
+            path: content.openingQuestionAudio || content.introductionAudio,
+          }
         : screen === "game" && intro && mission
           ? { text: mission.introduction, path: mission.introductionAudio }
           : screen === "game" && complete && mission
@@ -236,9 +250,25 @@ export default function App() {
               : null;
   useEffect(() => {
     if (!rootNarration) return;
-    audioEngine.speak(rootNarration.text, rootNarration.path);
+    if (
+      screen === "prologue" &&
+      content?.openingQuestionAudio &&
+      content.openingNarrationAudio
+    )
+      audioEngine.speakSequence([
+        { text: content.openingQuestion, path: content.openingQuestionAudio },
+        { text: content.openingNarration, path: content.openingNarrationAudio },
+      ]);
+    else audioEngine.speak(rootNarration.text, rootNarration.path);
     return () => audioEngine.stopVoice();
-  }, [rootNarration?.path, rootNarration?.text, settings.voice]);
+  }, [
+    rootNarration?.path,
+    rootNarration?.text,
+    settings.voice,
+    screen,
+    content?.openingQuestionAudio,
+    content?.openingNarrationAudio,
+  ]);
   if (hash === "#guru")
     return (
       <Suspense
@@ -325,6 +355,21 @@ export default function App() {
               <br />
               Temui kisah yang menyatukan kita.
             </p>
+            <div className="curriculum-summary">
+              <p>
+                Sejarah Tahun 6 · Unit 3: Rukun Negara
+                <br />
+                SP 10.3.1 · 10.3.2 · 10.3.3
+              </p>
+              <details>
+                <summary>Objektif pembelajaran</summary>
+                <ol>
+                  {content.learningObjectives.map((o) => (
+                    <li key={o}>{o}</li>
+                  ))}
+                </ol>
+              </details>
+            </div>
             <div className="hero-actions">
               <PrimaryButton
                 onClick={() =>
@@ -478,6 +523,15 @@ export default function App() {
           <span className="onboarding-number">01 / PERMULAAN</span>
         </main>
       )}
+      {screen === "video" && content.openingVideo && (
+        <OpeningVideo
+          url={content.openingVideo}
+          onContinue={() => {
+            void audioEngine.unlock();
+            setScreen("prologue");
+          }}
+        />
+      )}
       {screen === "prologue" && (
         <main className="prologue">
           <Emblem />
@@ -489,11 +543,22 @@ export default function App() {
             <br />
             negara menjadi <em>satu?</em>
           </h1>
-          <p>{content.introduction}</p>
+          <p>{content.openingQuestion || content.introduction}</p>
+          {content.openingNarration && (
+            <>
+              <p>{content.openingNarration}</p>
+              <NarrationButton
+                text={content.openingNarration}
+                path={content.openingNarrationAudio}
+                light
+                label="Dengar perjalanan kita"
+              />
+            </>
+          )}
           <PrimaryButton onClick={enter}>Masuki lorong masa</PrimaryButton>
           <NarrationButton
-            text={content.introduction}
-            path={content.introductionAudio}
+            text={content.openingQuestion || content.introduction}
+            path={content.openingQuestionAudio || content.introductionAudio}
             light
             label="Dengar cerita"
           />
@@ -539,6 +604,15 @@ export default function App() {
           />
         </Suspense>
       )}
+      {screen === "assessment" && save && content.finalAssessment && (
+        <FinalAssessment
+          content={content}
+          save={save}
+          onChange={update}
+          onFinish={() => setScreen("finish")}
+          onHome={home}
+        />
+      )}
       {screen === "finish" && save && (
         <main className="finish-screen">
           <span className="finish-medal">
@@ -563,7 +637,7 @@ export default function App() {
               <strong>{save.solved.length}</strong>Penemuan direkodkan
             </span>
             <span>
-              <strong>5</strong>Prinsip difahami
+              <strong>5</strong>Prinsip diterokai
             </span>
           </div>
           <label htmlFor="reflection">
@@ -580,6 +654,14 @@ export default function App() {
               update((s) => ({ ...s, reflection: e.target.value }));
             }}
           />
+          {content.finalAssessment && (
+            <button
+              className="primary-button"
+              onClick={() => setScreen("assessment")}
+            >
+              Buka pentaksiran akhir
+            </button>
+          )}
           <div className="finish-actions">
             <PrimaryButton onClick={() => setModal("journal")}>
               Lihat buku pengembaraan
@@ -630,12 +712,14 @@ export default function App() {
             <div>
               <Sparkles />
               <h3>Temui</h3>
-              <p>Dekati objek bertanda emas. Tekan E untuk buka.</p>
+              <p>Dekati watak. Tekan E atau butang Bercakap.</p>
             </div>
             <div>
               <BookOpen />
               <h3>Fahami</h3>
-              <p>Dengar atau baca dialog. Kemudian, buat tugasan.</p>
+              <p>
+                Lihat gambar. Dengar atau baca dialog. Kemudian, buat tugasan.
+              </p>
             </div>
           </div>
           <p className="hint-box">
@@ -723,6 +807,30 @@ export default function App() {
                           ? a.feedback
                           : "Petunjuk belum ditemui. Teruskan penerokaan."}
                       </p>
+                      {save?.solved.includes(a.id) && a.visuals.length > 0 && (
+                        <details className="journal-visuals">
+                          <summary>Lihat bahan dan pemerhatian</summary>
+                          <VisualAlbum
+                            visuals={a.visuals}
+                            speaker={a.speaker}
+                          />
+                          {save.observations[a.id] && (
+                            <>
+                              <p>
+                                <strong>Pemerhatian:</strong>{" "}
+                                {
+                                  a.observation?.options[
+                                    save.observations[a.id].answer
+                                  ]
+                                }
+                              </p>
+                              {save.observations[a.id].note && (
+                                <p>{save.observations[a.id].note}</p>
+                              )}
+                            </>
+                          )}
+                        </details>
+                      )}
                     </div>
                   </div>
                 ))}
@@ -761,6 +869,15 @@ export default function App() {
           name={save.name}
           alreadySolved={save.solved.includes(activity.id)}
           onClose={() => setActivity(null)}
+          onObservation={(answer, note) =>
+            update((s) => ({
+              ...s,
+              observations: {
+                ...s.observations,
+                [activity.id]: { answer, note },
+              },
+            }))
+          }
           onAttempt={() =>
             update((s) => ({
               ...s,

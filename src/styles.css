@@ -2339,3 +2339,467 @@ em {
     font-size: 15px;
   }
 }
+
+/* Images are learning objects inside NPC conversations, with their source visible. */
+.visual-album {
+  margin: 22px 0;
+  min-width: 0;
+}
+.album-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #63765f;
+}
+.visual-frame {
+  border: 1px solid #d1ceb8;
+  border-radius: 9px;
+  background: #fffaf0;
+  overflow: hidden;
+}
+.visual-image-button {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  background: #e4dfcc;
+}
+.visual-image-button img {
+  display: block;
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
+.visual-image-button > span {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 8px 12px;
+  background: #203f34e8;
+  color: #fff9e7;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.visual-caption {
+  padding: 16px 18px;
+}
+.visual-kind {
+  font-size: 13px;
+  color: #75663f;
+  display: block;
+  line-height: 1.7;
+}
+.visual-caption h3 {
+  font:
+    500 21px/1.5 "DM Sans",
+    sans-serif;
+  margin: 8px 0;
+}
+.visual-caption p,
+.visual-caption a {
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+.visual-caption details {
+  font-size: 15px;
+  margin-top: 10px;
+}
+.visual-caption summary,
+.journal-visuals > summary {
+  cursor: pointer;
+  padding: 8px 0;
+}
+.visual-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0;
+}
+.visual-choices button {
+  min-height: 44px;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 9px 13px;
+  border: 1px solid #c6ccb7;
+  border-radius: 5px;
+  background: #f8f4e8;
+  color: #3e5b48;
+}
+.visual-choices button[aria-pressed="true"] {
+  background: #325b4b;
+  color: #fff6de;
+  border-color: #325b4b;
+}
+.visual-explanation {
+  border-left: 3px solid #b3995e;
+  padding: 9px 0 9px 16px;
+  margin-top: 15px;
+}
+.visual-explanation strong {
+  font-size: 15px;
+}
+.visual-explanation p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 8px 0;
+}
+.visual-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #142e27fa;
+  overflow: auto;
+  padding: 76px max(20px, calc((100vw - 1050px) / 2)) 30px;
+  color: #f8f2dc;
+}
+.visual-expanded .visual-image-button {
+  background: #203b31;
+}
+.visual-expanded img {
+  height: min(62svh, 650px);
+}
+.visual-expanded .visual-kind,
+.visual-expanded a {
+  color: #e2c98e;
+}
+.visual-expanded p {
+  color: #e0e6d4;
+}
+.visual-close {
+  position: fixed;
+  top: 18px;
+  right: 22px;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: #f4eedc;
+  color: #284d3d;
+  padding: 12px 18px;
+  border-radius: 7px;
+  font-size: 16px;
+}
+.visual-inquiry {
+  border-top: 1px solid #c6ceb7;
+  padding-top: 22px;
+  margin-top: 20px;
+}
+.visual-inquiry h3 {
+  font-size: 23px;
+  line-height: 1.5;
+}
+.visual-inquiry p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.visual-inquiry [role="radiogroup"] {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 18px 0;
+}
+.visual-inquiry > .primary-button {
+  margin-top: 15px;
+}
+.observation-note {
+  display: block;
+  font-size: 17px;
+  margin: 18px 0;
+}
+.observation-note textarea {
+  width: 100%;
+  display: block;
+  margin-top: 9px;
+  font-size: 17px;
+}
+.visual-error {
+  padding: 30px;
+  font-size: 18px;
+}
+.visual-error button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 12px;
+  margin-top: 15px;
+}
+.journal-entry > div {
+  min-width: 0;
+  width: 100%;
+}
+.journal-visuals {
+  font-size: 16px;
+}
+.curriculum-summary {
+  max-width: 470px;
+  margin: 15px 0 23px;
+  color: #d0d9bf;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.curriculum-summary p {
+  margin: 0 0 5px;
+  font-size: 15px;
+}
+.curriculum-summary summary {
+  cursor: pointer;
+}
+.curriculum-summary ol {
+  padding-left: 22px;
+  margin: 12px 0;
+}
+.curriculum-summary li {
+  margin: 10px 0;
+}
+.opening-video {
+  position: relative;
+  z-index: 2;
+  max-width: 1040px;
+  padding: 45px 28px;
+  margin: auto;
+  color: #f1ecd9;
+}
+.opening-video h1 {
+  font:
+    48px/1.2 "Libre Caslon Display",
+    serif;
+  margin: 18px 0;
+}
+.opening-video > p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.video-frame {
+  aspect-ratio: 16/9;
+  background: #10231e;
+  margin: 25px 0;
+  border: 1px solid #d0b77455;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.video-frame iframe {
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+.opening-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.opening-actions a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #e8d199;
+  font-size: 16px;
+}
+.opening-video .video-note {
+  font-size: 15px;
+  color: #c7d2bc;
+}
+@media (max-width: 640px) {
+  .visual-image-button img {
+    height: 220px;
+  }
+  .visual-caption {
+    padding: 13px;
+  }
+  .visual-explanation p {
+    font-size: 18px;
+  }
+  .opening-video {
+    padding: 30px 20px;
+  }
+  .opening-video h1 {
+    font-size: 37px;
+  }
+  .opening-actions .primary-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+.assessment-screen {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 35px 24px 65px;
+  color: #f0ecd8;
+}
+.assessment-screen header h1 {
+  font:
+    44px/1.2 "Libre Caslon Display",
+    serif;
+  margin: 20px 0;
+}
+.assessment-screen header p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.assessment-screen header .text-button {
+  color: #e3cea0;
+  font-size: 16px;
+}
+.assessment-screen nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+.assessment-screen nav button {
+  padding: 13px 20px;
+  border: 1px solid #b5c3a966;
+  border-radius: 6px;
+  background: #214534;
+  color: #e9e9d4;
+  font-size: 17px;
+}
+.assessment-screen nav button[aria-current] {
+  background: #d9c188;
+  color: #234834;
+}
+.assessment-screen > section {
+  background: #f6f0df;
+  color: #2a4b3a;
+  border-radius: 10px;
+  padding: 28px;
+  margin-top: 20px;
+}
+.assessment-screen h2 {
+  font:
+    34px/1.3 "Libre Caslon Display",
+    serif;
+}
+.assessment-screen section > p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.assessment-question {
+  padding: 22px 0;
+  border: 0;
+  border-top: 1px solid #cad0ba;
+  margin: 25px 0;
+  min-width: 0;
+}
+.assessment-question legend {
+  font-size: 20px;
+  line-height: 1.7;
+  padding-top: 20px;
+}
+.assessment-question .match-row {
+  margin: 10px 0;
+}
+.assessment-question p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.written-answer {
+  display: block;
+  font-size: 19px;
+  line-height: 1.8;
+}
+.written-answer textarea {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.assessment-rubric {
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 18px 0;
+}
+.assessment-rubric summary {
+  cursor: pointer;
+}
+.assessment-rubric li {
+  margin: 10px 0;
+}
+.assessment-actions {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.assessment-actions > button:not(.primary-button) {
+  font-size: 16px;
+  padding: 12px;
+}
+.assessment-correct {
+  padding: 15px;
+  background: #e0ead5;
+  border-left: 3px solid #6a8b59;
+}
+.assessment-revise {
+  padding: 15px;
+  background: #efe1cc;
+  border-left: 3px solid #ad8256;
+}
+.assessment-results .text-button {
+  display: block;
+  margin-top: 15px;
+  font-size: 16px;
+}
+@media (max-width: 640px) {
+  .assessment-screen {
+    padding: 25px 15px;
+  }
+  .assessment-screen header h1 {
+    font-size: 35px;
+  }
+  .assessment-screen > section {
+    padding: 20px;
+  }
+  .assessment-question legend {
+    font-size: 18px;
+  }
+}
+@media print {
+  .cinematic-background,
+  .assessment-screen header button,
+  .assessment-screen nav,
+  .assessment-actions,
+  .assessment-results button {
+    display: none;
+  }
+  .assessment-screen {
+    color: #000;
+    background: #fff;
+  }
+  .assessment-screen > section {
+    break-inside: avoid;
+  }
+  .assessment-rubric {
+    display: block;
+  }
+}
+.assessment-print-report {
+  display: none;
+}
+@media print {
+  .assessment-screen > header,
+  .assessment-screen > section {
+    display: none;
+  }
+  .assessment-print-report {
+    display: block;
+  }
+  .assessment-print-report section {
+    break-before: page;
+  }
+  .assessment-print-report section:first-of-type {
+    break-before: auto;
+  }
+}

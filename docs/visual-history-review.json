@@ -1,0 +1,23 @@
+{
+  "baseline_commit": "3a2c801e4dee565ffbb62000befce9c12d881b6a",
+  "pages": "36–46",
+  "protected_fields": [
+    "id",
+    "title",
+    "speaker",
+    "dialogue",
+    "kind",
+    "question",
+    "options",
+    "matches",
+    "correct",
+    "feedback",
+    "hint",
+    "page",
+    "position"
+  ],
+  "before_sha256": "ea5e79d7c47b3ee2ab5f5f1b12deb65a6c175e1f7e0285fc620942cbbc7f8718",
+  "after_sha256": "ea5e79d7c47b3ee2ab5f5f1b12deb65a6c175e1f7e0285fc620942cbbc7f8718",
+  "unchanged": true,
+  "new_material": "Visual observations, source metadata and final assessment supplement the original textbook activities."
+}
