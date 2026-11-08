@@ -6,7 +6,6 @@ import {
   Check,
   ChevronRight,
   Compass,
-  GraduationCap,
   Headphones,
   HelpCircle,
   MapPin,
@@ -231,7 +230,7 @@ export default function App() {
     setActivity(a);
   };
   const rootNarration =
-    !content || modal || activity || hash === "#guru"
+    !content || modal || activity || (hash === "#guru" || location.pathname.endsWith("/guru.html"))
       ? null
       : screen === "prologue"
         ? {
@@ -269,7 +268,7 @@ export default function App() {
     content?.openingQuestionAudio,
     content?.openingNarrationAudio,
   ]);
-  if (hash === "#guru")
+  if ((hash === "#guru" || location.pathname.endsWith("/guru.html")))
     return (
       <Suspense
         fallback={<div className="boot-screen">Membuka ruang guru…</div>}
@@ -277,7 +276,7 @@ export default function App() {
         <Editor
           initialContent={content}
           onHome={() => {
-            location.hash = "";
+            location.href = import.meta.env.BASE_URL;
           }}
         />
       </Suspense>
@@ -450,10 +449,7 @@ export default function App() {
             <span className="footer-note">
               <Compass size={15} /> PENEROKAAN 3D INTERAKTIF
             </span>
-            <a href="#guru" className="teacher-link">
-              <GraduationCap size={16} />
-              Ruang Guru
-            </a>
+
           </footer>
         </main>
       )}

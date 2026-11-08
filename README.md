@@ -79,7 +79,7 @@ Selepas tiga misi, **Pentaksiran Akhir — Misi Perpaduan** menyediakan Bahagian
 
 ## Teacher Editor
 
-Buka **Ruang Guru** di menu atau tambah `#guru` pada URL.
+Buka pautan guru berasingan: https://khiewxinru-ui.github.io/khiewxinru-ui-misi-rukun-negara/guru.html. Menu murid tidak memaparkan pautan editor. Pautan lama `#guru` dikekalkan untuk keserasian. Menyembunyikan pautan bukan kawalan akses; penerbitan tetap memerlukan sesi guru backend yang sah.
 
 ### Mod tempatan
 
